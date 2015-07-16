@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>FamilyInfo</key>
+	<array/>
+	<key>BaseInfo1</key>
+	<array>
+		<string>性别</string>
+		<string>年龄</string>
+		<string>体重</string>
+		<string>身高</string>
+	</array>
+</dict>
+</plist>

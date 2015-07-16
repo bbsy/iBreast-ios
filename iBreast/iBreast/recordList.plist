@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>普通女性设置</key>
+	<array>
+		<string>上次月经来潮日期</string>
+		<string>上次月经结束日期</string>
+		<string>建议检查日期</string>
+	</array>
+	<key>怀孕或已绝经女性设置</key>
+	<array>
+		<string>设置每月提醒日</string>
+	</array>
+	<key>提醒</key>
+	<array>
+		<string>推送通知提醒</string>
+	</array>
+</dict>
+</plist>

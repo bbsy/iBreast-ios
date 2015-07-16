@@ -1,0 +1,534 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8A6EB9911B46D16A0003CFAB /* HarvardCheckMenu.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8A6EB9901B46D16A0003CFAB /* HarvardCheckMenu.plist */; };
+		8A6EB9931B46D3170003CFAB /* HarhardCheckBaseInfo1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6EB9921B46D3170003CFAB /* HarhardCheckBaseInfo1.swift */; };
+		8A6EB9951B46D4520003CFAB /* harvardMenuList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8A6EB9941B46D4520003CFAB /* harvardMenuList.plist */; };
+		8A6EB9971B46DBDF0003CFAB /* HarvardCheckBaseInfo2VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6EB9961B46DBDF0003CFAB /* HarvardCheckBaseInfo2VC.swift */; };
+		8A6EB9991B46E40E0003CFAB /* HarvardCheckBaseInfo3VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6EB9981B46E40E0003CFAB /* HarvardCheckBaseInfo3VC.swift */; };
+		8A6EB99D1B46EA5A0003CFAB /* HarvardCheckBaseInfo4VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6EB99C1B46EA5A0003CFAB /* HarvardCheckBaseInfo4VC.swift */; };
+		8A74DEE11B461CAB0091DA2E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A74DEE01B461CAB0091DA2E /* AppDelegate.swift */; };
+		8A74DEE31B461CAB0091DA2E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A74DEE21B461CAB0091DA2E /* ViewController.swift */; };
+		8A74DEE61B461CAB0091DA2E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A74DEE41B461CAB0091DA2E /* Main.storyboard */; };
+		8A74DEE81B461CAB0091DA2E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A74DEE71B461CAB0091DA2E /* Images.xcassets */; };
+		8A74DEEB1B461CAB0091DA2E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A74DEE91B461CAB0091DA2E /* LaunchScreen.xib */; };
+		8A74DEF71B461CAB0091DA2E /* iBreastTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A74DEF61B461CAB0091DA2E /* iBreastTests.swift */; };
+		8A7BB06B1B491CCA00AFE5E2 /* ExamBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A7BB06A1B491CCA00AFE5E2 /* ExamBoard.swift */; };
+		8A7BB06D1B4921A000AFE5E2 /* BaseBrush.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A7BB06C1B4921A000AFE5E2 /* BaseBrush.swift */; };
+		8A7BB06F1B4924D600AFE5E2 /* PencilBrush.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A7BB06E1B4924D600AFE5E2 /* PencilBrush.swift */; };
+		8A7BB0711B49278000AFE5E2 /* EraserBrush.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A7BB0701B49278000AFE5E2 /* EraserBrush.swift */; };
+		8A7BB0731B49439000AFE5E2 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A7BB0721B49439000AFE5E2 /* CircleView.swift */; };
+		8A7BB0751B4969F500AFE5E2 /* SelfExamEditorVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A7BB0741B4969F500AFE5E2 /* SelfExamEditorVC.swift */; };
+		8A7BB0771B49745200AFE5E2 /* SelfExamData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A7BB0761B49745200AFE5E2 /* SelfExamData.swift */; };
+		8A93D2511B4AD28900B734FA /* AlertPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A93D24F1B4AD28900B734FA /* AlertPickerViewController.swift */; };
+		8A93D2541B4B911900B734FA /* SelfExam in Resources */ = {isa = PBXBuildFile; fileRef = 8A93D2531B4B911900B734FA /* SelfExam */; };
+		8A93E09C1B4BACE200B734FA /* ClinicsHistoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A93E09B1B4BACE200B734FA /* ClinicsHistoryVC.swift */; };
+		8A93E09E1B4BADC700B734FA /* ClinicsHistoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A93E09D1B4BADC700B734FA /* ClinicsHistoryModel.swift */; };
+		8A93E0A01B4C01DE00B734FA /* recordList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8A93E09F1B4C01DE00B734FA /* recordList.plist */; };
+		8A93E0A21B4C03E100B734FA /* ClinicsCheck in Resources */ = {isa = PBXBuildFile; fileRef = 8A93E0A11B4C03E100B734FA /* ClinicsCheck */; };
+		8A93E0A41B4C042600B734FA /* RecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A93E0A31B4C042600B734FA /* RecordViewController.swift */; };
+		8A93E0A61B4C043000B734FA /* Record in Resources */ = {isa = PBXBuildFile; fileRef = 8A93E0A51B4C043000B734FA /* Record */; };
+		8A93E0A81B4D1E9F00B734FA /* MeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A93E0A71B4D1E9F00B734FA /* MeViewController.swift */; };
+		8A93E0AA1B4D1EA900B734FA /* Me in Resources */ = {isa = PBXBuildFile; fileRef = 8A93E0A91B4D1EA900B734FA /* Me */; };
+		8A93E0AC1B4D205100B734FA /* MeMenuList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8A93E0AB1B4D205100B734FA /* MeMenuList.plist */; };
+		8A93E0AE1B4E458800B734FA /* HarvardCheckResultVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A93E0AD1B4E458800B734FA /* HarvardCheckResultVC.swift */; };
+		8A93E0B21B4E551800B734FA /* HarvardCheckModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A93E0B11B4E551800B734FA /* HarvardCheckModel.swift */; };
+		8A93E0B61B4E5BC300B734FA /* HarvarCheckFamilyInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A93E0B51B4E5BC300B734FA /* HarvarCheckFamilyInfoVC.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8A74DEF11B461CAB0091DA2E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8A74DED31B461CAB0091DA2E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8A74DEDA1B461CAB0091DA2E;
+			remoteInfo = iBreast;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		8A6EB9901B46D16A0003CFAB /* HarvardCheckMenu.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = HarvardCheckMenu.plist; sourceTree = "<group>"; };
+		8A6EB9921B46D3170003CFAB /* HarhardCheckBaseInfo1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HarhardCheckBaseInfo1.swift; sourceTree = "<group>"; };
+		8A6EB9941B46D4520003CFAB /* harvardMenuList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = harvardMenuList.plist; sourceTree = "<group>"; };
+		8A6EB9961B46DBDF0003CFAB /* HarvardCheckBaseInfo2VC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HarvardCheckBaseInfo2VC.swift; sourceTree = "<group>"; };
+		8A6EB9981B46E40E0003CFAB /* HarvardCheckBaseInfo3VC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HarvardCheckBaseInfo3VC.swift; sourceTree = "<group>"; };
+		8A6EB99C1B46EA5A0003CFAB /* HarvardCheckBaseInfo4VC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HarvardCheckBaseInfo4VC.swift; sourceTree = "<group>"; };
+		8A74DEDB1B461CAB0091DA2E /* iBreast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iBreast.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8A74DEDF1B461CAB0091DA2E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8A74DEE01B461CAB0091DA2E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		8A74DEE21B461CAB0091DA2E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		8A74DEE51B461CAB0091DA2E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		8A74DEE71B461CAB0091DA2E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		8A74DEEA1B461CAB0091DA2E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		8A74DEF01B461CAB0091DA2E /* iBreastTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iBreastTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8A74DEF51B461CAB0091DA2E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8A74DEF61B461CAB0091DA2E /* iBreastTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iBreastTests.swift; sourceTree = "<group>"; };
+		8A7BB06A1B491CCA00AFE5E2 /* ExamBoard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExamBoard.swift; path = SelfExam/ExamBoard.swift; sourceTree = "<group>"; };
+		8A7BB06C1B4921A000AFE5E2 /* BaseBrush.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseBrush.swift; path = SelfExam/BaseBrush.swift; sourceTree = "<group>"; };
+		8A7BB06E1B4924D600AFE5E2 /* PencilBrush.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PencilBrush.swift; path = SelfExam/PencilBrush.swift; sourceTree = "<group>"; };
+		8A7BB0701B49278000AFE5E2 /* EraserBrush.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EraserBrush.swift; path = SelfExam/EraserBrush.swift; sourceTree = "<group>"; };
+		8A7BB0721B49439000AFE5E2 /* CircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CircleView.swift; path = SelfExam/CircleView.swift; sourceTree = "<group>"; };
+		8A7BB0741B4969F500AFE5E2 /* SelfExamEditorVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SelfExamEditorVC.swift; path = SelfExam/SelfExamEditorVC.swift; sourceTree = "<group>"; };
+		8A7BB0761B49745200AFE5E2 /* SelfExamData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SelfExamData.swift; path = SelfExam/SelfExamData.swift; sourceTree = "<group>"; };
+		8A93D24F1B4AD28900B734FA /* AlertPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertPickerViewController.swift; sourceTree = "<group>"; };
+		8A93D2531B4B911900B734FA /* SelfExam */ = {isa = PBXFileReference; lastKnownFileType = folder; path = SelfExam; sourceTree = "<group>"; };
+		8A93E09B1B4BACE200B734FA /* ClinicsHistoryVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ClinicsHistoryVC.swift; path = ClinicsCheck/ClinicsHistoryVC.swift; sourceTree = "<group>"; };
+		8A93E09D1B4BADC700B734FA /* ClinicsHistoryModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ClinicsHistoryModel.swift; path = ClinicsCheck/ClinicsHistoryModel.swift; sourceTree = "<group>"; };
+		8A93E09F1B4C01DE00B734FA /* recordList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = recordList.plist; sourceTree = "<group>"; };
+		8A93E0A11B4C03E100B734FA /* ClinicsCheck */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ClinicsCheck; sourceTree = "<group>"; };
+		8A93E0A31B4C042600B734FA /* RecordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RecordViewController.swift; path = Record/RecordViewController.swift; sourceTree = "<group>"; };
+		8A93E0A51B4C043000B734FA /* Record */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Record; sourceTree = "<group>"; };
+		8A93E0A71B4D1E9F00B734FA /* MeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MeViewController.swift; path = Me/MeViewController.swift; sourceTree = "<group>"; };
+		8A93E0A91B4D1EA900B734FA /* Me */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Me; sourceTree = "<group>"; };
+		8A93E0AB1B4D205100B734FA /* MeMenuList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MeMenuList.plist; sourceTree = "<group>"; };
+		8A93E0AD1B4E458800B734FA /* HarvardCheckResultVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HarvardCheckResultVC.swift; sourceTree = "<group>"; };
+		8A93E0B11B4E551800B734FA /* HarvardCheckModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HarvardCheckModel.swift; path = HarvardCheck/HarvardCheckModel.swift; sourceTree = "<group>"; };
+		8A93E0B51B4E5BC300B734FA /* HarvarCheckFamilyInfoVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HarvarCheckFamilyInfoVC.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8A74DED81B461CAB0091DA2E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8A74DEED1B461CAB0091DA2E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8A74DED21B461CAB0091DA2E = {
+			isa = PBXGroup;
+			children = (
+				8A74DEDD1B461CAB0091DA2E /* iBreast */,
+				8A74DEF31B461CAB0091DA2E /* iBreastTests */,
+				8A74DEDC1B461CAB0091DA2E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		8A74DEDC1B461CAB0091DA2E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8A74DEDB1B461CAB0091DA2E /* iBreast.app */,
+				8A74DEF01B461CAB0091DA2E /* iBreastTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8A74DEDD1B461CAB0091DA2E /* iBreast */ = {
+			isa = PBXGroup;
+			children = (
+				8A93D2531B4B911900B734FA /* SelfExam */,
+				8A93D24F1B4AD28900B734FA /* AlertPickerViewController.swift */,
+				8A74DEE01B461CAB0091DA2E /* AppDelegate.swift */,
+				8A74DEE21B461CAB0091DA2E /* ViewController.swift */,
+				8A74DEE41B461CAB0091DA2E /* Main.storyboard */,
+				8A93E0A11B4C03E100B734FA /* ClinicsCheck */,
+				8A74DEE71B461CAB0091DA2E /* Images.xcassets */,
+				8A74DEDE1B461CAB0091DA2E /* Supporting Files */,
+				8A74DEE91B461CAB0091DA2E /* LaunchScreen.xib */,
+				8A6EB9921B46D3170003CFAB /* HarhardCheckBaseInfo1.swift */,
+				8A6EB9941B46D4520003CFAB /* harvardMenuList.plist */,
+				8A6EB9961B46DBDF0003CFAB /* HarvardCheckBaseInfo2VC.swift */,
+				8A6EB9981B46E40E0003CFAB /* HarvardCheckBaseInfo3VC.swift */,
+				8A6EB99C1B46EA5A0003CFAB /* HarvardCheckBaseInfo4VC.swift */,
+				8A93E0AD1B4E458800B734FA /* HarvardCheckResultVC.swift */,
+				8A7BB06A1B491CCA00AFE5E2 /* ExamBoard.swift */,
+				8A7BB0721B49439000AFE5E2 /* CircleView.swift */,
+				8A7BB06E1B4924D600AFE5E2 /* PencilBrush.swift */,
+				8A7BB0701B49278000AFE5E2 /* EraserBrush.swift */,
+				8A7BB0761B49745200AFE5E2 /* SelfExamData.swift */,
+				8A93E09B1B4BACE200B734FA /* ClinicsHistoryVC.swift */,
+				8A93E09D1B4BADC700B734FA /* ClinicsHistoryModel.swift */,
+				8A93E09F1B4C01DE00B734FA /* recordList.plist */,
+				8A93E0A31B4C042600B734FA /* RecordViewController.swift */,
+				8A93E0A51B4C043000B734FA /* Record */,
+				8A93E0A71B4D1E9F00B734FA /* MeViewController.swift */,
+				8A93E0A91B4D1EA900B734FA /* Me */,
+				8A93E0AB1B4D205100B734FA /* MeMenuList.plist */,
+				8A93E0B11B4E551800B734FA /* HarvardCheckModel.swift */,
+				8A93E0B51B4E5BC300B734FA /* HarvarCheckFamilyInfoVC.swift */,
+			);
+			path = iBreast;
+			sourceTree = "<group>";
+		};
+		8A74DEDE1B461CAB0091DA2E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8A6EB9901B46D16A0003CFAB /* HarvardCheckMenu.plist */,
+				8A74DEDF1B461CAB0091DA2E /* Info.plist */,
+				8A7BB06C1B4921A000AFE5E2 /* BaseBrush.swift */,
+				8A7BB0741B4969F500AFE5E2 /* SelfExamEditorVC.swift */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8A74DEF31B461CAB0091DA2E /* iBreastTests */ = {
+			isa = PBXGroup;
+			children = (
+				8A74DEF61B461CAB0091DA2E /* iBreastTests.swift */,
+				8A74DEF41B461CAB0091DA2E /* Supporting Files */,
+			);
+			path = iBreastTests;
+			sourceTree = "<group>";
+		};
+		8A74DEF41B461CAB0091DA2E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8A74DEF51B461CAB0091DA2E /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8A74DEDA1B461CAB0091DA2E /* iBreast */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8A74DEFA1B461CAB0091DA2E /* Build configuration list for PBXNativeTarget "iBreast" */;
+			buildPhases = (
+				8A74DED71B461CAB0091DA2E /* Sources */,
+				8A74DED81B461CAB0091DA2E /* Frameworks */,
+				8A74DED91B461CAB0091DA2E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = iBreast;
+			productName = iBreast;
+			productReference = 8A74DEDB1B461CAB0091DA2E /* iBreast.app */;
+			productType = "com.apple.product-type.application";
+		};
+		8A74DEEF1B461CAB0091DA2E /* iBreastTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8A74DEFD1B461CAB0091DA2E /* Build configuration list for PBXNativeTarget "iBreastTests" */;
+			buildPhases = (
+				8A74DEEC1B461CAB0091DA2E /* Sources */,
+				8A74DEED1B461CAB0091DA2E /* Frameworks */,
+				8A74DEEE1B461CAB0091DA2E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8A74DEF21B461CAB0091DA2E /* PBXTargetDependency */,
+			);
+			name = iBreastTests;
+			productName = iBreastTests;
+			productReference = 8A74DEF01B461CAB0091DA2E /* iBreastTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8A74DED31B461CAB0091DA2E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0630;
+				ORGANIZATIONNAME = "钟其鸿";
+				TargetAttributes = {
+					8A74DEDA1B461CAB0091DA2E = {
+						CreatedOnToolsVersion = 6.3.2;
+					};
+					8A74DEEF1B461CAB0091DA2E = {
+						CreatedOnToolsVersion = 6.3.2;
+						TestTargetID = 8A74DEDA1B461CAB0091DA2E;
+					};
+				};
+			};
+			buildConfigurationList = 8A74DED61B461CAB0091DA2E /* Build configuration list for PBXProject "iBreast" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 8A74DED21B461CAB0091DA2E;
+			productRefGroup = 8A74DEDC1B461CAB0091DA2E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8A74DEDA1B461CAB0091DA2E /* iBreast */,
+				8A74DEEF1B461CAB0091DA2E /* iBreastTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8A74DED91B461CAB0091DA2E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8A93E0AC1B4D205100B734FA /* MeMenuList.plist in Resources */,
+				8A93E0AA1B4D1EA900B734FA /* Me in Resources */,
+				8A74DEE61B461CAB0091DA2E /* Main.storyboard in Resources */,
+				8A74DEEB1B461CAB0091DA2E /* LaunchScreen.xib in Resources */,
+				8A6EB9951B46D4520003CFAB /* harvardMenuList.plist in Resources */,
+				8A74DEE81B461CAB0091DA2E /* Images.xcassets in Resources */,
+				8A93E0A01B4C01DE00B734FA /* recordList.plist in Resources */,
+				8A6EB9911B46D16A0003CFAB /* HarvardCheckMenu.plist in Resources */,
+				8A93D2541B4B911900B734FA /* SelfExam in Resources */,
+				8A93E0A61B4C043000B734FA /* Record in Resources */,
+				8A93E0A21B4C03E100B734FA /* ClinicsCheck in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8A74DEEE1B461CAB0091DA2E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8A74DED71B461CAB0091DA2E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8A93E0A81B4D1E9F00B734FA /* MeViewController.swift in Sources */,
+				8A7BB0711B49278000AFE5E2 /* EraserBrush.swift in Sources */,
+				8A93D2511B4AD28900B734FA /* AlertPickerViewController.swift in Sources */,
+				8A6EB99D1B46EA5A0003CFAB /* HarvardCheckBaseInfo4VC.swift in Sources */,
+				8A93E0AE1B4E458800B734FA /* HarvardCheckResultVC.swift in Sources */,
+				8A7BB06D1B4921A000AFE5E2 /* BaseBrush.swift in Sources */,
+				8A7BB06F1B4924D600AFE5E2 /* PencilBrush.swift in Sources */,
+				8A6EB9991B46E40E0003CFAB /* HarvardCheckBaseInfo3VC.swift in Sources */,
+				8A7BB0771B49745200AFE5E2 /* SelfExamData.swift in Sources */,
+				8A6EB9971B46DBDF0003CFAB /* HarvardCheckBaseInfo2VC.swift in Sources */,
+				8A7BB0731B49439000AFE5E2 /* CircleView.swift in Sources */,
+				8A93E0A41B4C042600B734FA /* RecordViewController.swift in Sources */,
+				8A74DEE31B461CAB0091DA2E /* ViewController.swift in Sources */,
+				8A93E0B21B4E551800B734FA /* HarvardCheckModel.swift in Sources */,
+				8A93E0B61B4E5BC300B734FA /* HarvarCheckFamilyInfoVC.swift in Sources */,
+				8A6EB9931B46D3170003CFAB /* HarhardCheckBaseInfo1.swift in Sources */,
+				8A7BB06B1B491CCA00AFE5E2 /* ExamBoard.swift in Sources */,
+				8A93E09E1B4BADC700B734FA /* ClinicsHistoryModel.swift in Sources */,
+				8A7BB0751B4969F500AFE5E2 /* SelfExamEditorVC.swift in Sources */,
+				8A93E09C1B4BACE200B734FA /* ClinicsHistoryVC.swift in Sources */,
+				8A74DEE11B461CAB0091DA2E /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8A74DEEC1B461CAB0091DA2E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8A74DEF71B461CAB0091DA2E /* iBreastTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8A74DEF21B461CAB0091DA2E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8A74DEDA1B461CAB0091DA2E /* iBreast */;
+			targetProxy = 8A74DEF11B461CAB0091DA2E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		8A74DEE41B461CAB0091DA2E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8A74DEE51B461CAB0091DA2E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		8A74DEE91B461CAB0091DA2E /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8A74DEEA1B461CAB0091DA2E /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		8A74DEF81B461CAB0091DA2E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		8A74DEF91B461CAB0091DA2E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8A74DEFB1B461CAB0091DA2E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = iBreast/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		8A74DEFC1B461CAB0091DA2E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = iBreast/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		8A74DEFE1B461CAB0091DA2E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = iBreastTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iBreast.app/iBreast";
+			};
+			name = Debug;
+		};
+		8A74DEFF1B461CAB0091DA2E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = iBreastTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iBreast.app/iBreast";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8A74DED61B461CAB0091DA2E /* Build configuration list for PBXProject "iBreast" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8A74DEF81B461CAB0091DA2E /* Debug */,
+				8A74DEF91B461CAB0091DA2E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8A74DEFA1B461CAB0091DA2E /* Build configuration list for PBXNativeTarget "iBreast" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8A74DEFB1B461CAB0091DA2E /* Debug */,
+				8A74DEFC1B461CAB0091DA2E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8A74DEFD1B461CAB0091DA2E /* Build configuration list for PBXNativeTarget "iBreastTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8A74DEFE1B461CAB0091DA2E /* Debug */,
+				8A74DEFF1B461CAB0091DA2E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 8A74DED31B461CAB0091DA2E /* Project object */;
+}

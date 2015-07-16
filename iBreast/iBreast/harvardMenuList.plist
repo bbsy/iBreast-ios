@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>BaseInfo4</key>
+	<array>
+		<string>激素使用情况</string>
+		<string>组合</string>
+		<string>使用年数</string>
+	</array>
+	<key>BaseInfo3</key>
+	<dict>
+		<key>种族渊源</key>
+		<array>
+			<string>祖先有犹太血统</string>
+			<string>家族背景</string>
+		</array>
+		<key>经期历史</key>
+		<array>
+			<string>月经初潮</string>
+			<string>绝经情况</string>
+			<string>双侧卵巢移除</string>
+			<string>卵巢移除年龄</string>
+		</array>
+	</dict>
+	<key>FamilyInfo</key>
+	<array/>
+	<key>BaseInfo1</key>
+	<array>
+		<string>性别</string>
+		<string>年龄</string>
+		<string>体重</string>
+		<string>身高</string>
+	</array>
+	<key>BaseInfo2</key>
+	<dict>
+		<key>乳腺组织活检</key>
+		<array>
+			<string>次数</string>
+			<string>检测结果</string>
+		</array>
+		<key>孕史</key>
+		<array>
+			<string>怀孕次数</string>
+			<string>第一胎怀孕孩子出生年龄</string>
+		</array>
+	</dict>
+</dict>
+</plist>
