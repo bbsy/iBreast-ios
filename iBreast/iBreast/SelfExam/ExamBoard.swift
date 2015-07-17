@@ -19,7 +19,7 @@ class ExamBoard: UIImageView {
     
     var lesionsData:SelfExamData?
     
-    var lesionsView=[CircleView]()
+    var lesionsView=[LesionView]()
     
     var brush: BaseBrush?
     
@@ -29,7 +29,7 @@ class ExamBoard: UIImageView {
     var strokeColor: UIColor
     
   //
-    var hightlightedLesion:CircleView?
+    var hightlightedLesion:LesionView?
     
     let PI=3.1415926
     
@@ -81,11 +81,11 @@ class ExamBoard: UIImageView {
         // 3
       
             
-            var circleView :CircleView?=CircleView(frame: CGRectMake(circleCenter.x, circleCenter.y, circleWidth, circleHeight))
+            var circleView :LesionView?=LesionView(frame: CGRectMake(circleCenter.x, circleCenter.y, circleWidth, circleHeight))
             
-            circleView!.point=circleCenter
-            circleView!.firmness=LesionFirmness.SOFT
-            circleView!.highlight=true
+            circleView!.lesion.point=circleCenter
+            circleView!.lesion.firmness=LesionFirmness.SOFT
+            circleView!.lesion.highlight=true
             
             self.addSubview(circleView!)
             
@@ -102,7 +102,7 @@ class ExamBoard: UIImageView {
         
         for (index,item)  in enumerate(lesionsView){
             
-            if item.highlight==true{
+            if item.lesion.highlight==true{
                 
                 item.removeFromSuperview()
                 lesionsView.removeAtIndex(index)
@@ -142,7 +142,7 @@ class ExamBoard: UIImageView {
         
         for (index,item)  in enumerate(lesionsView){
            
-              var v=sqrt(fabs((point.x-item.point!.x)*(point.x-item.point!.x))+fabs((point.y-item.point!.y)*(point.y-item.point!.y)))
+              var v=sqrt(fabs((point.x-item.lesion.point!.x)*(point.x-item.lesion.point!.x))+fabs((point.y-item.lesion.point!.y)*(point.y-item.lesion.point!.y)))
             
             if(v<offset){
                 cursor=index
@@ -153,11 +153,11 @@ class ExamBoard: UIImageView {
            
           for (index,item)  in enumerate(lesionsView){
             if(index==cursor){
-                item.highlight=true
+                item.lesion.highlight=true
                 hightlightedLesion=item
             }
             else{
-                item.highlight=false
+                item.lesion.highlight=false
             }
                 
            }
@@ -185,7 +185,7 @@ class ExamBoard: UIImageView {
         
         if let cir=hightlightedLesion{
             var movePoint=(touches as NSSet).anyObject()!.locationInView(self)
-            cir.point=movePoint
+            cir.lesion.point=movePoint
             cir.frame=CGRectMake(movePoint.x, movePoint.y, cir.frame.size.width, cir.frame.size.height)
         }
         

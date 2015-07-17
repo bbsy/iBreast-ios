@@ -14,15 +14,17 @@ enum LesionFirmness{
     case SOFT, MEDIUM, HARD
 }
 
-class CircleView: UIView {
+class LesionView: UIView {
+//    
+//    var  highlight:Bool?=false
+//    var  time:NSDate?
+//    var firmness:LesionFirmness?
+//    var size:Int?
+//    var point:CGPoint?
+//    var x:Float?
+//    var y:Float?
     
-    var  highlight:Bool?=false
-    var  time:NSDate?
-    var firmness:LesionFirmness?
-    var size:Int?
-    var point:CGPoint?
-    var x:Float?
-    var y:Float?
+    var lesion: LesionModel = LesionModel()
     
 
     override init(frame: CGRect) {
@@ -36,19 +38,19 @@ class CircleView: UIView {
     }
     
     func setSize(size:Int){
-        self.size=size
+        lesion.size=size
     }
     
     func setFirmness(firmness:LesionFirmness){
-        self.firmness=firmness
+        lesion.firmness=firmness
     }
     
     func setHighlight(highlight:Bool){
-        self.highlight=highlight
+        lesion.highlight=highlight
     }
     
     func setPoint(point:CGPoint){
-        self.point=point
+        lesion.point=point
     }
     
     

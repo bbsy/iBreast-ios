@@ -11,37 +11,37 @@ import UIKit
 class SelfExamData: NSObject {
     
     
-    var lesions=[CircleView]()
+    var lesions=[LesionView]()
     
     override init(){
         super.init();
         
-        var cv0=CircleView()
+        var cv0=LesionView()
         lesions.append(cv0)
         
-        var cv1=CircleView()
+        var cv1=LesionView()
         lesions.append(cv1)
         
-        var cv2=CircleView()
+        var cv2=LesionView()
         lesions.append(cv2)
         
         
-        lesions[0].size=30;
-        lesions[0].firmness=LesionFirmness.SOFT
-        lesions[0].highlight=true
+        lesions[0].lesion.size=30;
+        lesions[0].lesion.firmness=LesionFirmness.SOFT
+        lesions[0].lesion.highlight=true
         
-        lesions[1].size=40;
-        lesions[1].firmness=LesionFirmness.HARD
-        lesions[1].highlight=false
+        lesions[1].lesion.size=40;
+        lesions[1].lesion.firmness=LesionFirmness.HARD
+        lesions[1].lesion.highlight=false
         
-        lesions[0].size=10;
-        lesions[0].firmness=LesionFirmness.MEDIUM
-        lesions[0].highlight=false
+        lesions[0].lesion.size=10;
+        lesions[0].lesion.firmness=LesionFirmness.MEDIUM
+        lesions[0].lesion.highlight=false
         
     }
     
     
-    func getLesions()->[CircleView]{
+    func getLesions()->[LesionView]{
         
         return lesions
     }
