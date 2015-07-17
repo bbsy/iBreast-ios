@@ -45,6 +45,11 @@
 		8A93E3691B58E4B600B734FA /* iBreast.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8A93E3671B58E4B600B734FA /* iBreast.xcdatamodeld */; };
 		8A93E36B1B58E6C100B734FA /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A93E36A1B58E6C100B734FA /* User.swift */; };
 		8A93E36D1B58E70F00B734FA /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A93E36C1B58E70F00B734FA /* UserManager.swift */; };
+		8A93E36F1B5950E100B734FA /* SelfExamHisModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A93E36E1B5950E100B734FA /* SelfExamHisModel.swift */; };
+		8A93E3711B5952EA00B734FA /* SelfExamHisManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A93E3701B5952EA00B734FA /* SelfExamHisManager.swift */; };
+		8A93E3731B5954B800B734FA /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A93E3721B5954B800B734FA /* Constant.swift */; };
+		8A93E37B1B595EAA00B734FA /* SelfExamHisVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A93E3791B595EAA00B734FA /* SelfExamHisVC.swift */; };
+		8A93E37C1B595EAA00B734FA /* SelfExamHisVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A93E37A1B595EAA00B734FA /* SelfExamHisVC.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,6 +105,11 @@
 		8A93E3681B58E4B600B734FA /* iBreast.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = iBreast.xcdatamodel; sourceTree = "<group>"; };
 		8A93E36A1B58E6C100B734FA /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		8A93E36C1B58E70F00B734FA /* UserManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
+		8A93E36E1B5950E100B734FA /* SelfExamHisModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SelfExamHisModel.swift; path = SelfExam/SelfExamHisModel.swift; sourceTree = "<group>"; };
+		8A93E3701B5952EA00B734FA /* SelfExamHisManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SelfExamHisManager.swift; path = SelfExam/SelfExamHisManager.swift; sourceTree = "<group>"; };
+		8A93E3721B5954B800B734FA /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		8A93E3791B595EAA00B734FA /* SelfExamHisVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SelfExamHisVC.swift; path = iBreast/SelfExamHisVC.swift; sourceTree = SOURCE_ROOT; };
+		8A93E37A1B595EAA00B734FA /* SelfExamHisVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SelfExamHisVC.xib; path = iBreast/SelfExamHisVC.xib; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +153,7 @@
 		8A74DEDD1B461CAB0091DA2E /* iBreast */ = {
 			isa = PBXGroup;
 			children = (
+				8A93E3741B595D5400B734FA /* SelfExamination */,
 				8A93E2BE1B58A49500B734FA /* Data */,
 				8A93D2531B4B911900B734FA /* SelfExam */,
 				8A93D24F1B4AD28900B734FA /* AlertPickerViewController.swift */,
@@ -175,6 +186,9 @@
 				8A93E0B11B4E551800B734FA /* HarvardCheckModel.swift */,
 				8A93E0B51B4E5BC300B734FA /* HarvarCheckFamilyInfoVC.swift */,
 				8A93E3671B58E4B600B734FA /* iBreast.xcdatamodeld */,
+				8A93E36E1B5950E100B734FA /* SelfExamHisModel.swift */,
+				8A93E3701B5952EA00B734FA /* SelfExamHisManager.swift */,
+				8A93E3721B5954B800B734FA /* Constant.swift */,
 			);
 			path = iBreast;
 			sourceTree = "<group>";
@@ -215,6 +229,15 @@
 				8A93E36C1B58E70F00B734FA /* UserManager.swift */,
 			);
 			path = Data;
+			sourceTree = "<group>";
+		};
+		8A93E3741B595D5400B734FA /* SelfExamination */ = {
+			isa = PBXGroup;
+			children = (
+				8A93E3791B595EAA00B734FA /* SelfExamHisVC.swift */,
+				8A93E37A1B595EAA00B734FA /* SelfExamHisVC.xib */,
+			);
+			path = SelfExamination;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -297,6 +320,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A93E37C1B595EAA00B734FA /* SelfExamHisVC.xib in Resources */,
 				8A93E0AC1B4D205100B734FA /* MeMenuList.plist in Resources */,
 				8A93E0AA1B4D1EA900B734FA /* Me in Resources */,
 				8A74DEE61B461CAB0091DA2E /* Main.storyboard in Resources */,
@@ -332,6 +356,7 @@
 				8A6EB99D1B46EA5A0003CFAB /* HarvardCheckBaseInfo4VC.swift in Sources */,
 				8A93E0AE1B4E458800B734FA /* HarvardCheckResultVC.swift in Sources */,
 				8A7BB06D1B4921A000AFE5E2 /* BaseBrush.swift in Sources */,
+				8A93E3731B5954B800B734FA /* Constant.swift in Sources */,
 				8A7BB06F1B4924D600AFE5E2 /* PencilBrush.swift in Sources */,
 				8A6EB9991B46E40E0003CFAB /* HarvardCheckBaseInfo3VC.swift in Sources */,
 				8A7BB0771B49745200AFE5E2 /* SelfExamData.swift in Sources */,
@@ -340,15 +365,18 @@
 				8A93E0A41B4C042600B734FA /* RecordViewController.swift in Sources */,
 				8A74DEE31B461CAB0091DA2E /* ViewController.swift in Sources */,
 				8A93E0B21B4E551800B734FA /* HarvardCheckModel.swift in Sources */,
+				8A93E36F1B5950E100B734FA /* SelfExamHisModel.swift in Sources */,
 				8A93E2C01B58A4B600B734FA /* UserDefaults.swift in Sources */,
 				8A93E0B61B4E5BC300B734FA /* HarvarCheckFamilyInfoVC.swift in Sources */,
 				8A6EB9931B46D3170003CFAB /* HarhardCheckBaseInfo1.swift in Sources */,
 				8A93E36D1B58E70F00B734FA /* UserManager.swift in Sources */,
 				8A7BB06B1B491CCA00AFE5E2 /* ExamBoard.swift in Sources */,
+				8A93E3711B5952EA00B734FA /* SelfExamHisManager.swift in Sources */,
 				8A93E09E1B4BADC700B734FA /* ClinicsHistoryModel.swift in Sources */,
 				8A93E36B1B58E6C100B734FA /* User.swift in Sources */,
 				8A7BB0751B4969F500AFE5E2 /* SelfExamEditorVC.swift in Sources */,
 				8A93E09C1B4BACE200B734FA /* ClinicsHistoryVC.swift in Sources */,
+				8A93E37B1B595EAA00B734FA /* SelfExamHisVC.swift in Sources */,
 				8A74DEE11B461CAB0091DA2E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
