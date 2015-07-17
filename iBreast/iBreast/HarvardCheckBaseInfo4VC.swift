@@ -8,11 +8,16 @@
 
 import UIKit
 
-class HarvardCheckBaseInfo4VC: UIViewController,UITableViewDataSource {
+class HarvardCheckBaseInfo4VC: UIViewController,UITableViewDataSource,UITableViewDelegate {
     let harvardBaseInfoCellTag:String="hfcheckBI4TableCell"
     
     let HFCHECK_MENU_SECTION=1
      @IBOutlet weak var tableMenu: UITableView!
+    var hormone_info=["未使用过激素","使用过少次","大量使用过"];
+    let group = ["未组合","已组合"]
+    let user_age=["15岁以下","16-18岁","20以上","30以上"]
+    
+    let alertPicker:AlertPickerViewController=AlertPickerViewController()
     
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -21,11 +26,33 @@ class HarvardCheckBaseInfo4VC: UIViewController,UITableViewDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        alertPicker.delegate=self
+        alertPicker.dataSource=self
+        alertPicker.mUIViewController=self
+        alertPicker.mViewControllerDelegate=self
+        
         initHarvardCheckMenuData()
         tableMenu.dataSource=self
         
+         tableMenu.delegate=self
+        
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath){
         
         
+        println("tableView ---- --  ---click \(indexPath.row)");
+        
+        //var indexId = indexPath.row + (1 * indexPath.section)
+        
+        if(indexPath.section == 0)
+        {
+            alertPicker.showPickerInActionSheet(indexPath.row);
+        }
+//        else
+//        {
+//            alertPicker.showPickerInActionSheet(indexPath.row+4);
+//        }
     }
     
    
@@ -84,3 +111,92 @@ class HarvardCheckBaseInfo4VC: UIViewController,UITableViewDataSource {
     // Pass the selected object to the new view controller.
     }
     */}
+
+
+extension HarvardCheckBaseInfo4VC:UIPickerViewDataSource
+{
+    func numberOfComponentsInPickerView(pickerView:UIPickerView) ->Int
+    {
+        return 1;
+    }
+    
+    // returns the # of rows in each component..
+    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int{
+        
+        if(pickerView.tag==0){
+            
+            return hormone_info.count
+        }
+        else if(pickerView.tag == 1){
+            
+            
+            return self.group.count
+            
+        } else if(pickerView.tag == 2){
+            
+            
+            return self.user_age.count
+            
+        }
+        
+            
+        else{
+            return 0
+        }
+        
+    }
+}
+
+extension HarvardCheckBaseInfo4VC:UIPickerViewDelegate{
+    
+    
+    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String! {
+        
+        if(pickerView.tag == 0){
+            
+            return "\(hormone_info[row])"
+        }
+            
+        else if(pickerView.tag == 1){
+            return "\(self.group[row] )"
+        } else if(pickerView.tag == 2){
+            
+            
+            return "\(self.user_age[row])"
+            
+        }
+      
+        else  {
+            
+            return "";
+            
+        }
+        
+    }
+    //
+    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        //        if(pickerView.tag == 0){
+        //            println("you selected the name: \(self.check_times[row])")
+        //        }
+        //
+        //        else if(pickerView.tag == 1){
+        //            println("you selected the name: \(self.check_result[row])")
+        //        } else if (pickerView.tag == 2){
+        //            println("you selected the name: \(self.conceive_times[row])")
+        //        }
+        //        else if(pickerView.tag==3){
+        //            println("you selected the name: \(self.first_haschild_age[row])")
+        //        }
+        
+    }
+}
+
+extension HarvardCheckBaseInfo4VC:AlertPickerViewControllerDelegate{
+    func didSelect(){
+        println("didSelect")
+    }
+    func didCancel()
+    {
+        println("didCancel")
+    }
+}

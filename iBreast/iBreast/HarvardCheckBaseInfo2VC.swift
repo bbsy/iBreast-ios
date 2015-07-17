@@ -8,12 +8,18 @@
 
 import UIKit
 
-class HarvardCheckBaseInfo2VC: UIViewController,UITableViewDataSource {
+class HarvardCheckBaseInfo2VC: UIViewController ,UITableViewDataSource,UITableViewDelegate{
     
     @IBOutlet weak var tableBaseInof2: UITableView!
     let HFCHECK_MENU_SECTION=4
     let harvardBaseInfoCellTag:String="hfcheckBI2TableCell"
     var selfData:NSDictionary?
+    let alertPicker:AlertPickerViewController=AlertPickerViewController()
+    
+    var check_times=[1,2,3,4,5,6,7,8,9,10];
+    let check_result=["正常","小异变","异变","大异变"]
+    let conceive_times=[1,2,3,4,5,6,7,8,9,10]
+    let first_haschild_age=[16,17,18,19,20,21,22,23,24,25]
     
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -25,10 +31,16 @@ class HarvardCheckBaseInfo2VC: UIViewController,UITableViewDataSource {
 
         // Do any additional setup after loading the view.
         
+        alertPicker.delegate=self
+        alertPicker.dataSource=self
+        alertPicker.mUIViewController=self
+        alertPicker.mViewControllerDelegate=self
+        
         initHarvardCheckMenuData()
         initSelfData()
         
         tableBaseInof2.dataSource=self
+        tableBaseInof2.delegate=self
     }
     
     func initSelfData(){
@@ -38,6 +50,22 @@ class HarvardCheckBaseInfo2VC: UIViewController,UITableViewDataSource {
     
     }
     
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath){
+        
+        
+        println("tableView ---- --  ---click \(indexPath.row)");
+        
+        var indexId = indexPath.row + (1 * indexPath.section)
+        
+        if(indexPath.section == 0)
+        {
+            alertPicker.showPickerInActionSheet(indexPath.row);
+        }
+        else
+        {
+            alertPicker.showPickerInActionSheet(indexPath.row+2);
+        }
+    }
     
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
@@ -47,7 +75,7 @@ class HarvardCheckBaseInfo2VC: UIViewController,UITableViewDataSource {
     }
         func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String?{
     
-    
+            println("section =\(section)");
            return selfData?.allKeys[section] as! String
         }
     
@@ -94,5 +122,98 @@ class HarvardCheckBaseInfo2VC: UIViewController,UITableViewDataSource {
         // Pass the selected object to the new view controller.
     }
     */
+    
 
 }
+
+extension HarvardCheckBaseInfo2VC:UIPickerViewDataSource
+{
+    func numberOfComponentsInPickerView(pickerView:UIPickerView) ->Int
+    {
+        return 1;
+    }
+    
+    // returns the # of rows in each component..
+    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int{
+        
+        if(pickerView.tag==0){
+            
+            return check_times.count
+        }
+        else if(pickerView.tag == 1){
+            
+            
+            return self.check_result.count
+            
+        } else if(pickerView.tag == 2){
+            
+            
+            return self.conceive_times.count
+            
+        } else if(pickerView.tag==3){
+            return self.first_haschild_age.count
+        }
+        else{
+            return 0
+        }
+        
+    }
+}
+
+extension HarvardCheckBaseInfo2VC:UIPickerViewDelegate{
+    
+    
+    
+    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String! {
+        
+        if(pickerView.tag == 0){
+            
+            return "\(check_times[row])"
+        }
+            
+        else if(pickerView.tag == 1){
+            return "\(self.check_result[row] )"
+        } else if(pickerView.tag == 2){
+            
+            
+            return "\(self.conceive_times[row])"
+            
+        }
+        else if(pickerView.tag==3){
+            return "\(self.first_haschild_age[row])"
+        }
+        else  {
+            
+            return "";
+            
+        }
+        
+    }
+    //
+    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        if(pickerView.tag == 0){
+            println("you selected the name: \(self.check_times[row])")
+        }
+            
+        else if(pickerView.tag == 1){
+            println("you selected the name: \(self.check_result[row])")
+        } else if (pickerView.tag == 2){
+            println("you selected the name: \(self.conceive_times[row])")
+        }
+        else if(pickerView.tag==3){
+            println("you selected the name: \(self.first_haschild_age[row])")
+        }
+        
+    }
+}
+
+extension HarvardCheckBaseInfo2VC:AlertPickerViewControllerDelegate{
+    func didSelect(){
+        println("didSelect")
+    }
+    func didCancel()
+    {
+        println("didCancel")
+    }
+}
+
