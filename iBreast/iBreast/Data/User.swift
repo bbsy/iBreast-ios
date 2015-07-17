@@ -20,5 +20,6 @@ class User: NSManagedObject {
     @NSManaged var imageUrl: String
     @NSManaged var gender: NSNumber
     @NSManaged var local: String
+    
 
 }

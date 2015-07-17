@@ -28,7 +28,10 @@ class MeViewController: UIViewController {
         
         userManager.save();
         
-        userManager.fetch()
+        
+        println(UserManager.getUser())
+        
+        //userManager.fetch()
         
     }
 

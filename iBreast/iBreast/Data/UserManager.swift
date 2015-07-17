@@ -9,10 +9,41 @@
 import UIKit
 import CoreData
 
+
+var user:User!
+
 class UserManager: NSObject {
+    
+    
+    typealias U = User
+  
+    
+    class func getUser()->AnyObject?{
+    
+        if let u = user {
+            return user
+        }
+        else
+        {
+            if var obj = fetch() {
+                
+                user = obj as! User
+                
+                return user
+            }
+        }
+        
+        return nil
+    
+    }
+    
+    
+    
    
     
     func save(){
+        
+        var u:U
     
         let app = UIApplication.sharedApplication().delegate as! AppDelegate
         
@@ -35,14 +66,17 @@ class UserManager: NSObject {
             println("保存成功")
         }
     
-        fetch()
+        
     
     
     
        
     }
 
-    func fetch(){
+    class func fetch()->AnyObject?{
+    
+        var u:User?
+        
     
         let app = UIApplication.sharedApplication().delegate as! AppDelegate
     
@@ -60,17 +94,30 @@ class UserManager: NSObject {
         
         fetchRequest.entity=entity
         
-        let predicate = NSPredicate(format: "id = '10'"," ")
-        
-        fetchRequest.predicate=predicate
+//        let predicate = NSPredicate(format: "id = '10'"," ")
+//        
+//        fetchRequest.predicate=predicate
         
         var fetchedObject:[AnyObject]? = context?.executeFetchRequest(fetchRequest, error: &error)
+        
+        if(fetchedObject == nil){
+            
+            return nil
+        }
+       
         
         for info:User in fetchedObject as! [User] {
             
             println("user id = \(info.id)")
             println("user name = \(info.name)")
+            
+           return info
         }
+        
+        return nil
+        
+        
+       
         
     }
 
