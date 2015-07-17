@@ -40,6 +40,11 @@
 		8A93E0AE1B4E458800B734FA /* HarvardCheckResultVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A93E0AD1B4E458800B734FA /* HarvardCheckResultVC.swift */; };
 		8A93E0B21B4E551800B734FA /* HarvardCheckModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A93E0B11B4E551800B734FA /* HarvardCheckModel.swift */; };
 		8A93E0B61B4E5BC300B734FA /* HarvarCheckFamilyInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A93E0B51B4E5BC300B734FA /* HarvarCheckFamilyInfoVC.swift */; };
+		8A93E2C01B58A4B600B734FA /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A93E2BF1B58A4B600B734FA /* UserDefaults.swift */; };
+		8A93E3661B58E42300B734FA /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A93E3651B58E42300B734FA /* CoreData.framework */; };
+		8A93E3691B58E4B600B734FA /* iBreast.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8A93E3671B58E4B600B734FA /* iBreast.xcdatamodeld */; };
+		8A93E36B1B58E6C100B734FA /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A93E36A1B58E6C100B734FA /* User.swift */; };
+		8A93E36D1B58E70F00B734FA /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A93E36C1B58E70F00B734FA /* UserManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +95,11 @@
 		8A93E0AD1B4E458800B734FA /* HarvardCheckResultVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HarvardCheckResultVC.swift; sourceTree = "<group>"; };
 		8A93E0B11B4E551800B734FA /* HarvardCheckModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HarvardCheckModel.swift; path = HarvardCheck/HarvardCheckModel.swift; sourceTree = "<group>"; };
 		8A93E0B51B4E5BC300B734FA /* HarvarCheckFamilyInfoVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HarvarCheckFamilyInfoVC.swift; sourceTree = "<group>"; };
+		8A93E2BF1B58A4B600B734FA /* UserDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
+		8A93E3651B58E42300B734FA /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		8A93E3681B58E4B600B734FA /* iBreast.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = iBreast.xcdatamodel; sourceTree = "<group>"; };
+		8A93E36A1B58E6C100B734FA /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		8A93E36C1B58E70F00B734FA /* UserManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +107,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A93E3661B58E42300B734FA /* CoreData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -113,6 +124,7 @@
 		8A74DED21B461CAB0091DA2E = {
 			isa = PBXGroup;
 			children = (
+				8A93E3651B58E42300B734FA /* CoreData.framework */,
 				8A74DEDD1B461CAB0091DA2E /* iBreast */,
 				8A74DEF31B461CAB0091DA2E /* iBreastTests */,
 				8A74DEDC1B461CAB0091DA2E /* Products */,
@@ -131,6 +143,7 @@
 		8A74DEDD1B461CAB0091DA2E /* iBreast */ = {
 			isa = PBXGroup;
 			children = (
+				8A93E2BE1B58A49500B734FA /* Data */,
 				8A93D2531B4B911900B734FA /* SelfExam */,
 				8A93D24F1B4AD28900B734FA /* AlertPickerViewController.swift */,
 				8A74DEE01B461CAB0091DA2E /* AppDelegate.swift */,
@@ -161,6 +174,7 @@
 				8A93E0AB1B4D205100B734FA /* MeMenuList.plist */,
 				8A93E0B11B4E551800B734FA /* HarvardCheckModel.swift */,
 				8A93E0B51B4E5BC300B734FA /* HarvarCheckFamilyInfoVC.swift */,
+				8A93E3671B58E4B600B734FA /* iBreast.xcdatamodeld */,
 			);
 			path = iBreast;
 			sourceTree = "<group>";
@@ -191,6 +205,16 @@
 				8A74DEF51B461CAB0091DA2E /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8A93E2BE1B58A49500B734FA /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				8A93E2BF1B58A4B600B734FA /* UserDefaults.swift */,
+				8A93E36A1B58E6C100B734FA /* User.swift */,
+				8A93E36C1B58E70F00B734FA /* UserManager.swift */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -301,6 +325,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A93E3691B58E4B600B734FA /* iBreast.xcdatamodeld in Sources */,
 				8A93E0A81B4D1E9F00B734FA /* MeViewController.swift in Sources */,
 				8A7BB0711B49278000AFE5E2 /* EraserBrush.swift in Sources */,
 				8A93D2511B4AD28900B734FA /* AlertPickerViewController.swift in Sources */,
@@ -315,10 +340,13 @@
 				8A93E0A41B4C042600B734FA /* RecordViewController.swift in Sources */,
 				8A74DEE31B461CAB0091DA2E /* ViewController.swift in Sources */,
 				8A93E0B21B4E551800B734FA /* HarvardCheckModel.swift in Sources */,
+				8A93E2C01B58A4B600B734FA /* UserDefaults.swift in Sources */,
 				8A93E0B61B4E5BC300B734FA /* HarvarCheckFamilyInfoVC.swift in Sources */,
 				8A6EB9931B46D3170003CFAB /* HarhardCheckBaseInfo1.swift in Sources */,
+				8A93E36D1B58E70F00B734FA /* UserManager.swift in Sources */,
 				8A7BB06B1B491CCA00AFE5E2 /* ExamBoard.swift in Sources */,
 				8A93E09E1B4BADC700B734FA /* ClinicsHistoryModel.swift in Sources */,
+				8A93E36B1B58E6C100B734FA /* User.swift in Sources */,
 				8A7BB0751B4969F500AFE5E2 /* SelfExamEditorVC.swift in Sources */,
 				8A93E09C1B4BACE200B734FA /* ClinicsHistoryVC.swift in Sources */,
 				8A74DEE11B461CAB0091DA2E /* AppDelegate.swift in Sources */,
@@ -529,6 +557,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		8A93E3671B58E4B600B734FA /* iBreast.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				8A93E3681B58E4B600B734FA /* iBreast.xcdatamodel */,
+			);
+			currentVersion = 8A93E3681B58E4B600B734FA /* iBreast.xcdatamodel */;
+			path = iBreast.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 8A74DED31B461CAB0091DA2E /* Project object */;
 }

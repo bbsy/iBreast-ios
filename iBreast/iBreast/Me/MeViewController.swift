@@ -16,6 +16,8 @@ class MeViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
+    var userManager:UserManager = UserManager()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         initRecordMenuData()
@@ -23,6 +25,10 @@ class MeViewController: UIViewController {
         tableView.delegate=self
         
         self.tableView.separatorStyle = UITableViewCellSeparatorStyle.None;
+        
+        userManager.save();
+        
+        userManager.fetch()
         
     }
 
