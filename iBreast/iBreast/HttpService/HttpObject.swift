@@ -15,43 +15,61 @@ class HttpObject{
     
     var objects = NSMutableOrderedSet()
     
-    var objMapper:HttpObjectMapper!
-    
-    var mapKey = "productlist"
+    var httpRequest:HttpRequest!
     
     var isPopulating = false
+ 
     
+ 
     
-    func fetch(key:String){
-        
-        if key != Constant.EMPTY_STRING{
-            mapKey = key
-        }
+    func fetch(httpRequest:HttpRequest){
         
       
+        self.httpRequest = httpRequest
+      
+        if(self.isPopulating){
+            if(self.httpRequest.callback != nil){
+                self.httpRequest.callback.callback("request stop")
+            }
+            return
+        }
         
+        self.isPopulating = true
         
-        Alamofire.request(URLRouter.Router.PopularPhotos(self.currentPage)).responseJSON(){
+        Alamofire.request(httpRequest.urlRequest).responseJSON(){
             _,_, JSON,error in
             
             if error==nil{
                 dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0)
                     ){
                         
-                        let lastItem=self.objects.count
                         
                         
-                        let infos=JSON!.valueForKey(self.mapKey) as! [NSDictionary]
+//                        let lastItem=self.objects.count
                         
                         
+                        let infos=JSON!.valueForKey(self.httpRequest.mapKey) as! [NSDictionary]
                         
-                        for item in infos{
-                    
-                           self.objects.addObject(self.objMapper.objectMap(item)!)
-                    
+                        if(self.httpRequest.objResolver != nil){
+                            
+                            self.httpRequest.objResolver.resolve(infos)
+                        }
+                        
+                        if(self.httpRequest.objMapper != nil){
+                            
+                            for item in infos{
+                                
+                                self.objects.addObject(self.httpRequest.objMapper.objectMap(item)!)
+                                
+                                
+                            }
 
                         }
-//                        
+                        if(self.httpRequest.callback != nil){
+                           self.httpRequest.callback.callback("request succeeded")
+                        }
+                        
+                     //
 //                        let indexPaths=(lastItem..<self.users.count).map{(NSIndexPath(forItem: $0, inSection: 0))}
 //                        
 //                        dispatch_async(dispatch_get_main_queue()){

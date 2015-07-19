@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SelfExamHisService: HttpObjectMapper{
+class SelfExamHisService: HttpObjectMapper,HttpCallBack{
     
     
     
@@ -26,5 +26,9 @@ class SelfExamHisService: HttpObjectMapper{
         println(model.imageUrl)
         
         return model
+    }
+    
+    func callback(result:AnyObject){
+        println("\(result)")
     }
 }

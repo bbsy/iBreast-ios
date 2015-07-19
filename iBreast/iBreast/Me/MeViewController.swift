@@ -31,10 +31,16 @@ class MeViewController: UIViewController {
 //        
 //        println(UserManager.getUser())
 //        
+        var selfExamService =  SelfExamHisService()
+        var httpRequest = HttpRequest()
+        httpRequest.mapKey="productlist"
+        httpRequest.objMapper = selfExamService
+        httpRequest.callback = selfExamService
+        httpRequest.urlRequest = URLRouter.Router.PopularPhotos(0)
         
         var http = HttpObject()
-        http.objMapper = SelfExamHisService()
-        http.fetch(Constant.EMPTY_STRING)
+       
+        http.fetch(httpRequest)
         
     }
 

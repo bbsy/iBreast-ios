@@ -15,3 +15,12 @@ protocol HttpObjectMapper{
     func objectMap(item:AnyObject)->AnyObject?
 
 }
+
+protocol HttpObjectResolver{
+    
+    func resolve(item:AnyObject)
+}
+
+protocol HttpCallBack{
+    func callback(result:AnyObject)
+}

@@ -31,7 +31,6 @@ class URLRouter: NSObject {
             }()
             
             let URL = NSURL(string:Router.baseURLString)
-            //let URLRequest = NSURLRequest(URL:URL!.URLByAppendingPathComponent(""))
             let URLRequest = NSURLRequest(URL:URL!.URLByAppendingPathComponent(path))
             let encoding=Alamofire.ParameterEncoding.URL
             
