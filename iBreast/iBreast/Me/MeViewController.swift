@@ -26,12 +26,15 @@ class MeViewController: UIViewController {
         
         self.tableView.separatorStyle = UITableViewCellSeparatorStyle.None;
         
-        userManager.save();
+//        userManager.save();
+//        
+//        
+//        println(UserManager.getUser())
+//        
         
-        
-        println(UserManager.getUser())
-        
-        //userManager.fetch()
+        var http = HttpObject()
+        http.objMapper = SelfExamHisService()
+        http.fetch(Constant.EMPTY_STRING)
         
     }
 

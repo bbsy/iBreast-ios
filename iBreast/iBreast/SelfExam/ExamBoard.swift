@@ -21,12 +21,12 @@ class ExamBoard: UIImageView {
     
     var lesionsView=[LesionView]()
     
-    var brush: BaseBrush?
+ //   var brush: BaseBrush?
     
     private var realImage: UIImage?
     
-    var strokeWidth: CGFloat
-    var strokeColor: UIColor
+//    var strokeWidth: CGFloat
+//    var strokeColor: UIColor
     
   //
     var hightlightedLesion:LesionView?
@@ -47,10 +47,10 @@ class ExamBoard: UIImageView {
         
        
         
-        self.strokeColor = UIColor.blackColor()
-        self.strokeWidth = 1
-        
-        self.brush=PencilBrush()
+//        self.strokeColor = UIColor.blackColor()
+//        self.strokeWidth = 1
+//        
+//        self.brush=PencilBrush()
         
         super.init(coder: aDecoder)
         
@@ -115,16 +115,16 @@ class ExamBoard: UIImageView {
     
     
     override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
-        
-        if let brush = self.brush {
-            brush.lastPoint = nil
-            
-            brush.beginPoint = (touches as NSSet).anyObject()!.locationInView(self)
-            brush.endPoint = brush.beginPoint
-            
-            self.drawingState = .Began
-            self.drawingImage()
-        }
+//        
+//        if let brush = self.brush {
+//            brush.lastPoint = nil
+//            
+//            brush.beginPoint = (touches as NSSet).anyObject()!.locationInView(self)
+//            brush.endPoint = brush.beginPoint
+//            
+//            self.drawingState = .Began
+//            self.drawingImage()
+//        }
         
         var point=(touches as NSSet).anyObject()!.locationInView(self)
         
@@ -175,12 +175,12 @@ class ExamBoard: UIImageView {
   
     
     override func touchesMoved(touches: Set<NSObject>, withEvent event: UIEvent) {
-        if let brush = self.brush {
-            brush.endPoint = (touches as NSSet).anyObject()!.locationInView(self)
-            
-            self.drawingState = .Moved
-            self.drawingImage()
-        }
+//        if let brush = self.brush {
+//            brush.endPoint = (touches as NSSet).anyObject()!.locationInView(self)
+//            
+//            self.drawingState = .Moved
+//            self.drawingImage()
+//        }
         
         
         if let cir=hightlightedLesion{
@@ -194,19 +194,19 @@ class ExamBoard: UIImageView {
     }
     
     override func touchesCancelled(touches: Set<NSObject>, withEvent event: UIEvent!) {
-        if let brush = self.brush {
-            brush.endPoint = nil
-        }
+//        if let brush = self.brush {
+//            brush.endPoint = nil
+//        }
     }
     
     override func touchesEnded(touches: Set<NSObject>, withEvent event: UIEvent) {
-        if let brush = self.brush {
-            brush.endPoint = (touches as NSSet).anyObject()!.locationInView(self)
-            
-            self.drawingState = .Ended
-            
-            self.drawingImage()
-        }
+//        if let brush = self.brush {
+//            brush.endPoint = (touches as NSSet).anyObject()!.locationInView(self)
+//            
+//            self.drawingState = .Ended
+//            
+//            self.drawingImage()
+//        }
     }
    
 

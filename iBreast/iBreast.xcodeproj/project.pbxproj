@@ -11,6 +11,10 @@
 		8A5323941B5AC8660095F568 /* Appointment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A5323931B5AC8660095F568 /* Appointment.swift */; };
 		8A5F923E1B5B94C100F5BB81 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A5F92371B5B948A00F5BB81 /* Alamofire.framework */; };
 		8A5F923F1B5B94C100F5BB81 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8A5F92371B5B948A00F5BB81 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		8A5F92451B5BD7B600F5BB81 /* URLRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A5F92441B5BD7B600F5BB81 /* URLRouter.swift */; };
+		8A5F92471B5BD97E00F5BB81 /* HttpObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A5F92461B5BD97E00F5BB81 /* HttpObject.swift */; };
+		8A5F92491B5BD9BF00F5BB81 /* HttpObjectMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A5F92481B5BD9BF00F5BB81 /* HttpObjectMapper.swift */; };
+		8A5F924B1B5BDA4500F5BB81 /* SelfExamHisService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A5F924A1B5BDA4500F5BB81 /* SelfExamHisService.swift */; };
 		8A6EB9911B46D16A0003CFAB /* HarvardCheckMenu.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8A6EB9901B46D16A0003CFAB /* HarvardCheckMenu.plist */; };
 		8A6EB9931B46D3170003CFAB /* HarhardCheckBaseInfo1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6EB9921B46D3170003CFAB /* HarhardCheckBaseInfo1.swift */; };
 		8A6EB9951B46D4520003CFAB /* harvardMenuList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8A6EB9941B46D4520003CFAB /* harvardMenuList.plist */; };
@@ -121,6 +125,10 @@
 		8A5323911B5AC7BB0095F568 /* ProfessionalInspection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfessionalInspection.swift; path = iBreast/ProfessionalInspection.swift; sourceTree = SOURCE_ROOT; };
 		8A5323931B5AC8660095F568 /* Appointment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Appointment.swift; sourceTree = "<group>"; };
 		8A5F922F1B5B948900F5BB81 /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = "Alamofire-master-2/Alamofire.xcodeproj"; sourceTree = "<group>"; };
+		8A5F92441B5BD7B600F5BB81 /* URLRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLRouter.swift; sourceTree = "<group>"; };
+		8A5F92461B5BD97E00F5BB81 /* HttpObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpObject.swift; sourceTree = "<group>"; };
+		8A5F92481B5BD9BF00F5BB81 /* HttpObjectMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpObjectMapper.swift; sourceTree = "<group>"; };
+		8A5F924A1B5BDA4500F5BB81 /* SelfExamHisService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelfExamHisService.swift; sourceTree = "<group>"; };
 		8A6EB9901B46D16A0003CFAB /* HarvardCheckMenu.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = HarvardCheckMenu.plist; sourceTree = "<group>"; };
 		8A6EB9921B46D3170003CFAB /* HarhardCheckBaseInfo1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HarhardCheckBaseInfo1.swift; sourceTree = "<group>"; };
 		8A6EB9941B46D4520003CFAB /* harvardMenuList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = harvardMenuList.plist; sourceTree = "<group>"; };
@@ -203,6 +211,17 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		8A5F92431B5BD79A00F5BB81 /* HttpService */ = {
+			isa = PBXGroup;
+			children = (
+				8A5F92441B5BD7B600F5BB81 /* URLRouter.swift */,
+				8A5F92461B5BD97E00F5BB81 /* HttpObject.swift */,
+				8A5F92481B5BD9BF00F5BB81 /* HttpObjectMapper.swift */,
+				8A5F924A1B5BDA4500F5BB81 /* SelfExamHisService.swift */,
+			);
+			path = HttpService;
+			sourceTree = "<group>";
+		};
 		8A74DED21B461CAB0091DA2E = {
 			isa = PBXGroup;
 			children = (
@@ -227,6 +246,7 @@
 		8A74DEDD1B461CAB0091DA2E /* iBreast */ = {
 			isa = PBXGroup;
 			children = (
+				8A5F92431B5BD79A00F5BB81 /* HttpService */,
 				8A5323931B5AC8660095F568 /* Appointment.swift */,
 				8A93E3741B595D5400B734FA /* SelfExamination */,
 				8A93E2BE1B58A49500B734FA /* Data */,
@@ -466,6 +486,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8A93E3691B58E4B600B734FA /* iBreast.xcdatamodeld in Sources */,
+				8A5F92471B5BD97E00F5BB81 /* HttpObject.swift in Sources */,
 				8A93E0A81B4D1E9F00B734FA /* MeViewController.swift in Sources */,
 				8A7BB0711B49278000AFE5E2 /* EraserBrush.swift in Sources */,
 				8A93D2511B4AD28900B734FA /* AlertPickerViewController.swift in Sources */,
@@ -481,8 +502,11 @@
 				8A6EB9971B46DBDF0003CFAB /* HarvardCheckBaseInfo2VC.swift in Sources */,
 				8A7BB0731B49439000AFE5E2 /* CircleView.swift in Sources */,
 				8A93E0A41B4C042600B734FA /* RecordViewController.swift in Sources */,
+				8A5F92491B5BD9BF00F5BB81 /* HttpObjectMapper.swift in Sources */,
 				8A74DEE31B461CAB0091DA2E /* ViewController.swift in Sources */,
 				8A93E0B21B4E551800B734FA /* HarvardCheckModel.swift in Sources */,
+				8A5F92451B5BD7B600F5BB81 /* URLRouter.swift in Sources */,
+				8A5F924B1B5BDA4500F5BB81 /* SelfExamHisService.swift in Sources */,
 				8A93E36F1B5950E100B734FA /* SelfExamHisModel.swift in Sources */,
 				8A93E2C01B58A4B600B734FA /* UserDefaults.swift in Sources */,
 				8A93E0B61B4E5BC300B734FA /* HarvarCheckFamilyInfoVC.swift in Sources */,
