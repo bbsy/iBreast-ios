@@ -10,6 +10,7 @@ import Foundation
 import Alamofire
 
 class HttpRequest {
+    
     var objMapper:HttpObjectMapper!
     var mapKey:String!
     var urlRequest:URLRequestConvertible!

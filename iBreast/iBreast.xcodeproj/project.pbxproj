@@ -17,6 +17,7 @@
 		8A5F924B1B5BDA4500F5BB81 /* SelfExamHisService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A5F924A1B5BDA4500F5BB81 /* SelfExamHisService.swift */; };
 		8A5F924E1B5BEFA900F5BB81 /* HttpRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A5F924D1B5BEFA900F5BB81 /* HttpRequest.swift */; };
 		8A5F92541B5C93A900F5BB81 /* HarvardExamModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A5F92531B5C93A900F5BB81 /* HarvardExamModel.swift */; };
+		8A5F92571B5D4F7B00F5BB81 /* RemindModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A5F92561B5D4F7B00F5BB81 /* RemindModel.swift */; };
 		8A6EB9911B46D16A0003CFAB /* HarvardCheckMenu.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8A6EB9901B46D16A0003CFAB /* HarvardCheckMenu.plist */; };
 		8A6EB9931B46D3170003CFAB /* HarhardCheckBaseInfo1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6EB9921B46D3170003CFAB /* HarhardCheckBaseInfo1.swift */; };
 		8A6EB9951B46D4520003CFAB /* harvardMenuList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8A6EB9941B46D4520003CFAB /* harvardMenuList.plist */; };
@@ -133,6 +134,7 @@
 		8A5F924A1B5BDA4500F5BB81 /* SelfExamHisService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelfExamHisService.swift; sourceTree = "<group>"; };
 		8A5F924D1B5BEFA900F5BB81 /* HttpRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpRequest.swift; sourceTree = "<group>"; };
 		8A5F92531B5C93A900F5BB81 /* HarvardExamModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HarvardExamModel.swift; sourceTree = "<group>"; };
+		8A5F92561B5D4F7B00F5BB81 /* RemindModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemindModel.swift; sourceTree = "<group>"; };
 		8A6EB9901B46D16A0003CFAB /* HarvardCheckMenu.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = HarvardCheckMenu.plist; sourceTree = "<group>"; };
 		8A6EB9921B46D3170003CFAB /* HarhardCheckBaseInfo1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HarhardCheckBaseInfo1.swift; sourceTree = "<group>"; };
 		8A6EB9941B46D4520003CFAB /* harvardMenuList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = harvardMenuList.plist; sourceTree = "<group>"; };
@@ -235,6 +237,14 @@
 			path = HarvardExam;
 			sourceTree = "<group>";
 		};
+		8A5F92551B5D4F5300F5BB81 /* Remind */ = {
+			isa = PBXGroup;
+			children = (
+				8A5F92561B5D4F7B00F5BB81 /* RemindModel.swift */,
+			);
+			path = Remind;
+			sourceTree = "<group>";
+		};
 		8A74DED21B461CAB0091DA2E = {
 			isa = PBXGroup;
 			children = (
@@ -259,6 +269,7 @@
 		8A74DEDD1B461CAB0091DA2E /* iBreast */ = {
 			isa = PBXGroup;
 			children = (
+				8A5F92551B5D4F5300F5BB81 /* Remind */,
 				8A5F92521B5C938500F5BB81 /* HarvardExam */,
 				8A5F92431B5BD79A00F5BB81 /* HttpService */,
 				8A5323931B5AC8660095F568 /* Appointment.swift */,
@@ -535,6 +546,7 @@
 				8A93E09E1B4BADC700B734FA /* ClinicsHistoryModel.swift in Sources */,
 				8A93E36B1B58E6C100B734FA /* User.swift in Sources */,
 				8A7BB0751B4969F500AFE5E2 /* SelfExamEditorVC.swift in Sources */,
+				8A5F92571B5D4F7B00F5BB81 /* RemindModel.swift in Sources */,
 				8A93E09C1B4BACE200B734FA /* ClinicsHistoryVC.swift in Sources */,
 				8A93E37B1B595EAA00B734FA /* SelfExamHisVC.swift in Sources */,
 				8A74DEE11B461CAB0091DA2E /* AppDelegate.swift in Sources */,

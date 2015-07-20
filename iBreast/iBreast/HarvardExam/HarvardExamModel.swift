@@ -23,6 +23,13 @@ enum YesNoUnknown{
     case No
     case Unknown
 }
+enum MenopauseStatus{
+    case Peri
+    case Post
+    case Pre
+    case Unknown
+}
+
 
 typealias HarvardExamFamilyHistory = HarvardCheckModel.HarvardCheckFamilyInfo
 var harvardExamModel:HarvardExamModel = HarvardExamModel()
@@ -57,12 +64,6 @@ class PhysicalDataModel{
 //经期历史
 class MenstrualHistory{
     
-    enum MenopauseStatus{
-        case Peri
-        case Post
-        case Pre
-        case Unknown
-    }
     
     //第一次月经时间
     var firstPeriodAga:Int!
@@ -130,7 +131,7 @@ class ChildbirthHistory{
     var ageAtFirstLiveBirth:Int!
     
 }
-
+//活体组织检查
 class Biopsies{
     
     enum Atypia{
@@ -140,7 +141,9 @@ class Biopsies{
         case AtypicalHyperplasia
         case LCIS
     }
+    //检查次数
     var biopsiesNum:Int!
+    //检查报告
     var atypia:Atypia!
     
 }
