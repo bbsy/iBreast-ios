@@ -18,6 +18,8 @@ class MeViewController: UIViewController {
     
     var userManager:UserManager = UserManager()
     
+    var alertPicker:AlertDatePickerView = AlertDatePickerView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         initRecordMenuData()
@@ -69,7 +71,33 @@ class MeViewController: UIViewController {
 
 extension MeViewController:UITableViewDataSource,UITableViewDelegate{
     
-    
+     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath){
+        
+        alertPicker.showPickerInActionSheet(indexPath.row)
+        
+        if(indexPath.section == 0) {
+            if(indexPath.row==0){
+                
+            }
+            else if(indexPath.row==1){
+                
+            }
+            else if(indexPath.row==2){
+                
+            }
+            else if(indexPath.row==3){
+                
+            }
+        }
+        else if(indexPath.section == 1)
+        {
+            
+        }
+        else if(indexPath.section == 2){
+            
+        }
+        
+    }
     
      func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat{
         
@@ -94,6 +122,8 @@ extension MeViewController:UITableViewDataSource,UITableViewDelegate{
 //     func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat{
 //        return CGFloat(40)
 //    }
+    
+    
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     

@@ -18,6 +18,7 @@
 		8A5F924E1B5BEFA900F5BB81 /* HttpRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A5F924D1B5BEFA900F5BB81 /* HttpRequest.swift */; };
 		8A5F92541B5C93A900F5BB81 /* HarvardExamModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A5F92531B5C93A900F5BB81 /* HarvardExamModel.swift */; };
 		8A5F92571B5D4F7B00F5BB81 /* RemindModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A5F92561B5D4F7B00F5BB81 /* RemindModel.swift */; };
+		8A5F925D1B5D5C2A00F5BB81 /* AlertDatePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A5F925C1B5D5C2A00F5BB81 /* AlertDatePickerView.swift */; };
 		8A6EB9911B46D16A0003CFAB /* HarvardCheckMenu.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8A6EB9901B46D16A0003CFAB /* HarvardCheckMenu.plist */; };
 		8A6EB9931B46D3170003CFAB /* HarhardCheckBaseInfo1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6EB9921B46D3170003CFAB /* HarhardCheckBaseInfo1.swift */; };
 		8A6EB9951B46D4520003CFAB /* harvardMenuList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8A6EB9941B46D4520003CFAB /* harvardMenuList.plist */; };
@@ -135,6 +136,7 @@
 		8A5F924D1B5BEFA900F5BB81 /* HttpRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpRequest.swift; sourceTree = "<group>"; };
 		8A5F92531B5C93A900F5BB81 /* HarvardExamModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HarvardExamModel.swift; sourceTree = "<group>"; };
 		8A5F92561B5D4F7B00F5BB81 /* RemindModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemindModel.swift; sourceTree = "<group>"; };
+		8A5F925C1B5D5C2A00F5BB81 /* AlertDatePickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertDatePickerView.swift; sourceTree = "<group>"; };
 		8A6EB9901B46D16A0003CFAB /* HarvardCheckMenu.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = HarvardCheckMenu.plist; sourceTree = "<group>"; };
 		8A6EB9921B46D3170003CFAB /* HarhardCheckBaseInfo1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HarhardCheckBaseInfo1.swift; sourceTree = "<group>"; };
 		8A6EB9941B46D4520003CFAB /* harvardMenuList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = harvardMenuList.plist; sourceTree = "<group>"; };
@@ -245,6 +247,14 @@
 			path = Remind;
 			sourceTree = "<group>";
 		};
+		8A5F925B1B5D5C0D00F5BB81 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8A5F925C1B5D5C2A00F5BB81 /* AlertDatePickerView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		8A74DED21B461CAB0091DA2E = {
 			isa = PBXGroup;
 			children = (
@@ -269,6 +279,7 @@
 		8A74DEDD1B461CAB0091DA2E /* iBreast */ = {
 			isa = PBXGroup;
 			children = (
+				8A5F925B1B5D5C0D00F5BB81 /* Views */,
 				8A5F92551B5D4F5300F5BB81 /* Remind */,
 				8A5F92521B5C938500F5BB81 /* HarvardExam */,
 				8A5F92431B5BD79A00F5BB81 /* HttpService */,
@@ -513,6 +524,7 @@
 				8A93E3691B58E4B600B734FA /* iBreast.xcdatamodeld in Sources */,
 				8A5F92471B5BD97E00F5BB81 /* HttpObject.swift in Sources */,
 				8A93E0A81B4D1E9F00B734FA /* MeViewController.swift in Sources */,
+				8A5F925D1B5D5C2A00F5BB81 /* AlertDatePickerView.swift in Sources */,
 				8A7BB0711B49278000AFE5E2 /* EraserBrush.swift in Sources */,
 				8A93D2511B4AD28900B734FA /* AlertPickerViewController.swift in Sources */,
 				8A6EB99D1B46EA5A0003CFAB /* HarvardCheckBaseInfo4VC.swift in Sources */,
