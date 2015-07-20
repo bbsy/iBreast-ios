@@ -17,9 +17,12 @@ class HarvardCheckBaseInfo2VC: UIViewController ,UITableViewDataSource,UITableVi
     let alertPicker:AlertPickerViewController=AlertPickerViewController()
     
     var check_times=[1,2,3,4,5,6,7,8,9,10];
-    let check_result=["正常","小异变","异变","大异变"]
+    let check_result=[Biopsies.Atypia.NAOrUnknow,Biopsies.Atypia.BenignBreastCondition,Biopsies.Atypia.Hyperplasia_NoAtypia,Biopsies.Atypia.AtypicalHyperplasia,Biopsies.Atypia.LCIS]
     let conceive_times=[1,2,3,4,5,6,7,8,9,10]
     let first_haschild_age=[16,17,18,19,20,21,22,23,24,25]
+    
+    // get a Model object for fill user data  获取一个用于填充用户数据的数据模型对象
+    var harvardExamModel:HarvardExamModel = HarvardExamModel();
     
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -193,15 +196,19 @@ extension HarvardCheckBaseInfo2VC:UIPickerViewDelegate{
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         if(pickerView.tag == 0){
             println("you selected the name: \(self.check_times[row])")
+            harvardExamModel.childbirthHistory.pregnanciesNum = check_times[row];
         }
             
         else if(pickerView.tag == 1){
             println("you selected the name: \(self.check_result[row])")
+            harvardExamModel.biopsies.atypia = self.check_result[row];
         } else if (pickerView.tag == 2){
             println("you selected the name: \(self.conceive_times[row])")
+            harvardExamModel.biopsies.biopsiesNum = self.conceive_times[row];
         }
         else if(pickerView.tag==3){
             println("you selected the name: \(self.first_haschild_age[row])")
+            harvardExamModel.childbirthHistory.ageAtFirstLiveBirth = self.first_haschild_age[row];
         }
         
     }

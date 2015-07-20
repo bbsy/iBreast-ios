@@ -32,15 +32,18 @@ class HarvardCheckBaseInfo1: UIViewController ,UITableViewDataSource,UITableView
     
     var age=[18,19,20,21,22,23,24];
     
-    let weight=["20kg","30kg","40kg"]
+    let weight=[20,25,30,35,40,45,50,55,60,65,70]
     let gender=["男","女"]
-    let height=["150cm","156cm","157cm"]
+    let height=[150,160,170,180];
     
     var indexOfAllRows:Int=0
     
     let HFCHECK_MENU_SECTION=3
     
     let alertPicker:AlertPickerViewController=AlertPickerViewController()
+    
+    // get a Model object for fill user data  获取一个用于填充用户数据的数据模型对象
+    var harvardExamModel:HarvardExamModel = HarvardExamModel();
     
     
     required init(coder aDecoder: NSCoder) {
@@ -61,19 +64,16 @@ class HarvardCheckBaseInfo1: UIViewController ,UITableViewDataSource,UITableView
         tableMenu.dataSource=self
         tableMenu.delegate=self
         
-        
         initHarvardCheckMenuData()
         initData()
-    
-     
-
-    }
+       }
     
     func initData(){
         
-       
-        for var num:Int=18; num<100;++num{
-          
+//        var index:Int = 0;
+        for var num:Int=18; num<99;++num{
+//          age[index]
+//            index ++；
             
         }
     }
@@ -198,11 +198,11 @@ extension HarvardCheckBaseInfo1:UIPickerViewDelegate{
         } else if(pickerView.tag == 2){
             
             
-            return self.weight[row]
+            return "\(self.weight[row])kg"
             
         }
         else if(pickerView.tag==3){
-            return self.height[row]
+            return "\(self.height[row])cm"
         }
         else  {
             
@@ -215,15 +215,19 @@ extension HarvardCheckBaseInfo1:UIPickerViewDelegate{
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         if(pickerView.tag == 0){
          println("you selected the name: \(self.gender[row])")
+            harvardExamModel.physicalDataModel.gender = (row+1);
         }
         
         else if(pickerView.tag == 1){
             println("you selected the name: \(self.age[row])")
+            harvardExamModel.physicalDataModel.age = self.age[row];
         } else if (pickerView.tag == 2){
             println("you selected the name: \(self.weight[row])")
+            harvardExamModel.physicalDataModel.weight = self.weight[row];
         }
         else if(pickerView.tag==3){
              println("you selected the name: \(self.height[row])")
+            harvardExamModel.physicalDataModel.height = self.height[row];
         }
         
     }
@@ -232,6 +236,7 @@ extension HarvardCheckBaseInfo1:UIPickerViewDelegate{
 extension HarvardCheckBaseInfo1:AlertPickerViewControllerDelegate{
     func didSelect(){
         println("didSelect")
+        
     }
     func didCancel()
     {
