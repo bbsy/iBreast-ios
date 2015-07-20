@@ -8,6 +8,8 @@
 
 import UIKit
 
+var remindModel = RemindModel()
+
 class RemindModel: NSObject {
     
     

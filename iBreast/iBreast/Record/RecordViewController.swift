@@ -11,12 +11,14 @@ import UIKit
 
 var recordData:NSDictionary?
 
-class RecordViewController: UIViewController,UITableViewDataSource {
+class RecordViewController: UIViewController,UITableViewDataSource ,UITableViewDelegate{
 
     @IBOutlet weak var tableView: UITableView!
     
     let RecordListTag="RecordListTag"
     
+    var alertPicker:AlertDatePickerView = AlertDatePickerView()
+
    
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +28,18 @@ class RecordViewController: UIViewController,UITableViewDataSource {
         initRecordMenuData()
         
         tableView.dataSource=self
+        tableView.delegate=self
+        
+         alertPicker.mUIViewController=self
+        
+        var number:[Int]=[Int]()
+        
+        for i in 15...99 {
+            number.append(i)
+            
+            println(number[i-15])
+        }
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -36,6 +50,33 @@ class RecordViewController: UIViewController,UITableViewDataSource {
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
         return (recordData!.allValues[section] as! NSArray).count
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath){
+        
+        alertPicker.showPickerInActionSheet(indexPath.row)
+        
+        if(indexPath.section == 0) {
+            if(indexPath.row==0){
+                
+            }
+            else if(indexPath.row==1){
+                
+            }
+            else if(indexPath.row==2){
+                
+            }
+            else if(indexPath.row==3){
+                
+            }
+        }
+        else if(indexPath.section == 1)
+        {
+            
+        }
+        else if(indexPath.section == 2){
+            
+        }
     }
     
     // Row display. Implementers should *always* try to reuse cells by setting each cell's reuseIdentifier and querying for available reusable cells with dequeueReusableCellWithIdentifier:
