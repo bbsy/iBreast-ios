@@ -16,10 +16,10 @@ class HarvardCheckBaseInfo2VC: UIViewController ,UITableViewDataSource,UITableVi
     var selfData:NSDictionary?
     let alertPicker:AlertPickerViewController=AlertPickerViewController()
     
-    var check_times=[1,2,3,4,5,6,7,8,9,10];
+    var check_times:[Int]=[Int]()//[1,2,3,4,5,6,7,8,9,10];
     let check_result=[Biopsies.Atypia.NAOrUnknow,Biopsies.Atypia.BenignBreastCondition,Biopsies.Atypia.Hyperplasia_NoAtypia,Biopsies.Atypia.AtypicalHyperplasia,Biopsies.Atypia.LCIS]
-    let conceive_times=[1,2,3,4,5,6,7,8,9,10]
-    let first_haschild_age=[16,17,18,19,20,21,22,23,24,25]
+    var conceive_times:[Int]=[Int]()//=[1,2,3,4,5,6,7,8,9,10]
+    var first_haschild_age:[Int]=[Int]()//=[16,17,18,19,20,21,22,23,24,25]
     
     // get a Model object for fill user data  获取一个用于填充用户数据的数据模型对象
     var harvardExamModel:HarvardExamModel = HarvardExamModel();
@@ -49,8 +49,22 @@ class HarvardCheckBaseInfo2VC: UIViewController ,UITableViewDataSource,UITableVi
     func initSelfData(){
     
         selfData=(data!.allValues[HFCHECK_MENU_SECTION] as! NSDictionary)
-    
-    
+        //var number:[Int]=[Int]()
+        
+        // 活检次数赋值
+        for i in 1...30 {
+            check_times.append(i)
+        }
+        
+        // 怀孕次数
+        for i in 1...15 {
+            conceive_times.append(i)
+        }
+        
+        // 第一次生孩子的年纪
+        for i in 12...55 {
+            first_haschild_age.append(i)
+        }
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath){

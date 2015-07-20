@@ -30,11 +30,12 @@ class HarvardCheckBaseInfo1: UIViewController ,UITableViewDataSource,UITableView
     @IBOutlet weak var tableMenu: UITableView!
     let harvardBaseInfoCellTag:String="hfcheckBI1TableCell"
     
-    var age=[18,19,20,21,22,23,24];
+    var age:[Int]=[Int]()//=[18,19,20,21,22,23,24];
     
-    let weight=[20,25,30,35,40,45,50,55,60,65,70]
-    let gender=["男","女"]
-    let height=[150,160,170,180];
+    //:[Int]=[Int]()
+    let weight = [20,25,30,35,40,45,50,55,60,65,70,80,90,100,110,120,130,140,150]
+    let gender = ["男","女"]
+    let height = [100,110,120,130,140,150,160,170,180,190,200];
     
     var indexOfAllRows:Int=0
     
@@ -70,12 +71,25 @@ class HarvardCheckBaseInfo1: UIViewController ,UITableViewDataSource,UITableView
     
     func initData(){
         
-//        var index:Int = 0;
-        for var num:Int=18; num<99;++num{
-//          age[index]
-//            index ++；
-            
+////        var index:Int = 0;
+//        for var num:Int=18; num<99;++num{
+////          age[index]
+////            index ++；
+//            
+//        }
+        // 年纪
+        for i in 10...105 {
+            age.append(i)
         }
+//        // 体重
+//        for i in 1...30 {
+//            age.append(10+i*5)
+//            println("  age=\(age[i])  i=\(i)");
+//        }
+//        // 身高  100 - 200
+//        for i in 1...20 {
+//            age.append(100+i+5)
+//        }
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath){
@@ -198,11 +212,11 @@ extension HarvardCheckBaseInfo1:UIPickerViewDelegate{
         } else if(pickerView.tag == 2){
             
             
-            return "\(self.weight[row])kg"
+            return "\(self.weight[row < self.weight.count ? row:(row-1)])kg"
             
         }
         else if(pickerView.tag==3){
-            return "\(self.height[row])cm"
+            return "\(self.height[row < self.height.count ? row:(row-1)])cm"
         }
         else  {
             

@@ -37,14 +37,12 @@ var harvardExamModel:HarvardExamModel = HarvardExamModel()
 class HarvardExamModel: NSObject {
     
     var familyInfos = [HarvardExamFamilyHistory]()
-    var physicalDataModel:PhysicalDataModel!
-    var menstrualHistory:MenstrualHistory!
-    var ethnicity:Ethnicity!
-    var hormoneReplacementTherapy:HormoneReplacementTherapy!
-    var childbirthHistory:ChildbirthHistory!
-    var biopsies:Biopsies!
-    
-
+    var physicalDataModel = PhysicalDataModel();
+    var menstrualHistory = MenstrualHistory();
+    var ethnicity = Ethnicity();
+    var hormoneReplacementTherapy = HormoneReplacementTherapy()
+    var childbirthHistory = ChildbirthHistory()
+    var biopsies = Biopsies()
 }
 
 //身体参数
