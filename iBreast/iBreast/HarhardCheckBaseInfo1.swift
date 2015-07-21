@@ -23,6 +23,11 @@ func initHarvardCheckMenuData(){
     }
 
 }
+class SectionAndRow{
+    var section:Int = -1
+    var row:Int = -1
+}
+
 
 
 class HarvardCheckBaseInfo1: UIViewController ,UITableViewDataSource,UITableViewDelegate{
@@ -94,6 +99,9 @@ class HarvardCheckBaseInfo1: UIViewController ,UITableViewDataSource,UITableView
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath){
         
+        
+    
+        
         indexOfAllRows=indexPath.row
         
         alertPicker.showPickerInActionSheet(indexOfAllRows)
@@ -133,7 +141,35 @@ class HarvardCheckBaseInfo1: UIViewController ,UITableViewDataSource,UITableView
         var label=cell?.textLabel?.text=(data!.allValues[HFCHECK_MENU_SECTION] as! NSArray).objectAtIndex(indexPath.row) as! String;
         //
         
-        cell?.detailTextLabel?.text =  String(indexPath.row)
+        //这行是性别
+        if(indexPath.row==0){
+            
+            
+            var gender = "男"
+            
+            if let gen = harvardExamModel.physicalDataModel.gender
+            {
+                if gen == 2 {
+                    gender = "女"
+                }
+                else {
+                    gender = "男"
+                }
+            }
+           cell?.detailTextLabel?.text = "\( gender)"
+        }//年龄
+        else  if(indexPath.row==1){
+            cell?.detailTextLabel?.text = "\( harvardExamModel.physicalDataModel.age)"
+        }//体重
+        else  if(indexPath.row==2){
+             cell?.detailTextLabel?.text = "\( harvardExamModel.physicalDataModel.weight) Kg"
+        }//身高
+        else  if(indexPath.row==3){
+             cell?.detailTextLabel?.text = "\( harvardExamModel.physicalDataModel.height)"
+        }
+
+        
+ //       cell?.detailTextLabel?.text =  String(indexPath.row)
         
 //        if(indexPath.row == 0)
 //        {
@@ -258,6 +294,10 @@ extension HarvardCheckBaseInfo1:UIPickerViewDelegate{
 
 extension HarvardCheckBaseInfo1:AlertPickerViewControllerDelegate{
     func didSelect(){
+        
+               
+        tableMenu.reloadData()
+
         println("didSelect")
         
     }
