@@ -68,7 +68,7 @@ class MenstrualHistory{
     //第一次月经时间
     var firstPeriodAga:Int!
     //绝经情况
-    var menopauseStatus:MenstrualHistory!
+    var menopauseStatus:MenopauseStatus!
     //是否双侧卵巢移除
     var isBothovariesRemoved:YesNoUnknown!
     //卵巢移除年纪

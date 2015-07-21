@@ -29,7 +29,7 @@ class ExamBoard: UIImageView {
 //    var strokeColor: UIColor
     
   //
-    var hightlightedLesion:LesionView?
+    var hightlightedLesion:LesionView!
     
     let PI=3.1415926
     
@@ -86,6 +86,8 @@ class ExamBoard: UIImageView {
             circleView!.lesion.point=circleCenter
             circleView!.lesion.firmness=LesionFirmness.SOFT
             circleView!.lesion.highlight=true
+            circleView!.lesion.size = circleWidth
+        
             
             self.addSubview(circleView!)
             
@@ -163,8 +165,27 @@ class ExamBoard: UIImageView {
            }
             
         }
+       
+        var rectx = CGFloat(hightlightedLesion.lesion.size) + hightlightedLesion.lesion.point.x
+        var recty = CGFloat(hightlightedLesion.lesion.size) + hightlightedLesion.lesion.point.y
         
-        println("real cursor = \(cursor) and offset=\(offset)")
+         var xb = point.x >= CGFloat(hightlightedLesion.lesion.point.x) && point.x <= CGFloat(rectx)
+        
+         var yb = point.y >= CGFloat(hightlightedLesion.lesion.point.y) && point.y <= CGFloat(recty)
+        
+        
+      
+        
+
+////        
+        if( xb && yb){
+                hightlightedLesion?.lesion.allowedMoving = true
+        }
+        else{
+                hightlightedLesion?.lesion.allowedMoving = false
+        }
+        
+//        println("real cursor = \(cursor) and offset=\(offset)")
         
 
         
@@ -184,9 +205,13 @@ class ExamBoard: UIImageView {
         
         
         if let cir=hightlightedLesion{
-            var movePoint=(touches as NSSet).anyObject()!.locationInView(self)
-            cir.lesion.point=movePoint
-            cir.frame=CGRectMake(movePoint.x, movePoint.y, cir.frame.size.width, cir.frame.size.height)
+            
+            if(hightlightedLesion.lesion.allowedMoving == true){
+                var movePoint=(touches as NSSet).anyObject()!.locationInView(self)
+                cir.lesion.point=movePoint
+                cir.frame=CGRectMake(movePoint.x, movePoint.y, cir.frame.size.width, cir.frame.size.height)
+            }
+           
         }
         
         

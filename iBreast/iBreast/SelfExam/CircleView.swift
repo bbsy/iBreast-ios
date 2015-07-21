@@ -37,7 +37,7 @@ class LesionView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func setSize(size:Int){
+    func setSize(size:CGFloat){
         lesion.size=size
     }
     
