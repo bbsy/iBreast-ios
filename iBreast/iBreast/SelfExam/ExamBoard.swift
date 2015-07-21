@@ -165,25 +165,29 @@ class ExamBoard: UIImageView {
            }
             
         }
+        
+        if(!lesionsView.isEmpty){
+            var rectx = CGFloat(hightlightedLesion.lesion.size) + hightlightedLesion.lesion.point.x
+            var recty = CGFloat(hightlightedLesion.lesion.size) + hightlightedLesion.lesion.point.y
+            
+            var xb = point.x >= CGFloat(hightlightedLesion.lesion.point.x) && point.x <= CGFloat(rectx)
+            
+            var yb = point.y >= CGFloat(hightlightedLesion.lesion.point.y) && point.y <= CGFloat(recty)
+            
+            if( xb && yb){
+                hightlightedLesion?.lesion.allowedMoving = true
+            }
+            else{
+                hightlightedLesion?.lesion.allowedMoving = false
+            }
+        }
        
-        var rectx = CGFloat(hightlightedLesion.lesion.size) + hightlightedLesion.lesion.point.x
-        var recty = CGFloat(hightlightedLesion.lesion.size) + hightlightedLesion.lesion.point.y
-        
-         var xb = point.x >= CGFloat(hightlightedLesion.lesion.point.x) && point.x <= CGFloat(rectx)
-        
-         var yb = point.y >= CGFloat(hightlightedLesion.lesion.point.y) && point.y <= CGFloat(recty)
-        
-        
+     
       
         
 
 ////        
-        if( xb && yb){
-                hightlightedLesion?.lesion.allowedMoving = true
-        }
-        else{
-                hightlightedLesion?.lesion.allowedMoving = false
-        }
+    
         
 //        println("real cursor = \(cursor) and offset=\(offset)")
         
