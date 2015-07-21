@@ -11,37 +11,46 @@ import UIKit
 class SelfExamData: NSObject {
     
     
-    var lesions=[LesionView]()
+    var lesions=NSMutableOrderedSet()
     
     override init(){
         super.init();
         
-        var cv0=LesionView()
-        lesions.append(cv0)
+        var cv0=LesionModel()
+        lesions.addObject(cv0)
         
-        var cv1=LesionView()
-        lesions.append(cv1)
+        var cv1=LesionModel()
+        lesions.addObject(cv1)
         
-        var cv2=LesionView()
-        lesions.append(cv2)
+        var cv2=LesionModel()
+        lesions.addObject(cv2)
         
         
-        lesions[0].lesion.size=30;
-        lesions[0].lesion.firmness=LesionFirmness.SOFT
-        lesions[0].lesion.highlight=true
         
-        lesions[1].lesion.size=40;
-        lesions[1].lesion.firmness=LesionFirmness.HARD
-        lesions[1].lesion.highlight=false
         
-        lesions[0].lesion.size=10;
-        lesions[0].lesion.firmness=LesionFirmness.MEDIUM
-        lesions[0].lesion.highlight=false
+        cv0.size=30;
+        cv0.firmness=LesionFirmness.SOFT
+        cv0.highlight=true
+        cv0.point.x=100
+        cv0.point.y=140
+        
+        cv1.size=40;
+        cv1.firmness=LesionFirmness.HARD
+        cv1.highlight=false
+        cv1.point.x=40
+        cv1.point.y=60
+        
+        
+        cv2.size=50;
+        cv2.firmness=LesionFirmness.MEDIUM
+        cv2.highlight=false
+        cv2.point.x=69
+        cv2.point.y=40
         
     }
     
     
-    func getLesions()->[LesionView]{
+    func getLesions()->NSMutableOrderedSet{
         
         return lesions
     }
