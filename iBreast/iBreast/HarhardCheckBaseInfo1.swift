@@ -118,6 +118,7 @@ class HarvardCheckBaseInfo1: UIViewController ,UITableViewDataSource,UITableView
     }
     
     
+    var selectIndex:Int = 0;
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
         
         
@@ -132,9 +133,16 @@ class HarvardCheckBaseInfo1: UIViewController ,UITableViewDataSource,UITableView
         var label=cell?.textLabel?.text=(data!.allValues[HFCHECK_MENU_SECTION] as! NSArray).objectAtIndex(indexPath.row) as! String;
         //
         
+        cell?.detailTextLabel?.text =  String(indexPath.row)
         
-        
-        cell?.detailTextLabel?.text=String(indexPath.row)
+//        if(indexPath.row == 0)
+//        {
+//            cell?.detailTextLabel?.text =  gender[selectIndex]; //String(indexPath.row)
+//        }
+//        else if(indexPath.row == 1)
+//        {
+//            cell?.detailTextLabel?.text = self.age[selectIndex];
+//        }
         
         return cell!
         
@@ -230,6 +238,7 @@ extension HarvardCheckBaseInfo1:UIPickerViewDelegate{
         if(pickerView.tag == 0){
          println("you selected the name: \(self.gender[row])")
             harvardExamModel.physicalDataModel.gender = (row+1);
+//            tableMenu.reloadRowsAtIndexPaths(<#indexPaths: [AnyObject]#>, withRowAnimation: <#UITableViewRowAnimation#>)
         }
         
         else if(pickerView.tag == 1){

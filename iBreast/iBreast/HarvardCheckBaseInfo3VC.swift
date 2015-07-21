@@ -16,14 +16,17 @@ class HarvardCheckBaseInfo3VC: UIViewController ,UITableViewDataSource,UITableVi
     let harvardBaseInfoCellTag:String="hfcheckBI3TableCell"
     var selfData:NSDictionary?
     
-    var menarche_days=["1-2天","3-4天","5-6天","6天以上"];
-    let menopause_info=["未绝经","临近绝经","已绝经"]
-    let ovary_isremove=["未移除","已移除","情况不明"]
-    let ovary_remove_age=["18岁以下","18-20","20-24","24-26","26-28","30或以上"]
-    let descent=["犹太血统","非犹太血统","混血血统"]
+    var menarche_days=[12,13,14,15,16,17,18,19,20,21,22,23,24,25];
+    let menopause_info=[MenopauseStatus.Peri,MenopauseStatus.Post,MenopauseStatus.Pre,MenopauseStatus.Unknown]
+    let ovary_isremove=[YesNoUnknown.No,YesNoUnknown.Yes,YesNoUnknown.Unknown]
+    let ovary_remove_age=[14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30]
+    let descent=[CommonAnswer.Yes,CommonAnswer.No,CommonAnswer.NotSure,CommonAnswer.PreferNotToAnswer]
 //    let family_bg = ["混血家族","正常家族","病史家族"];
-    let family_bg=["混血家族","正常家族","病史家族"]
+    let family_bg=[Ethnicity.RacialBackground.AfricanAmericanOrBlack,Ethnicity.RacialBackground.American_Indian_Aleutian_Eskimo,Ethnicity.RacialBackground.AsionOrPacificIslander,Ethnicity.RacialBackground.Caribbean_WestIndian,Ethnicity.RacialBackground.CaucasianOrWhite,Ethnicity.RacialBackground.Other]
     let alertPicker:AlertPickerViewController=AlertPickerViewController()
+    
+    // get a Model object for fill user data  获取一个用于填充用户数据的数据模型对象
+    var harvardExamModel:HarvardExamModel = HarvardExamModel();
     
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -198,19 +201,30 @@ extension HarvardCheckBaseInfo3VC:UIPickerViewDelegate{
     }
     //
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-//        if(pickerView.tag == 0){
-//            println("you selected the name: \(self.check_times[row])")
-//        }
-//            
-//        else if(pickerView.tag == 1){
-//            println("you selected the name: \(self.check_result[row])")
-//        } else if (pickerView.tag == 2){
-//            println("you selected the name: \(self.conceive_times[row])")
-//        }
-//        else if(pickerView.tag==3){
-//            println("you selected the name: \(self.first_haschild_age[row])")
-//        }
-        
+            if(pickerView.tag == 0){
+                println("you selected the name: \(self.menarche_days[row])")
+                harvardExamModel.menstrualHistory.firstPeriodAga = self.menarche_days[row];
+            }
+
+            else if(pickerView.tag == 1){
+                println("you selected the name: \(self.menopause_info[row])")
+                harvardExamModel.menstrualHistory.menopauseStatus = self.menopause_info[row];
+            } else if (pickerView.tag == 2){
+                    println("you selected the name: \(self.ovary_isremove[row])")
+                harvardExamModel.menstrualHistory.isBothovariesRemoved = self.ovary_isremove[row];
+            }
+            else if(pickerView.tag==3){
+                println("you selected the name: \(self.ovary_remove_age[row])")
+                harvardExamModel.menstrualHistory.ovaryRemovalAge = self.ovary_remove_age[row];
+            }
+            else if(pickerView.tag == 4)
+            {
+                harvardExamModel.ethnicity.isGrandparentsOfJewishDescent = self.descent[row]
+            }
+            else if(pickerView.tag == 5)
+            {
+                harvardExamModel.ethnicity.racialBackground = self.family_bg[row]
+            }
     }
 }
 

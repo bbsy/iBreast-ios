@@ -56,7 +56,6 @@ class PhysicalDataModel{
     var weight:Int!
     //身高
     var height:Int!
-    
 }
 
 //经期历史

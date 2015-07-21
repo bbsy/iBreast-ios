@@ -13,11 +13,14 @@ class HarvardCheckBaseInfo4VC: UIViewController,UITableViewDataSource,UITableVie
     
     let HFCHECK_MENU_SECTION=1
      @IBOutlet weak var tableMenu: UITableView!
-    var hormone_info=["未使用过激素","使用过少次","大量使用过"];
-    let group = ["未组合","已组合"]
-    let user_age=["15岁以下","16-18岁","20以上","30以上"]
+    var hormone_info=[HormoneReplacementTherapy.UsedHormones.No_Never,HormoneReplacementTherapy.UsedHormones.Not_Sure,HormoneReplacementTherapy.UsedHormones.Yes_Currently,HormoneReplacementTherapy.UsedHormones.Yes_InThePast];
+    let group = [YesOrNo.No,YesOrNo.Yes]
+    let user_age=[1,2,3,4,5,6,7,8,9,10]
     
     let alertPicker:AlertPickerViewController=AlertPickerViewController()
+    
+    // get a Model object for fill user data  获取一个用于填充用户数据的数据模型对象
+    var harvardExamModel:HarvardExamModel = HarvardExamModel();
     
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -175,18 +178,18 @@ extension HarvardCheckBaseInfo4VC:UIPickerViewDelegate{
     }
     //
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        //        if(pickerView.tag == 0){
-        //            println("you selected the name: \(self.check_times[row])")
-        //        }
-        //
-        //        else if(pickerView.tag == 1){
-        //            println("you selected the name: \(self.check_result[row])")
-        //        } else if (pickerView.tag == 2){
-        //            println("you selected the name: \(self.conceive_times[row])")
-        //        }
-        //        else if(pickerView.tag==3){
-        //            println("you selected the name: \(self.first_haschild_age[row])")
-        //        }
+                if(pickerView.tag == 0){
+                    println("you selected the name: \(self.hormone_info[row])")
+                    harvardExamModel.hormoneReplacementTherapy.everUsedHormones = hormone_info[row]
+                }
+                else if(pickerView.tag == 1){
+                    println("you selected the name: \(self.group[row])")
+                    harvardExamModel.hormoneReplacementTherapy.combined = group[row]
+                 } else if (pickerView.tag == 2){
+                    println("you selected the name: \(self.user_age[row])")
+                    harvardExamModel.hormoneReplacementTherapy.yearsSinceTaken = user_age[row]
+                }
+
         
     }
 }
