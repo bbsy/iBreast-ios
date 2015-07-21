@@ -17,9 +17,11 @@ class ExamBoard: UIImageView {
     
     private var drawingState: DrawingState!
     
-    var lesionsData:SelfExamData?
+   
     
-    var lesionsView=[LesionView]()
+    var lesionsModels:NSMutableOrderedSet!
+    
+    var lesionViews:[LesionView]=[LesionView]()
     
  //   var brush: BaseBrush?
     
@@ -29,7 +31,7 @@ class ExamBoard: UIImageView {
 //    var strokeColor: UIColor
     
   //
-    var hightlightedLesion:LesionView?
+    var hightlightedLesion:LesionView!
     
     let PI=3.1415926
     
@@ -41,9 +43,7 @@ class ExamBoard: UIImageView {
     
     required init(coder aDecoder: NSCoder) {
         
-        lesionsData = SelfExamData()
-        
-        var lesions=lesionsData?.getLesions()
+      
         
        
         
@@ -58,59 +58,85 @@ class ExamBoard: UIImageView {
       
         self.image=img
         
+        showHistoryLesions()
+        
+    }
+    
+    func showHistoryLesions(){
+        
+        var lesionsData = SelfExamData()
+        lesionsModels = lesionsData.getLesions()
+        
+        for obj in lesionsModels {
+            
+            
+            add(obj as! LesionModel)
+
+        }
+        
+        
+        
     }
     
     func addNewLesion(){
         
         
-        // Set the Center of the Circle
-        // 1
-        //var circleCenter = (touches as NSSet).anyObject()!.locationInView(self)
+        var model = LesionModel()
+        model.point.x = CGFloat(100)
+        model.point.y = CGFloat(200)
+        model.size = 30
+        model.firmness=LesionFirmness.SOFT
+        model.highlight=true
+     
         
-        // Set a random Circle Radius
-        // 2
+        add(model)
         
-        var circleCenter:CGPoint=CGPoint(x: CGFloat(100),y: CGFloat(200))
-        
-        
-        
-        var circleWidth = CGFloat(25 + (arc4random() % 50))
-        var circleHeight = circleWidth
-        
-        // Create a new CircleView
-        // 3
-      
             
-            var circleView :LesionView?=LesionView(frame: CGRectMake(circleCenter.x, circleCenter.y, circleWidth, circleHeight))
-            
-            circleView!.lesion.point=circleCenter
-            circleView!.lesion.firmness=LesionFirmness.SOFT
-            circleView!.lesion.highlight=true
-            
-            self.addSubview(circleView!)
-            
-            lesionsView.append(circleView!)
-        
-            hightlightedLesion=circleView
-        
-
-        
         
     }
     
     func deleteALesion(){
         
-        for (index,item)  in enumerate(lesionsView){
+        for (index,item)  in enumerate(lesionViews){
             
             if item.lesion.highlight==true{
                 
                 item.removeFromSuperview()
-                lesionsView.removeAtIndex(index)
+                lesionViews.removeAtIndex(index)
+                lesionsModels.removeObject(item.lesion)
+                hightlightedLesion = nil
             }
             
         }
         
       
+    }
+    
+    func remove(){
+        
+    }
+    
+    func add(item:LesionModel){
+        
+        var circleCenter:CGPoint=CGPoint(x:item.point.x,y: item.point.y)
+        var circleWidth = CGFloat(item.size)
+        var circleHeight = circleWidth
+        
+        var circleView :LesionView=LesionView(frame: CGRectMake(circleCenter.x, circleCenter.y, circleWidth, circleHeight))
+        
+        circleView.lesion = item
+        
+        hightlightedLesion = circleView
+        
+        for obj in lesionsModels {
+            var model = obj as! LesionModel
+            model.highlight = false
+        }
+        item.highlight = true
+        lesionsModels.addObject(item)
+        lesionViews.append(circleView)
+        self.addSubview(circleView)
+
     }
     
     
@@ -140,7 +166,7 @@ class ExamBoard: UIImageView {
         var offset:CGFloat? = 100000.0
         var cursor=0;
         
-        for (index,item)  in enumerate(lesionsView){
+        for (index,item)  in enumerate(lesionViews){
            
               var v=sqrt(fabs((point.x-item.lesion.point!.x)*(point.x-item.lesion.point!.x))+fabs((point.y-item.lesion.point!.y)*(point.y-item.lesion.point!.y)))
             
@@ -149,9 +175,9 @@ class ExamBoard: UIImageView {
                 offset=v
             }
         }
-        if !lesionsView.isEmpty&&lesionsView.count>cursor{
+        if !lesionViews.isEmpty&&lesionViews.count>cursor{
            
-          for (index,item)  in enumerate(lesionsView){
+          for (index,item)  in enumerate(lesionViews){
             if(index==cursor){
                 item.lesion.highlight=true
                 hightlightedLesion=item
@@ -164,7 +190,30 @@ class ExamBoard: UIImageView {
             
         }
         
-        println("real cursor = \(cursor) and offset=\(offset)")
+        if(!lesionViews.isEmpty){
+            var rectx = CGFloat(hightlightedLesion.lesion.size) + hightlightedLesion.lesion.point.x
+            var recty = CGFloat(hightlightedLesion.lesion.size) + hightlightedLesion.lesion.point.y
+            
+            var xb = point.x >= CGFloat(hightlightedLesion.lesion.point.x) && point.x <= CGFloat(rectx)
+            
+            var yb = point.y >= CGFloat(hightlightedLesion.lesion.point.y) && point.y <= CGFloat(recty)
+            
+            if( xb && yb){
+                hightlightedLesion?.lesion.allowedMoving = true
+            }
+            else{
+                hightlightedLesion?.lesion.allowedMoving = false
+            }
+        }
+       
+     
+      
+        
+
+////        
+    
+        
+//        println("real cursor = \(cursor) and offset=\(offset)")
         
 
         
@@ -184,9 +233,13 @@ class ExamBoard: UIImageView {
         
         
         if let cir=hightlightedLesion{
-            var movePoint=(touches as NSSet).anyObject()!.locationInView(self)
-            cir.lesion.point=movePoint
-            cir.frame=CGRectMake(movePoint.x, movePoint.y, cir.frame.size.width, cir.frame.size.height)
+            
+            if(hightlightedLesion.lesion.allowedMoving == true){
+                var movePoint=(touches as NSSet).anyObject()!.locationInView(self)
+                cir.lesion.point=movePoint
+                cir.frame=CGRectMake(movePoint.x, movePoint.y, cir.frame.size.width, cir.frame.size.height)
+            }
+           
         }
         
         

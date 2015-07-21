@@ -15,7 +15,7 @@ class AlertDatePickerView: NSObject {
     var mUIViewController:UIViewController?
     var mViewControllerDelegate:AlertPickerViewControllerDelegate?
     
-    var dataSource: UIPickerViewDataSource? // default is nil. weak reference
+    var dataSource: UIDatePicker? // default is nil. weak reference
     var delegate: UIPickerViewDelegate? // default is nil. weak reference
     
     
@@ -29,11 +29,17 @@ class AlertDatePickerView: NSObject {
         
         
         //Create a frame (placeholder/wrapper) for the picker and then create the picker
-        var pickerFrame: CGRect = CGRectMake(17, 52, 270, 100); // CGRectMake(left), top, width, height) - left and top are like margins
-        var picker: UIDatePicker = UIDatePicker(frame: pickerFrame);
+       // var pickerFrame: CGRect = CGRectMake(17, 52, 270, 100); // CGRectMake(left), top, width, height) - left and top are like margins
         
+        var pickerFrame: CGRect = CGRectMake(17, 52, 270, 100);
+        
+        var picker: UIDatePicker = UIDatePicker();
+        picker.frame = pickerFrame
+        picker.datePickerMode = UIDatePickerMode.Date
         
         picker.tag=tag
+        
+        picker.addTarget(self, action:Selector("datePickerValueChange:"), forControlEvents: UIControlEvents.ValueChanged)
         
         //set the pickers datasource and delegate
 //        picker.delegate = delegate;
@@ -95,6 +101,19 @@ class AlertDatePickerView: NSObject {
         
         mUIViewController!.dismissViewControllerAnimated(true, completion: nil);
         // We dismiss the alert. Here you can add your additional code to execute when cancel is pressed
+    }
+    
+    
+    /// 响应 datePicker 事件
+    
+    func datePickerValueChange(sender: UIDatePicker) {
+        
+        var dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat="yyyy-MM-dd"
+        var dateStr = dateFormatter.stringFromDate(sender.date)
+        
+            println("date select: \(dateStr)")
+        
     }
 
 }

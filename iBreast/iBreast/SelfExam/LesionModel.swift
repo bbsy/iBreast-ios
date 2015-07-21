@@ -11,13 +11,13 @@ import UIKit
 class LesionModel: NSObject {
    
     
-    var  highlight:Bool?=false
-    var  time:NSDate?
-    var firmness:LesionFirmness?
-    var size:Int?
-    var point:CGPoint?
-    var x:Float?
-    var y:Float?
-    
+    var  highlight:Bool! = false
+    var  time:NSDate! = NSDate()
+    var firmness:LesionFirmness! = LesionFirmness.HARD
+    var size:CGFloat! = 0
+    var point:CGPoint! = CGPoint(x: 0, y: 0)
+    var x:Float! = 0
+    var y:Float! = 0
+    var allowedMoving:Bool! = false
     
 }
