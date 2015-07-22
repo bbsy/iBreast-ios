@@ -307,7 +307,7 @@ extension HarvardCheckBaseInfo1:UIPickerViewDelegate{
 extension HarvardCheckBaseInfo1:AlertPickerViewControllerDelegate{
     func didSelect(){
         
-               
+        
         tableMenu.reloadData()
 
         println("didSelect")

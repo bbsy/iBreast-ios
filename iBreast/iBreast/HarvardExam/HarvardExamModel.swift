@@ -49,13 +49,13 @@ class HarvardExamModel: NSObject {
 class PhysicalDataModel{
     
     //性别
-    var gender:Int!
+    var gender:Int! = 1
     //年龄
-    var age:Int!
+    var age:Int! = 20
     //体重
-    var weight:Int!
+    var weight:Int! = 30
     //身高
-    var height:Int!
+    var height:Int! = 50
 }
 
 //经期历史
