@@ -14,7 +14,10 @@ class HarvardCheckBaseInfo4VC: UIViewController,UITableViewDataSource,UITableVie
     let HFCHECK_MENU_SECTION=1
      @IBOutlet weak var tableMenu: UITableView!
     var hormone_info=[HormoneReplacementTherapy.UsedHormones.No_Never,HormoneReplacementTherapy.UsedHormones.Not_Sure,HormoneReplacementTherapy.UsedHormones.Yes_Currently,HormoneReplacementTherapy.UsedHormones.Yes_InThePast];
+    var hormone_info_temp=["No Never","Not Sure","Yes Currently","Yes In The Past"];
     let group = [YesOrNo.No,YesOrNo.Yes]
+    let group_temp = ["No","Yes"]
+    
     let user_age=[1,2,3,4,5,6,7,8,9,10]
     
     let alertPicker:AlertPickerViewController=AlertPickerViewController()
@@ -88,11 +91,58 @@ class HarvardCheckBaseInfo4VC: UIViewController,UITableViewDataSource,UITableVie
         //        var lable=cell!.viewWithTag(TAG_CELL_LABLE) as? UILabel
         //         lable.text=(data!.allValues[indexPath.section] as! NSArray).objectAtIndex(indexPath.row) as! String
         var label=cell?.textLabel?.text=(data!.allValues[HFCHECK_MENU_SECTION] as! NSArray).objectAtIndex(indexPath.row) as! String;
-        //
+        //var hormone_info_temp=["No Never","Not Sure","Yes Currently","Yes In The Past"];
+        if(indexPath.row == 0)
+        {
+            if(harvardExamModel.hormoneReplacementTherapy.everUsedHormones == nil)
+            {
+                cell?.detailTextLabel?.text = "No Never";
+            }
+            else if(harvardExamModel.hormoneReplacementTherapy.everUsedHormones == HormoneReplacementTherapy.UsedHormones.No_Never)
+            {
+                cell?.detailTextLabel?.text = "No Never";
+            }
+            else if(harvardExamModel.hormoneReplacementTherapy.everUsedHormones == HormoneReplacementTherapy.UsedHormones.Not_Sure)
+            {
+                cell?.detailTextLabel?.text = "Not Sure";
+            }
+            else if(harvardExamModel.hormoneReplacementTherapy.everUsedHormones == HormoneReplacementTherapy.UsedHormones.Yes_Currently)
+            {
+                cell?.detailTextLabel?.text = "Yes Currently";
+            }
+            else if(harvardExamModel.hormoneReplacementTherapy.everUsedHormones == HormoneReplacementTherapy.UsedHormones.Yes_InThePast)
+            {
+                cell?.detailTextLabel?.text = "Yes In The Past";
+            }
+//            cell?.detailTextLabel?.text="\(harvardExamModel.hormoneReplacementTherapy.everUsedHormones)"
+        }
+        else if(indexPath.row == 1)
+        {
+            if(harvardExamModel.hormoneReplacementTherapy.combined == nil)
+            {
+                cell?.detailTextLabel?.text = "No";
+            }
+            else if(harvardExamModel.hormoneReplacementTherapy.combined == YesOrNo.No)
+            {
+                cell?.detailTextLabel?.text = "No";
+            }
+            else if(harvardExamModel.hormoneReplacementTherapy.combined == YesOrNo.Yes)
+            {
+                cell?.detailTextLabel?.text = "Yes";
+            }
+//            cell?.detailTextLabel?.text="\(harvardExamModel.hormoneReplacementTherapy.combined)"
+        }
+        else if(indexPath.row == 2)
+        {
+            if(harvardExamModel.hormoneReplacementTherapy.yearsSinceTaken == nil)
+            {
+                harvardExamModel.hormoneReplacementTherapy.yearsSinceTaken = user_age[0];
+            }
+            
+            cell?.detailTextLabel?.text="\(harvardExamModel.hormoneReplacementTherapy.yearsSinceTaken)"
+        }
         
-        
-        
-        cell?.detailTextLabel?.text=String(indexPath.row)
+//        cell?.detailTextLabel?.text=String(indexPath.row)
         
         return cell!
         
@@ -128,12 +178,12 @@ extension HarvardCheckBaseInfo4VC:UIPickerViewDataSource
         
         if(pickerView.tag==0){
             
-            return hormone_info.count
+            return hormone_info_temp.count
         }
         else if(pickerView.tag == 1){
             
             
-            return self.group.count
+            return self.group_temp.count
             
         } else if(pickerView.tag == 2){
             
@@ -157,11 +207,11 @@ extension HarvardCheckBaseInfo4VC:UIPickerViewDelegate{
         
         if(pickerView.tag == 0){
             
-            return "\(hormone_info[row])"
+            return "\(hormone_info_temp[row])"
         }
             
         else if(pickerView.tag == 1){
-            return "\(self.group[row] )"
+            return "\(self.group_temp[row] )"
         } else if(pickerView.tag == 2){
             
             
@@ -179,23 +229,22 @@ extension HarvardCheckBaseInfo4VC:UIPickerViewDelegate{
     //
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
                 if(pickerView.tag == 0){
-                    println("you selected the name: \(self.hormone_info[row])")
+                    println("you selected the name: \(self.hormone_info_temp[row])")
                     harvardExamModel.hormoneReplacementTherapy.everUsedHormones = hormone_info[row]
                 }
                 else if(pickerView.tag == 1){
-                    println("you selected the name: \(self.group[row])")
+                    println("you selected the name: \(self.group_temp[row])")
                     harvardExamModel.hormoneReplacementTherapy.combined = group[row]
                  } else if (pickerView.tag == 2){
                     println("you selected the name: \(self.user_age[row])")
                     harvardExamModel.hormoneReplacementTherapy.yearsSinceTaken = user_age[row]
                 }
-
-        
     }
 }
 
 extension HarvardCheckBaseInfo4VC:AlertPickerViewControllerDelegate{
     func didSelect(){
+        tableMenu.reloadData();
         println("didSelect")
     }
     func didCancel()

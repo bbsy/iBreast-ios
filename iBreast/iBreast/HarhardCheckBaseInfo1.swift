@@ -159,13 +159,25 @@ class HarvardCheckBaseInfo1: UIViewController ,UITableViewDataSource,UITableView
            cell?.detailTextLabel?.text = "\( gender)"
         }//年龄
         else  if(indexPath.row==1){
+            if(harvardExamModel.physicalDataModel.age == nil )
+            {
+                harvardExamModel.physicalDataModel.age = age[0];
+            }
             cell?.detailTextLabel?.text = "\( harvardExamModel.physicalDataModel.age)"
         }//体重
         else  if(indexPath.row==2){
-             cell?.detailTextLabel?.text = "\( harvardExamModel.physicalDataModel.weight) Kg"
+            if(harvardExamModel.physicalDataModel.weight == nil)
+            {
+                harvardExamModel.physicalDataModel.weight = weight[0];
+            }
+             cell?.detailTextLabel?.text = "\( harvardExamModel.physicalDataModel.weight) kg"
         }//身高
         else  if(indexPath.row==3){
-             cell?.detailTextLabel?.text = "\( harvardExamModel.physicalDataModel.height)"
+            if(harvardExamModel.physicalDataModel.height == nil)
+            {
+                harvardExamModel.physicalDataModel.height = height[0];
+            }
+             cell?.detailTextLabel?.text = "\( harvardExamModel.physicalDataModel.height) cm"
         }
 
         

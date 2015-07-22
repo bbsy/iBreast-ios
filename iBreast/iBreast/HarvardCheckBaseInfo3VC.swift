@@ -18,11 +18,15 @@ class HarvardCheckBaseInfo3VC: UIViewController ,UITableViewDataSource,UITableVi
     
     var menarche_days=[12,13,14,15,16,17,18,19,20,21,22,23,24,25];
     let menopause_info=[MenopauseStatus.Peri,MenopauseStatus.Post,MenopauseStatus.Pre,MenopauseStatus.Unknown]
+    let menopause_info_temp=["Peri","Post","Pre","Unknown"]
     let ovary_isremove=[YesNoUnknown.No,YesNoUnknown.Yes,YesNoUnknown.Unknown]
+    let ovary_isremove_temp=["No","Yes","Unknown"]
     let ovary_remove_age=[14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30]
     let descent=[CommonAnswer.Yes,CommonAnswer.No,CommonAnswer.NotSure,CommonAnswer.PreferNotToAnswer]
+    let descent_temp=["Yes","No","Not Sure","Prefer Not To Answer"]
 //    let family_bg = ["混血家族","正常家族","病史家族"];
     let family_bg=[Ethnicity.RacialBackground.AfricanAmericanOrBlack,Ethnicity.RacialBackground.American_Indian_Aleutian_Eskimo,Ethnicity.RacialBackground.AsionOrPacificIslander,Ethnicity.RacialBackground.Caribbean_WestIndian,Ethnicity.RacialBackground.CaucasianOrWhite,Ethnicity.RacialBackground.Other]
+        let family_bg_temp=["African American Or Black","American Indian Aleutian Eskimo","Asion Or Pacific Islander","Caribbean WestIndian","Caucasian Or White","Other"]
     let alertPicker:AlertPickerViewController=AlertPickerViewController()
     
     // get a Model object for fill user data  获取一个用于填充用户数据的数据模型对象
@@ -100,15 +104,138 @@ class HarvardCheckBaseInfo3VC: UIViewController ,UITableViewDataSource,UITableVi
             as? UITableViewCell
         
         
-        
+        println("---------tabview \(indexPath.row)  \(indexPath.section)");
         //        var lable=cell!.viewWithTag(TAG_CELL_LABLE) as? UILabel
         //         lable.text=(data!.allValues[indexPath.section] as! NSArray).objectAtIndex(indexPath.row) as! String
         var label=cell?.textLabel?.text=(selfData!.allValues[indexPath.section] as! NSArray).objectAtIndex(indexPath.row) as! String;
         //
+        if(indexPath.section == 0)
+        {
+            if(indexPath.row == 0)
+            {
+                if(harvardExamModel.menstrualHistory.firstPeriodAga == nil)
+                {
+                    harvardExamModel.menstrualHistory.firstPeriodAga = menarche_days[0];
+                }
+                cell?.detailTextLabel?.text = "\(harvardExamModel.menstrualHistory.firstPeriodAga)";
+            }
+            else if(indexPath.row == 1)
+            {
+                if(harvardExamModel.menstrualHistory.menopauseStatus == nil)
+                {
+                    cell?.detailTextLabel?.text = "Peri";
+                }
+                else if(harvardExamModel.menstrualHistory.menopauseStatus == MenopauseStatus.Peri)
+                {
+                    cell?.detailTextLabel?.text = "Peri";
+                }
+                else if(harvardExamModel.menstrualHistory.menopauseStatus == MenopauseStatus.Post)
+                {
+                    cell?.detailTextLabel?.text = "Post";
+                }
+                else if(harvardExamModel.menstrualHistory.menopauseStatus == MenopauseStatus.Post)
+                {
+                    cell?.detailTextLabel?.text = "Pre";
+                }
+                else if(harvardExamModel.menstrualHistory.menopauseStatus == MenopauseStatus.Post)
+                {
+                    cell?.detailTextLabel?.text = "Unknown"
+                }
+            }
+            else if(indexPath.row == 2)
+            {
+                // let ovary_isremove_temp=["No","Yes","Unknown"]
+                if(harvardExamModel.menstrualHistory.isBothovariesRemoved == nil)
+                {
+                    cell?.detailTextLabel?.text = "No"
+                }
+                else if(harvardExamModel.menstrualHistory.isBothovariesRemoved == YesNoUnknown.No)
+                {
+                    cell?.detailTextLabel?.text = "No"
+                }
+                else if(harvardExamModel.menstrualHistory.isBothovariesRemoved == YesNoUnknown.Yes)
+                {
+                    cell?.detailTextLabel?.text = "Yes"
+                }
+                else if(harvardExamModel.menstrualHistory.isBothovariesRemoved == YesNoUnknown.Unknown)
+                {
+                    cell?.detailTextLabel?.text = "Unknown"
+                }
+            }
+            else if(indexPath.row == 3)
+            {
+                if(harvardExamModel.menstrualHistory.ovaryRemovalAge == nil)
+                {
+                    harvardExamModel.menstrualHistory.ovaryRemovalAge = ovary_remove_age[0];
+                }
+                cell?.detailTextLabel?.text = "\(harvardExamModel.menstrualHistory.ovaryRemovalAge)"
+            }
+
+        }
+        if(indexPath.section == 1)
+        {
+            if(indexPath.row == 0)
+            {
+              
+                if(harvardExamModel.ethnicity.isGrandparentsOfJewishDescent == nil)
+                {
+                    cell?.detailTextLabel?.text = descent_temp[0];
+                }
+                else if(harvardExamModel.ethnicity.isGrandparentsOfJewishDescent == CommonAnswer.No)
+                {
+                    cell?.detailTextLabel?.text = "No";
+                }
+                else if(harvardExamModel.ethnicity.isGrandparentsOfJewishDescent == CommonAnswer.NotSure)
+                {
+                    cell?.detailTextLabel?.text = "Not Sure";
+                }
+                else if(harvardExamModel.ethnicity.isGrandparentsOfJewishDescent == CommonAnswer.PreferNotToAnswer)
+                {
+                    cell?.detailTextLabel?.text = "Prefer Not To Answer";
+                }
+                else if(harvardExamModel.ethnicity.isGrandparentsOfJewishDescent == CommonAnswer.Yes)
+                {
+                    cell?.detailTextLabel?.text = "Yes";
+                }
+            }
+            else if(indexPath.row == 1)
+            {
+                //        let family_bg_temp=["African American Or Black","American Indian Aleutian Eskimo","Asion Or Pacific Islander","Caribbean West Indian","Caucasian Or White","Other"]
+                if(harvardExamModel.ethnicity.racialBackground == nil)
+                {
+                    cell?.detailTextLabel?.text = family_bg_temp[0]
+                }
+                else if(harvardExamModel.ethnicity.racialBackground == Ethnicity.RacialBackground.AfricanAmericanOrBlack)
+                {
+                    cell?.detailTextLabel?.text = "frican American Or Black"
+                }
+                else if(harvardExamModel.ethnicity.racialBackground == Ethnicity.RacialBackground.American_Indian_Aleutian_Eskimo)
+                {
+                    cell?.detailTextLabel?.text = "American Indian Aleutian Eskimo"
+                }
+                else if(harvardExamModel.ethnicity.racialBackground == Ethnicity.RacialBackground.AsionOrPacificIslander)
+                {
+                    cell?.detailTextLabel?.text = "Asion Or Pacific Islander"
+                }
+                else if(harvardExamModel.ethnicity.racialBackground == Ethnicity.RacialBackground.Caribbean_WestIndian)
+                {
+                    cell?.detailTextLabel?.text = "Caribbean West Indian"
+                }
+                else if(harvardExamModel.ethnicity.racialBackground == Ethnicity.RacialBackground.CaucasianOrWhite)
+                {
+                    cell?.detailTextLabel?.text = family_bg_temp[4]
+                }
+                else if(harvardExamModel.ethnicity.racialBackground == Ethnicity.RacialBackground.Other)
+                {
+                    cell?.detailTextLabel?.text = family_bg_temp[5]
+                }
+                
+                //cell?.detailTextLabel?.text = "\(harvardExamModel.ethnicity.racialBackground)"
+            }
+        }
+
         
-        
-        
-        cell?.detailTextLabel?.text=String(indexPath.row)
+        //cell?.detailTextLabel?.text=String(indexPath.row)
         
         return cell!
         
@@ -176,21 +303,18 @@ extension HarvardCheckBaseInfo3VC:UIPickerViewDelegate{
         }
             
         else if(pickerView.tag == 1){
-            return "\(self.menopause_info[row] )"
+            return "\(self.menopause_info_temp[row] )"
         } else if(pickerView.tag == 2){
-            
-            
-            return "\(self.ovary_isremove[row])"
-            
+            return "\(self.ovary_isremove_temp[row])"
         }
         else if(pickerView.tag==3){
             return "\(self.ovary_remove_age[row])"
         }
         else if(pickerView.tag==4){
-            return "\(self.descent[row])"
+            return "\(self.descent_temp[row])"
         }
         else if(pickerView.tag==5){
-            return "\(self.family_bg[row])"
+            return "\(self.family_bg_temp[row])"
         }
         else  {
             
@@ -201,6 +325,7 @@ extension HarvardCheckBaseInfo3VC:UIPickerViewDelegate{
     }
     //
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        
             if(pickerView.tag == 0){
                 println("you selected the name: \(self.menarche_days[row])")
                 harvardExamModel.menstrualHistory.firstPeriodAga = self.menarche_days[row];
@@ -219,10 +344,12 @@ extension HarvardCheckBaseInfo3VC:UIPickerViewDelegate{
             }
             else if(pickerView.tag == 4)
             {
+                println("you selected the name: \(self.descent[row])")
                 harvardExamModel.ethnicity.isGrandparentsOfJewishDescent = self.descent[row]
             }
             else if(pickerView.tag == 5)
             {
+                println("you selected the name: \(self.family_bg[row])")
                 harvardExamModel.ethnicity.racialBackground = self.family_bg[row]
             }
     }
@@ -231,6 +358,7 @@ extension HarvardCheckBaseInfo3VC:UIPickerViewDelegate{
 extension HarvardCheckBaseInfo3VC:AlertPickerViewControllerDelegate{
     func didSelect(){
         println("didSelect")
+        tableBaseInfo3.reloadData();
     }
     func didCancel()
     {
