@@ -21,6 +21,8 @@ class RemindModel: NSObject {
     
     var suggestedExamlDate:NSDate!
     
+    var everyMonthSuggestDate:NSDate!
+    
     var needNotify:Bool!
     
 

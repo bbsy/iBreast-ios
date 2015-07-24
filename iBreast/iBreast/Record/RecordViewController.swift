@@ -11,6 +11,7 @@ import UIKit
 
 var recordData:NSDictionary?
 
+
 class RecordViewController: UIViewController,UITableViewDataSource ,UITableViewDelegate{
 
     @IBOutlet weak var tableView: UITableView!
@@ -54,25 +55,22 @@ class RecordViewController: UIViewController,UITableViewDataSource ,UITableViewD
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath){
         
-        alertPicker.showPickerInActionSheet(indexPath.row)
+        
         
         if(indexPath.section == 0) {
             if(indexPath.row==0){
-                
+                alertPicker.showPickerInActionSheet(indexPath.row)
             }
             else if(indexPath.row==1){
-                
+                alertPicker.showPickerInActionSheet(indexPath.row)
             }
             else if(indexPath.row==2){
-                
-            }
-            else if(indexPath.row==3){
-                
+                alertPicker.showPickerInActionSheet(indexPath.row)
             }
         }
         else if(indexPath.section == 1)
         {
-            
+            alertPicker.showPickerInActionSheet(indexPath.row+3)
         }
         else if(indexPath.section == 2){
             
@@ -141,9 +139,38 @@ class RecordViewController: UIViewController,UITableViewDataSource ,UITableViewD
         var label=cell?.textLabel?.text=(recordData!.allValues[indexPath.section] as! NSArray).objectAtIndex(indexPath.row) as! String;
         //
         
+        if(indexPath.section == 0)
+        {
+            if(indexPath.row == 0)
+            {
+                cell?.detailTextLabel?.text = "\(remindModel.lastPeriodFrom)"
+            }
+            else if(indexPath.row == 1)
+            {
+                cell?.detailTextLabel?.text = "\(remindModel.lastPeriodTo)"
+            }
+            else if(indexPath.row == 2)
+            {
+                cell?.detailTextLabel?.text = "\(remindModel.suggestedExamlDate)"
+            }
+        }
+        else if(indexPath.section == 1)
+        {
+            if(indexPath.row == 0)
+            {
+                cell?.detailTextLabel?.text = "\(remindModel.everyMonthSuggestDate)";
+            }
+        }
+//        else if(indexPath.section == 2)
+//        {
+//            if(indexPath.row == 1)
+//            {
+//                
+//            }
+//        }
         
         
-        cell?.detailTextLabel?.text=String(indexPath.row)
+        //cell?.detailTextLabel?.text=String(indexPath.row)
         
         return cell!
 

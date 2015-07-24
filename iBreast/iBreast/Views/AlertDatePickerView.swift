@@ -27,7 +27,6 @@ class AlertDatePickerView: NSObject {
         var alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.ActionSheet);
         alert.modalInPopover = true;
         
-        
         //Create a frame (placeholder/wrapper) for the picker and then create the picker
        // var pickerFrame: CGRect = CGRectMake(17, 52, 270, 100); // CGRectMake(left), top, width, height) - left and top are like margins
         
@@ -112,6 +111,16 @@ class AlertDatePickerView: NSObject {
         dateFormatter.dateFormat="yyyy-MM-dd"
         var dateStr = dateFormatter.stringFromDate(sender.date)
         
+        switch(sender.tag)
+        {
+        case 0:remindModel.lastPeriodFrom = sender.date;
+        case 1:remindModel.lastPeriodTo = sender.date;
+        case 2:remindModel.suggestedExamlDate = sender.date;
+        case 3:remindModel.everyMonthSuggestDate = sender.date;
+        case 4:remindModel.lastPeriodFrom = sender.date;
+        default:remindModel.lastPeriodFrom = sender.date;
+        }
+
             println("date select: \(dateStr)")
         
     }
