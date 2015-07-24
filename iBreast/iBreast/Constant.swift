@@ -14,6 +14,7 @@ class Constant: NSObject {
     
     static let EMPTY_STRING="EMPTY_STRING"
     
+    static let LESIONS_DATA_PATH = "LESIONS_DATA"
     override init(){
         super.init()
     }

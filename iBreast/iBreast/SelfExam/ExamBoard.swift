@@ -15,13 +15,19 @@ enum DrawingState {
 
 class ExamBoard: UIImageView {
     
+    var LESIONS_DATA_PATH:String!
+    
+    var userDefault = NSUserDefaults.standardUserDefaults()
+    
     private var drawingState: DrawingState!
     
-   
+    var idMax:Int! = 0
     
     var lesionsModels:NSMutableOrderedSet!
     
     var lesionViews:[LesionView]=[LesionView]()
+    
+    
     
  //   var brush: BaseBrush?
     
@@ -52,13 +58,19 @@ class ExamBoard: UIImageView {
 //        
 //        self.brush=PencilBrush()
         
+         LESIONS_DATA_PATH = "\(Constant.LESIONS_DATA_PATH)"
+        
         super.init(coder: aDecoder)
         
         var img=UIImage(named: "breast.png")
       
         self.image=img
         
-        showHistoryLesions()
+       if(fetch()==false){
+            showHistoryLesions()
+       }
+        
+        
         
     }
     
@@ -82,10 +94,11 @@ class ExamBoard: UIImageView {
         
         
         var model = LesionModel()
+        model.id = generateId()
         model.point.x = CGFloat(100)
         model.point.y = CGFloat(200)
         model.size = 30
-        model.firmness=LesionFirmness.SOFT
+        model.firmness=LesionModel.SOFT
         model.highlight=true
      
         
@@ -112,8 +125,72 @@ class ExamBoard: UIImageView {
       
     }
     
+    func generateId()->Int{
+        
+        var max:Int = -100
+        
+        for item  in lesionsModels{
+            var model = item as! LesionModel
+            if model.id > max{
+                max = item.id
+            }
+            
+        }
+        return ++max
+    }
+    
     func remove(){
         
+    }
+    
+    func save(){
+        
+        
+        var path=NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)[0] as! NSString
+        
+        var filePath=path.stringByAppendingPathComponent("lesionsData.archive")
+//        
+//        var data=NSMutableArray()
+//        
+//         for i in 1...10 {
+//                    var model = Model()
+//                    model.id = i
+//                    model.name = "zhongqihong"
+//                    data.addObject(model)
+//        }
+        
+        if(userDefault.objectForKey(LESIONS_DATA_PATH) != nil){
+            
+            userDefault.removeObjectForKey(LESIONS_DATA_PATH)
+        }
+        
+        var modelData:NSData = NSKeyedArchiver.archivedDataWithRootObject(lesionsModels)
+        userDefault.setObject(modelData, forKey: LESIONS_DATA_PATH)
+        
+        
+        
+    }
+    
+    func fetch() ->Bool{
+        
+        var deModel = userDefault.objectForKey(LESIONS_DATA_PATH)
+        
+        if deModel != nil{
+            var array:NSMutableOrderedSet = NSKeyedUnarchiver.unarchiveObjectWithData(deModel! as! NSData) as! NSMutableOrderedSet
+        
+            lesionsModels = NSMutableOrderedSet()
+        
+            for item in array {
+            
+                println((item as! LesionModel).highlight)
+                self.add(item as! LesionModel)
+            }
+            
+            return true
+        }
+        
+        return false
+
     }
     
     func add(item:LesionModel){

@@ -43,7 +43,7 @@ class LesionView: UIView {
         lesion.size=size
     }
     
-    func setFirmness(firmness:LesionFirmness){
+    func setFirmness(firmness:Int){
         lesion.firmness=firmness
     }
     

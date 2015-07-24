@@ -27,22 +27,24 @@ class SelfExamData: NSObject {
         
         
         
-        
+        cv0.id = 0
         cv0.size=30;
-        cv0.firmness=LesionFirmness.SOFT
+        cv0.firmness=LesionModel.SOFT
         cv0.highlight=true
         cv0.point.x=100
         cv0.point.y=140
+
         
+        cv1.id = 1
         cv1.size=40;
-        cv1.firmness=LesionFirmness.HARD
+        cv1.firmness=LesionModel.HARD
         cv1.highlight=false
         cv1.point.x=40
         cv1.point.y=60
         
-        
+        cv2.id = 2
         cv2.size=50;
-        cv2.firmness=LesionFirmness.MEDIUM
+        cv2.firmness=LesionModel.MEDIUM
         cv2.highlight=false
         cv2.point.x=69
         cv2.point.y=40

@@ -10,6 +10,12 @@ import UIKit
 
 class SelfExamEditorVC: UIViewController {
     
+    @IBAction func didSave(sender: AnyObject) {
+        
+        checkBoard.save()
+    }
+  
+    
     
     @IBOutlet weak var checkBoard: ExamBoard!
    
