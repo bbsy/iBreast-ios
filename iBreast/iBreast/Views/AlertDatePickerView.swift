@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol AlertDatePickerViewValueChanged{
+    func onValueChanged(date:NSDate,tag:Int)
+}
+
 class AlertDatePickerView: NSObject {
 
     
@@ -18,7 +22,7 @@ class AlertDatePickerView: NSObject {
     var dataSource: UIDatePicker? // default is nil. weak reference
     var delegate: UIPickerViewDelegate? // default is nil. weak reference
     
-    
+    var valueChangedDeletgete:AlertDatePickerViewValueChanged?
     
     
     func showPickerInActionSheet(tag:Int) {
@@ -111,6 +115,10 @@ class AlertDatePickerView: NSObject {
         dateFormatter.dateFormat="yyyy-MM-dd"
         var dateStr = dateFormatter.stringFromDate(sender.date)
         
+        if let dele = valueChangedDeletgete {
+            dele.onValueChanged(sender.date,tag: sender.tag)
+        }
+        
         switch(sender.tag)
         {
         case 0:remindModel.lastPeriodFrom = sender.date;
@@ -121,7 +129,7 @@ class AlertDatePickerView: NSObject {
         default:remindModel.lastPeriodFrom = sender.date;
         }
 
-            println("date select: \(dateStr)")
+        println("date select: \(dateStr)")
         
     }
 

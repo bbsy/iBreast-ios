@@ -32,14 +32,15 @@ class RecordViewController: UIViewController,UITableViewDataSource ,UITableViewD
         tableView.delegate=self
         
          alertPicker.mUIViewController=self
+        alertPicker.valueChangedDeletgete = self
         
-        var number:[Int]=[Int]()
-        
-        for i in 15...99 {
-            number.append(i)
-            
-            println(number[i-15])
-        }
+//        var number:[Int]=[Int]()
+//        
+//        for i in 15...99 {
+//            number.append(i)
+//            
+//            println(number[i-15])
+//        }
         
     }
 
@@ -219,4 +220,17 @@ class RecordViewController: UIViewController,UITableViewDataSource ,UITableViewD
     }
     */
 
+}
+
+extension RecordViewController:AlertDatePickerViewValueChanged{
+    
+    func onValueChanged(date:NSDate,tag:Int){
+        var dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat="yyyy-MM-dd"
+        var dateStr = dateFormatter.stringFromDate(date)
+        
+        tableView.reloadData()
+        
+        println("dateStr: \(dateStr), tag: \(tag)")
+    }
 }
