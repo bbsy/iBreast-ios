@@ -50,7 +50,7 @@ class SelfExamHisVC: UIViewController {
         if segue.identifier == "GoToLesionEditor" {
             var vc = segue.destinationViewController as! SelfExamEditorVC
             vc.maxId = selfExamHisList[selectedIndex].lastId
-            
+            vc.historyModel = selfExamHisList[selectedIndex]
             println("selectedIndex \(selectedIndex)")
             
         }

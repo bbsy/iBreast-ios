@@ -15,7 +15,7 @@ enum DrawingState {
 
 class ExamBoard: UIImageView {
     
-    
+     var historyModel:SelfExamHisModel?
 
     var didSave = false
  
@@ -110,6 +110,7 @@ class ExamBoard: UIImageView {
             
             
             deletedLesions.removeAll(keepCapacity: false)
+            addedLesions.removeAll(keepCapacity: false)
             
         }
         //如果用户在离开界面之前并没有点击 确认 。数据需要还原
@@ -188,6 +189,11 @@ class ExamBoard: UIImageView {
         lesionsData.save()
         
         didSave = true
+        
+        check()
+        
+        
+        didSave = false
     }
     
     func addToDB(model:LesionModel){
@@ -206,6 +212,25 @@ class ExamBoard: UIImageView {
         var circleView :LesionView=LesionView(frame: CGRectMake(circleCenter.x, circleCenter.y, circleWidth, circleHeight))
         
         circleView.lesion = item
+        
+        if let hisModel = historyModel {
+            if(hisModel.action == SelfExamHisModel.ADD){
+                for i in 0...hisModel.ids!.count-1{
+                    if item.id == hisModel.ids![i]{
+                         item.didAdd = true
+                    }
+                }
+               
+            }
+            else{
+                for i in 0...hisModel.ids!.count{
+                    if item.id == hisModel.ids![i]{
+                        item.didDelete = true
+                    }
+                }
+                
+            }
+        }
         
         hightlightedLesion = circleView
         

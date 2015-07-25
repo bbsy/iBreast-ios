@@ -64,7 +64,16 @@ class LesionView: UIView {
         CGContextSetLineWidth(context, 5.0);
         
         // Set the circle outerline-colour
-        UIColor.redColor().set()
+        if(lesion.didAdd == true){
+            UIColor.yellowColor().set()
+        }
+        else if(lesion.didDelete == true){
+            UIColor.redColor().set()
+        }
+        else {
+            UIColor.grayColor().set()
+        }
+        
         
         // Create Circle
         CGContextAddArc(context, (frame.size.width)/2, frame.size.height/2, (frame.size.width - 10)/2, 0.0, CGFloat(M_PI * 2.0), 1)
