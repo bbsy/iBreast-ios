@@ -850,7 +850,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cDQ-h0-ekO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1022" y="-278"/>
+            <point key="canvasLocation" x="974" y="-643"/>
         </scene>
         <!--自检历史-->
         <scene sceneID="5b0-VN-Q5o">
@@ -900,7 +900,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="H0x-Wv-bDi" kind="push" id="reb-EZ-Xqd"/>
+                                            <segue destination="H0x-Wv-bDi" kind="push" identifier="GoToLesionEditor" id="reb-EZ-Xqd"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -912,7 +912,7 @@
                     <navigationItem key="navigationItem" title="自检历史" id="yDH-39-VP0">
                         <barButtonItem key="rightBarButtonItem" title="开始" id="xPU-Dy-51e">
                             <connections>
-                                <segue destination="Doq-Ff-19J" kind="push" id="ehp-Nj-E6i"/>
+                                <segue destination="Doq-Ff-19J" kind="push" identifier="GoToLesson" id="ehp-Nj-E6i"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -939,7 +939,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="RecordListTag" textLabel="MxT-oW-SJ9" detailTextLabel="Ors-pw-pcL" style="IBUITableViewCellStyleValue1" id="I6F-rx-PL0">
-                                        <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="86" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="I6F-rx-PL0" id="lYN-yE-oBq">
                                             <rect key="frame" x="0.0" y="0.0" width="287" height="43.5"/>
@@ -1156,7 +1156,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="appointmentCell" rowHeight="74" id="2rY-n9-slo">
-                                        <rect key="frame" x="0.0" y="22" width="320" height="74"/>
+                                        <rect key="frame" x="0.0" y="86" width="320" height="74"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2rY-n9-slo" id="gfS-8j-KPi">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="73.5"/>
@@ -1271,6 +1271,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="MiW-7G-r87"/>
+        <segue reference="reb-EZ-Xqd"/>
     </inferredMetricsTieBreakers>
 </document>

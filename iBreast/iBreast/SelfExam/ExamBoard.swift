@@ -15,19 +15,23 @@ enum DrawingState {
 
 class ExamBoard: UIImageView {
     
-    var LESIONS_DATA_PATH:String!
     
-    var userDefault = NSUserDefaults.standardUserDefaults()
+
+    var didSave = false
+ 
+    var lesionsData = SelfExamData()
     
     private var drawingState: DrawingState!
     
-    var idMax:Int! = 0
+  
     
     var lesionsModels:NSMutableOrderedSet!
     
     var lesionViews:[LesionView]=[LesionView]()
     
     
+    var addedLesions:[LesionModel] = [LesionModel]()
+    var deletedLesions:[LesionModel] = [LesionModel]()
     
  //   var brush: BaseBrush?
     
@@ -58,7 +62,7 @@ class ExamBoard: UIImageView {
 //        
 //        self.brush=PencilBrush()
         
-         LESIONS_DATA_PATH = "\(Constant.LESIONS_DATA_PATH)"
+        
         
         super.init(coder: aDecoder)
         
@@ -66,18 +70,64 @@ class ExamBoard: UIImageView {
       
         self.image=img
         
-       if(fetch()==false){
-            showHistoryLesions()
-       }
+      
+       
+    
         
         
         
     }
     
-    func showHistoryLesions(){
+    func check(){
+        if didSave == true {
+            //把临时列表的数据清空，没作用了
+           
+            
+          
+            if(deletedLesions.isEmpty && addedLesions.isEmpty){
+                //什么都没干
+            }
+            else if(deletedLesions.isEmpty && !addedLesions.isEmpty){
+                //增加了
+                
+              
+//                
+                SelfExamHisManager.getInstance().addHistory(addedLesions)
+                
+                
+            }
+            else if(!deletedLesions.isEmpty && addedLesions.isEmpty){
+                //减少了
+                
+//                var model = deletedLesions.removeLast()
+//                
+//                SelfExamHisManager.getInstance().addHistory(model)
+            }
+            else {
+                //增加了新的，减少了老的
+                 //SelfExamHisManager.getInstance().addHistory(item.lesion)
+            }
+            
+            
+            deletedLesions.removeAll(keepCapacity: false)
+            
+        }
+        //如果用户在离开界面之前并没有点击 确认 。数据需要还原
+        else {
+            
+            //恢复数据库中的数据
+            
+            lesionsData.addLesions(deletedLesions)
+            lesionsData.removeLesions(addedLesions)
+            
+        }
+    }
+    
+    
+    func showHistoryLesions(maxId:Int){
         
-        var lesionsData = SelfExamData()
-        lesionsModels = lesionsData.getLesions()
+        
+        lesionsModels = lesionsData.getLesions(maxId)
         
         for obj in lesionsModels {
             
@@ -86,21 +136,21 @@ class ExamBoard: UIImageView {
 
         }
         
-        
-        
     }
     
     func addNewLesion(){
         
         
         var model = LesionModel()
-        model.id = generateId()
+        model.id = lesionsData.generateId()
         model.point.x = CGFloat(100)
         model.point.y = CGFloat(200)
         model.size = 30
         model.firmness=LesionModel.SOFT
         model.highlight=true
-     
+        
+        
+        addedLesions.append(model)
         
         add(model)
         
@@ -116,82 +166,36 @@ class ExamBoard: UIImageView {
                 
                 item.removeFromSuperview()
                 lesionViews.removeAtIndex(index)
-                lesionsModels.removeObject(item.lesion)
+                lesionsData.removeLesion(item.lesion)
                 hightlightedLesion = nil
+                
+                //如果删除的这个
+                item.lesion.didDelete = true
+                
+                deletedLesions.append(item.lesion)
+                
             }
             
         }
+        
         
       
     }
     
-    func generateId()->Int{
-        
-        var max:Int = -100
-        
-        for item  in lesionsModels{
-            var model = item as! LesionModel
-            if model.id > max{
-                max = item.id
-            }
-            
-        }
-        return ++max
-    }
-    
-    func remove(){
-        
-    }
-    
+       
     func save(){
         
+        lesionsData.save()
         
-        var path=NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)[0] as! NSString
-        
-        var filePath=path.stringByAppendingPathComponent("lesionsData.archive")
-//        
-//        var data=NSMutableArray()
-//        
-//         for i in 1...10 {
-//                    var model = Model()
-//                    model.id = i
-//                    model.name = "zhongqihong"
-//                    data.addObject(model)
-//        }
-        
-        if(userDefault.objectForKey(LESIONS_DATA_PATH) != nil){
-            
-            userDefault.removeObjectForKey(LESIONS_DATA_PATH)
-        }
-        
-        var modelData:NSData = NSKeyedArchiver.archivedDataWithRootObject(lesionsModels)
-        userDefault.setObject(modelData, forKey: LESIONS_DATA_PATH)
-        
-        
-        
+        didSave = true
     }
     
-    func fetch() ->Bool{
-        
-        var deModel = userDefault.objectForKey(LESIONS_DATA_PATH)
-        
-        if deModel != nil{
-            var array:NSMutableOrderedSet = NSKeyedUnarchiver.unarchiveObjectWithData(deModel! as! NSData) as! NSMutableOrderedSet
-        
-            lesionsModels = NSMutableOrderedSet()
-        
-            for item in array {
-            
-                println((item as! LesionModel).highlight)
-                self.add(item as! LesionModel)
-            }
-            
-            return true
-        }
-        
-        return false
-
+    func addToDB(model:LesionModel){
+       
+        lesionsData.addLesion(model)
     }
+    
+    
     
     func add(item:LesionModel){
         
@@ -210,7 +214,7 @@ class ExamBoard: UIImageView {
             model.highlight = false
         }
         item.highlight = true
-        lesionsModels.addObject(item)
+        addToDB(item)
         lesionViews.append(circleView)
         self.addSubview(circleView)
 

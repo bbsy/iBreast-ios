@@ -14,12 +14,14 @@ class SelfExamHisManager: NSObject {
     
     static let NUM_MAX = Int.max
     
+    static let TITLE:String! = "Add New  Lesion"
+    
     //表示一次检索最多返回10条数据
     static let PAGE_NUM = 10
     
     
     //缓存最后一次检索的数据
-    var historyList:[SelfExamHisModel]=[SelfExamHisModel]()
+    var historyList:[SelfExamHisModel]!;
     
     var userName:String!
     
@@ -44,6 +46,7 @@ class SelfExamHisManager: NSObject {
             userName = Constant.DEFAULT_USER_NAME
         }
         
+        historyList = AppDataState.getInstance().getSelfExamHisList()
     }
     
     
@@ -92,16 +95,17 @@ class SelfExamHisManager: NSObject {
     
     func fetchHisRecord(offset:Int,num:Int)->AnyObject?{
         
-        for var i = 0 ;i<num;++i {
-            
-            var model=SelfExamHisModel(time: NSDate(), imageUrl: "empty", title: "title\(offset+i)", detail: "detail\(offset+i)")
-            
-            historyList.append(model)
-            
-        }
+//        for var i = 0 ;i<num;++i {
+//            
+//            var model=SelfExamHisModel(lastId:100,action:1,time: NSDate(), imageUrl: "empty", title: "title\(offset+i)", detail: "detail\(offset+i)")
+//            
+//            historyList.append(model)
+//            
+//        }
         
         return historyList
     }
+    
     
     /**
     * 返回数据库中记录的总个数
@@ -111,6 +115,41 @@ class SelfExamHisManager: NSObject {
         
         return 100
     }
+    
+    func addHistory(lesions:[LesionModel]!){
+    
+        if(lesions.isEmpty){
+            
+            return
+        }
+        
+        var title:String!
+        var action:Int = SelfExamHisModel.DELETE
+        var lesion:LesionModel = lesions.last!
+        
+        var ids:[Int] = [Int]()
+        
+        for item in lesions {
+            ids.append(item.id)
+        }
+        
+        if(lesion.didDelete==false){
+            action = SelfExamHisModel.ADD
+        }
+        if(action == SelfExamHisModel.ADD){
+            title = "增加一个硬块"
+        }
+        else{
+            title = "减少一个硬块"
+        }
+        
+        var his=SelfExamHisModel(lastId:lesion.id,action:action,time: NSDate(), imageUrl: "empty", title: title, detail:"\(lesion.firmness) ,\(lesion.size)",ids: ids)
+        
+        historyList.append(his)
+        
+    }
+    
+    
     
     
    

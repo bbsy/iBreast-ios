@@ -25,6 +25,7 @@ class LesionModel: NSObject{
     var y:Float! = 0
     var allowedMoving:Bool! = false
     var didDelete:Bool! = false
+    var didAdd:Bool! = false
     
    
     
@@ -39,6 +40,8 @@ class LesionModel: NSObject{
         _encoder.encodeObject(self.y,forKey:"_y")
        _encoder.encodeObject(self.allowedMoving,forKey:"_allowedMoving")
            _encoder.encodeObject(self.didDelete,forKey:"_didDelete")
+          _encoder.encodeObject(self.didAdd,forKey:"_didAdd")
+        
     }
     
     override init(){
@@ -57,6 +60,7 @@ class LesionModel: NSObject{
         self.y = decoder.decodeObjectForKey("_y") as! Float
          self.allowedMoving = decoder.decodeObjectForKey("_allowedMoving") as! Bool
          self.didDelete = decoder.decodeObjectForKey("_didDelete") as! Bool
+         self.didAdd = decoder.decodeObjectForKey("_didAdd") as! Bool
     }
 
     

@@ -25,6 +25,7 @@
 		8A6EB9971B46DBDF0003CFAB /* HarvardCheckBaseInfo2VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6EB9961B46DBDF0003CFAB /* HarvardCheckBaseInfo2VC.swift */; };
 		8A6EB9991B46E40E0003CFAB /* HarvardCheckBaseInfo3VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6EB9981B46E40E0003CFAB /* HarvardCheckBaseInfo3VC.swift */; };
 		8A6EB99D1B46EA5A0003CFAB /* HarvardCheckBaseInfo4VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6EB99C1B46EA5A0003CFAB /* HarvardCheckBaseInfo4VC.swift */; };
+		8A7040931B6266BA00B7923A /* AppDataState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A7040921B6266BA00B7923A /* AppDataState.swift */; };
 		8A74DEE11B461CAB0091DA2E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A74DEE01B461CAB0091DA2E /* AppDelegate.swift */; };
 		8A74DEE31B461CAB0091DA2E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A74DEE21B461CAB0091DA2E /* ViewController.swift */; };
 		8A74DEE61B461CAB0091DA2E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A74DEE41B461CAB0091DA2E /* Main.storyboard */; };
@@ -143,6 +144,7 @@
 		8A6EB9961B46DBDF0003CFAB /* HarvardCheckBaseInfo2VC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HarvardCheckBaseInfo2VC.swift; sourceTree = "<group>"; };
 		8A6EB9981B46E40E0003CFAB /* HarvardCheckBaseInfo3VC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HarvardCheckBaseInfo3VC.swift; sourceTree = "<group>"; };
 		8A6EB99C1B46EA5A0003CFAB /* HarvardCheckBaseInfo4VC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HarvardCheckBaseInfo4VC.swift; sourceTree = "<group>"; };
+		8A7040921B6266BA00B7923A /* AppDataState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDataState.swift; sourceTree = "<group>"; };
 		8A74DEDB1B461CAB0091DA2E /* iBreast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iBreast.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A74DEDF1B461CAB0091DA2E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8A74DEE01B461CAB0091DA2E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -358,6 +360,7 @@
 				8A93E2BF1B58A4B600B734FA /* UserDefaults.swift */,
 				8A93E36A1B58E6C100B734FA /* User.swift */,
 				8A93E36C1B58E70F00B734FA /* UserManager.swift */,
+				8A7040921B6266BA00B7923A /* AppDataState.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -560,6 +563,7 @@
 				8A7BB0751B4969F500AFE5E2 /* SelfExamEditorVC.swift in Sources */,
 				8A5F92571B5D4F7B00F5BB81 /* RemindModel.swift in Sources */,
 				8A93E09C1B4BACE200B734FA /* ClinicsHistoryVC.swift in Sources */,
+				8A7040931B6266BA00B7923A /* AppDataState.swift in Sources */,
 				8A93E37B1B595EAA00B734FA /* SelfExamHisVC.swift in Sources */,
 				8A74DEE11B461CAB0091DA2E /* AppDelegate.swift in Sources */,
 			);

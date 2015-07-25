@@ -11,11 +11,50 @@ import UIKit
 class SelfExamData: NSObject {
     
     
-    var lesions=NSMutableOrderedSet()
+    var lesions:NSMutableOrderedSet!
+    
+    var localLesions = NSMutableOrderedSet()
+    
+    var userDefault = NSUserDefaults.standardUserDefaults()
+    
+    var LESIONS_DATA_PATH:String = "\(Constant.LESIONS_DATA_PATH)"
+    
+    
     
     override init(){
         super.init();
         
+       lesions = AppDataState.getInstance().getLesionList()
+        
+    }
+    
+    
+    func getLesions(maxId:Int)->NSMutableOrderedSet{
+        
+        if(fetch(maxId) == false)
+        {
+            setDefalutData()
+        }
+        return localLesions
+    }
+    
+    func addLesion(model:LesionModel){
+        
+        lesions.addObject(model)
+        
+    }
+    func removeLesion(model:LesionModel){
+        lesions.removeObject(model)
+    }
+    func addLesions(models:[LesionModel]){
+        lesions.addObjectsFromArray(models)
+    }
+    
+    func removeLesions(models:[LesionModel]){
+        lesions.removeObjectsInArray(models)
+    }
+    
+    func setDefalutData(){
         var cv0=LesionModel()
         lesions.addObject(cv0)
         
@@ -33,7 +72,7 @@ class SelfExamData: NSObject {
         cv0.highlight=true
         cv0.point.x=100
         cv0.point.y=140
-
+        
         
         cv1.id = 1
         cv1.size=40;
@@ -48,15 +87,76 @@ class SelfExamData: NSObject {
         cv2.highlight=false
         cv2.point.x=69
         cv2.point.y=40
+    }
+    
+    func generateId()->Int{
         
+        var max:Int = 0
+        
+        for item  in lesions{
+            var model = item as! LesionModel
+            if model.id > max {
+                max = item.id
+            }
+            
+        }
+        return ++max
     }
     
     
-    func getLesions()->NSMutableOrderedSet{
+    func save(){
         
-        return lesions
+        
+        var path=NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)[0] as! NSString
+        
+        var filePath=path.stringByAppendingPathComponent("lesionsData.archive")
+        if(userDefault.objectForKey(LESIONS_DATA_PATH) != nil){
+            
+            userDefault.removeObjectForKey(LESIONS_DATA_PATH)
+        }
+        
+        var modelData:NSData = NSKeyedArchiver.archivedDataWithRootObject(lesions)
+        userDefault.setObject(modelData, forKey: LESIONS_DATA_PATH)
+        
+        
+        
     }
+
     
+    func fetch(maxId:Int)->Bool{
+        
+        
+        localLesions.removeAllObjects()
+        lesions.removeAllObjects()
+        
+            var deModel = userDefault.objectForKey(LESIONS_DATA_PATH)
+            
+            if deModel != nil{
+                var array:NSMutableOrderedSet = NSKeyedUnarchiver.unarchiveObjectWithData(deModel! as! NSData) as! NSMutableOrderedSet
+                
+                println("max id is \(maxId)")
+              
+                
+                for item in array {
+                    
+                    if(item.id <= maxId){
+                       self.localLesions.addObject(item as! LesionModel)
+                    }
+                    else {
+                        println((item as! LesionModel).id)
+                    }
+                    lesions.addObject(item)
+                    
+                }
+                
+                return true
+            }
+            
+            return false
+            
+        
+
+    }
     
     
     

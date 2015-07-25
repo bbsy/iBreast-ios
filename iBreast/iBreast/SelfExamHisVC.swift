@@ -9,29 +9,53 @@
 import UIKit
 
 class SelfExamHisVC: UIViewController {
-
-    @IBOutlet weak var tableView: UITableView!
+    
     
     var selfExamHisList:[SelfExamHisModel]!
     
-    override func viewDidLoad() {
+    var selectedIndex:Int = 0
+
+
+    @IBOutlet weak var tableView: UITableView!
+        override func viewDidLoad() {
         super.viewDidLoad()
 
-         var data=SelfExamHisManager.getInstance().fetchHisRecord(0, num: 10)
+        tableView.dataSource = self
+        tableView.delegate = self
+        
+    }
+    override func viewWillAppear(animated: Bool){
+        initData()
+        tableView.reloadData()
+        
+    }
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    func initData(){
+        
+        var data=SelfExamHisManager.getInstance().fetchHisRecord(0, num: 10)
         
         if let list = data {
             
             selfExamHisList = list as! [SelfExamHisModel]
         }
         
-        tableView.dataSource = self
-        
-        
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        if segue.identifier == "GoToLesionEditor" {
+            var vc = segue.destinationViewController as! SelfExamEditorVC
+            vc.maxId = selfExamHisList[selectedIndex].lastId
+            
+            println("selectedIndex \(selectedIndex)")
+            
+        }
+        
+        
     }
     
 
@@ -48,11 +72,16 @@ class SelfExamHisVC: UIViewController {
 }
 
 
-extension SelfExamHisVC:UITableViewDataSource{
+extension SelfExamHisVC:UITableViewDataSource,UITableViewDelegate{
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
         
         return selfExamHisList.count
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath){
+        println("did select: \(selectedIndex)")
+        selectedIndex = indexPath.row
     }
     
     // Row display. Implementers should *always* try to reuse cells by setting each cell's reuseIdentifier and querying for available reusable cells with dequeueReusableCellWithIdentifier:

@@ -10,6 +10,9 @@ import UIKit
 
 class SelfExamEditorVC: UIViewController {
     
+    //定义一个变量 存储记录中最后一个lesion的Id
+    var maxId:Int = Int.max
+    
     @IBAction func didSave(sender: AnyObject) {
         
         checkBoard.save()
@@ -23,6 +26,7 @@ class SelfExamEditorVC: UIViewController {
     
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+       
         
     }
 
@@ -37,7 +41,16 @@ class SelfExamEditorVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+     
+        
+        checkBoard.showHistoryLesions(maxId)
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewDidDisappear(animated: Bool) {
+        
+        checkBoard.check()
+        
     }
 
     override func didReceiveMemoryWarning() {
