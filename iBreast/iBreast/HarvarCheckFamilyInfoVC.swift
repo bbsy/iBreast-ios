@@ -34,6 +34,8 @@ class HarvarCheckFamilyInfoVC: UIViewController {
         pickerAlert.dataSource = self
         pickerAlert.delegate = self
         pickerAlert.mUIViewController = self
+        pickerAlert.mViewControllerDelegate=self
+
         
         tableView.dataSource=self
         tableView.delegate=self
@@ -66,6 +68,9 @@ class HarvarCheckFamilyInfoVC: UIViewController {
 
 }
 
+var cancer = "";
+var ageTemp = 10;
+var sectionId = 0;
 extension HarvarCheckFamilyInfoVC:UITableViewDataSource,UITableViewDelegate{
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath){
@@ -77,11 +82,13 @@ extension HarvarCheckFamilyInfoVC:UITableViewDataSource,UITableViewDelegate{
             if(indexPath.row==familyInfos![indexPath.section]._cancerCount-1)
             {
                 println("add new item in the section")
-                
-                var newItem=familyInfos![indexPath.section]
-                newItem.addCancer("第\(familyInfos![indexPath.section]._cancerCount)次癌症", age:20)
-                
-                tableView.reloadData()
+                tag = 1
+                sectionId = indexPath.section;
+                pickerAlert.showPickerInActionSheet(indexPath.row)
+//                var newItem=familyInfos![indexPath.section]
+//                newItem.addCancer(cancer, age:20)
+////
+//                tableView.reloadData()
                 
             }
             else if(indexPath.row == 0){//选择血缘关系
@@ -198,6 +205,23 @@ extension HarvarCheckFamilyInfoVC:UITableViewDataSource,UITableViewDelegate{
     }
 }
 
+
+extension HarvarCheckFamilyInfoVC:AlertPickerViewControllerDelegate{
+    func didSelect(){
+        println("didSelect")
+        
+        var newItem=familyInfos![sectionId]
+        newItem.addCancer(cancer,age:ageTemp)
+        //
+        tableView.reloadData()
+        //tableBaseInof2.reloadData();
+    }
+    func didCancel()
+    {
+        println("didCancel")
+    }
+}
+
 extension HarvarCheckFamilyInfoVC:UIPickerViewDataSource ,UIPickerViewDelegate{
     
     // returns the number of 'columns' to display.
@@ -253,8 +277,19 @@ extension HarvarCheckFamilyInfoVC:UIPickerViewDataSource ,UIPickerViewDelegate{
         }
     }
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int){
-        println("component: \(component), row: \(row)")
+        
+        if(component == 0)
+        {
+            cancer = "\(mHarvardCheckModel.cancersForSelf[row])"
+        }
+        else
+        {
+            ageTemp = mHarvardCheckModel.age[row]
+        }
+//
+//        println("size: \(mHarvardCheckModel.age.count), cancer: \(mHarvardCheckModel.cancersForSelf[row])   age:\(mHarvardCheckModel.age[row])")
     }
+    
     //设置行的长度
     func pickerView(pickerView: UIPickerView, widthForComponent component: Int) -> CGFloat{
         if(component == 0){
