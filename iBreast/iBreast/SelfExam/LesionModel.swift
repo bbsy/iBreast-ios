@@ -24,8 +24,11 @@ class LesionModel: NSObject{
     var x:Float! = 0
     var y:Float! = 0
     var allowedMoving:Bool! = false
+    //在记录中被删除
     var didDelete:Bool! = false
+    //在记录中被增加
     var didAdd:Bool! = false
+  
     
    
     
