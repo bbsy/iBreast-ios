@@ -8,13 +8,16 @@
 
 import UIKit
 
-var mHarvardCheckModel:HarvardCheckModel?
+var mHarvardCheckModel:HarvardCheckModel!
 
 class HarvarCheckFamilyInfoVC: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     var familyInfos:[HarvardCheckModel.HarvardCheckFamilyInfo]?
-
+    //0 表示选择血缘关系， 1 把表示选择癌症和年纪
+    var tag:Int = 0
+    var age:[Int]=[Int]()
+    let pickerAlert:AlertPickerViewController=AlertPickerViewController()
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -28,8 +31,20 @@ class HarvarCheckFamilyInfoVC: UIViewController {
         
         familyInfos=mHarvardCheckModel?.familyInfos
         
+        pickerAlert.dataSource = self
+        pickerAlert.delegate = self
+        pickerAlert.mUIViewController = self
+        
         tableView.dataSource=self
         tableView.delegate=self
+        
+        
+        
+                for i in 1...108 {
+                    age.append(i)
+        
+                }
+    
         
     }
 
@@ -68,6 +83,14 @@ extension HarvarCheckFamilyInfoVC:UITableViewDataSource,UITableViewDelegate{
                 
                 tableView.reloadData()
                 
+            }
+            else if(indexPath.row == 0){//选择血缘关系
+                 tag = 0
+                 pickerAlert.showPickerInActionSheet(indexPath.row)
+            }
+            else {//选择癌症历史
+                tag = 1
+                pickerAlert.showPickerInActionSheet(indexPath.row)
             }
         }
         else{
@@ -172,5 +195,85 @@ extension HarvarCheckFamilyInfoVC:UITableViewDataSource,UITableViewDelegate{
     {
         //最后一个是“增加”项
         return familyInfos!.count+1
+    }
+}
+
+extension HarvarCheckFamilyInfoVC:UIPickerViewDataSource ,UIPickerViewDelegate{
+    
+    // returns the number of 'columns' to display.
+    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int{
+        
+        return 2
+        
+    }
+    
+    // returns the # of rows in each component..
+    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int{
+        
+        if(component==0)
+        {
+            if(tag == 1){
+             return mHarvardCheckModel.cancersForSelf.count
+            }
+            else {
+                return mHarvardCheckModel.relationShips.count
+            }
+        }
+        else
+        {
+            if(tag == 1){
+                return age.count;
+            }
+            else {
+                return mHarvardCheckModel.bloodLines.count
+            }
+        }
+    }
+    
+    
+    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String!{
+        if(component==0)
+        {
+            if(tag == 1){
+                return mHarvardCheckModel.cancersForSelf[row];
+            }
+            else{
+                return mHarvardCheckModel.relationShips[row];
+            }
+            
+        }
+        else
+        {
+             if(tag == 1){
+                return "\(age[row])"
+            }
+             else{
+                 return "\(mHarvardCheckModel.bloodLines[row])"
+            }
+        }
+    }
+    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int){
+        println("component: \(component), row: \(row)")
+    }
+    //设置行的长度
+    func pickerView(pickerView: UIPickerView, widthForComponent component: Int) -> CGFloat{
+        if(component == 0){
+            if(tag == 1){
+                return 240
+            }
+            else {
+                return 150
+            }
+        }
+        else {
+            if(tag == 1){
+                
+                return 60
+            }
+            else {
+                return 150
+            }
+
+        }
     }
 }

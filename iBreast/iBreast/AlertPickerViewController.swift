@@ -24,29 +24,37 @@ class AlertPickerViewController: NSObject {
     var dataSource: UIPickerViewDataSource? // default is nil. weak reference
     var delegate: UIPickerViewDelegate? // default is nil. weak reference
     
+    var picker: UIPickerView!
     
+    override init(){
+        
+    }
     
     
     func showPickerInActionSheet(tag:Int) {
+        
+        
         var title = ""
         var message = "\n\n\n\n\n\n\n\n\n\n";
         var alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.ActionSheet);
         alert.modalInPopover = true;
-        
-        
         //Create a frame (placeholder/wrapper) for the picker and then create the picker
-        var pickerFrame: CGRect = CGRectMake(17, 52, 270, 100); // CGRectMake(left), top, width, height) - left and top are like margins
-        var picker: UIPickerView = UIPickerView(frame: pickerFrame);
+        //var pickerFrame: CGRect = CGRectMake(17, 52, 270, 100); // CGRectMake(left), top, width, height) - left and top are like margins
+        picker = UIPickerView();
+        var pickerFrame: CGRect = CGRectMake(0, 52, 300, 100); // CGRectMake(left), top, width,
+        picker.frame = pickerFrame
+        alert.view.addSubview(picker);
         
         
         picker.tag=tag
         
         //set the pickers datasource and delegate
-        picker.delegate = delegate;
+
+        picker.delegate = delegate ;
         picker.dataSource = dataSource;
         
         //Add the picker to the alert controller
-        alert.view.addSubview(picker);
+        
         
         //Create the toolbar view - the view witch will hold our 2 buttons
         var toolFrame = CGRectMake(17, 5, 270, 45);
@@ -101,6 +109,11 @@ class AlertPickerViewController: NSObject {
 
         mUIViewController!.dismissViewControllerAnimated(true, completion: nil);
         // We dismiss the alert. Here you can add your additional code to execute when cancel is pressed
+    }
+    
+    func getPicker()->UIPickerView{
+        
+        return picker
     }
 
 }

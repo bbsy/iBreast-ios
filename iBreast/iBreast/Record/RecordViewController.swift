@@ -34,13 +34,7 @@ class RecordViewController: UIViewController,UITableViewDataSource ,UITableViewD
          alertPicker.mUIViewController=self
         alertPicker.valueChangedDeletgete = self
         
-//        var number:[Int]=[Int]()
-//        
-//        for i in 15...99 {
-//            number.append(i)
-//            
-//            println(number[i-15])
-//        }
+
         
     }
 
