@@ -111,25 +111,17 @@ class AlertDatePickerView: NSObject {
     
     func datePickerValueChange(sender: UIDatePicker) {
         
-        var dateFormatter = NSDateFormatter()
-        dateFormatter.dateFormat="yyyy-MM-dd"
-        var dateStr = dateFormatter.stringFromDate(sender.date)
+//        var dateFormatter = NSDateFormatter()
+//        dateFormatter.dateFormat="yyyy-MM-dd"
+//        var dateStr = dateFormatter.stringFromDate(sender.date)
+
+
         
         if let dele = valueChangedDeletgete {
             dele.onValueChanged(sender.date,tag: sender.tag)
         }
-        
-        switch(sender.tag)
-        {
-        case 0:remindModel.lastPeriodFrom = sender.date;
-        case 1:remindModel.lastPeriodTo = sender.date;
-        case 2:remindModel.suggestedExamlDate = sender.date;
-        case 3:remindModel.everyMonthSuggestDate = sender.date;
-        case 4:remindModel.lastPeriodFrom = sender.date;
-        default:remindModel.lastPeriodFrom = sender.date;
-        }
 
-        println("date select: \(dateStr)")
+//        println("date select: \(dateStr)")
         
     }
 

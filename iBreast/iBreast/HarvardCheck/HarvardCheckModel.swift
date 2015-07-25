@@ -14,10 +14,13 @@ class HarvardCheckModel: NSObject {
     var relationShips = ["Self","Mother","Father","Grandmother","Grandfather","Grandmother","Grandfather","Aunt","Brotser","Cousin","Cousin(Female)","Cousin(Male)","Daughter","Nephew","Niece","Sister","Son","Uncle","Unknow"];
     var bloodLines = ["Maternal","Paternal","Both"];
     
+    // this list for self
     var cancersForSelf = ["Brain Cancer","Breast Cancer","Cervical Cancer","Colon or Rectal Cancer","Hodgkins Lymphoma","Kidney or Bladder Cancer","Leukemia","Liver Cancer","Lung Cancer","Lymphoma(Non-Hodgkins)","Melanoma","Ovarian Cancer","Pancreatic Cancer","Prostate Cancer","Sarcoma","Stomach Cancer","Thyroid Cancer","Uterine Cancer","Other"];
     
+    // this list for maternal
     var cancersForMaternal = ["Brain Cancer","Breast Cancer","Cervical Cancer","Colon or Rectal Cancer","Hodgkins Lymphoma","Kidney or Bladder Cancer","Leukemia","Liver Cancer","Lung Cancer","Lymphoma(Non-Hodgkins)","Melanoma","Ovarian Cancer","Pancreatic Cancer","Sarcoma","Stomach Cancer","Thyroid Cancer","Uterine Cancer","Other"];
     
+    // this list for paternal
     var cancersForPaternal = ["Brain Cancer","Breast Cancer","Colon or Rectal Cancer","Hodgkins Lymphoma","Kidney or Bladder Cancer","Leukemia","Liver Cancer","Lung Cancer","Lymphoma(Non-Hodgkins)","Melanoma","Pancreatic Cancer","Prostate Cancer","Sarcoma","Stomach Cancer","Thyroid Cancer","Uterine Cancer","Other"];
     
     var age:[Int]=[Int]();
@@ -32,31 +35,31 @@ class HarvardCheckModel: NSObject {
         
         // self
         var family1 = HarvardCheckFamilyInfo(relationship: relationShips[0], bloodline: bloodLines[2], cancerName: cancersForSelf[0], age: age[25]);
-        family1.addCancer( "brain",age: 25)
+        //family1.addCancer( "brain",age: 25)
         
         // mather
         var family2 = HarvardCheckFamilyInfo(relationship: relationShips[1], bloodline: bloodLines[0], cancerName: cancersForSelf[0], age: age[25]);
-        family2.addCancer( "brain",age: 25)
+        //family2.addCancer( "brain",age: 25)
 
         // father
         var family3 = HarvardCheckFamilyInfo(relationship: relationShips[2], bloodline: bloodLines[1], cancerName: cancersForSelf[0], age: age[25]);
-        family3.addCancer( "brain",age: 25)
+        //family3.addCancer( "brain",age: 25)
 
         // grandmother
         var family4 = HarvardCheckFamilyInfo(relationship: relationShips[3], bloodline: bloodLines[0], cancerName: cancersForSelf[0], age: age[25]);
-        family4.addCancer( "brain",age: 25)
+        //family4.addCancer( "brain",age: 25)
 
         // grandfather
         var family5 = HarvardCheckFamilyInfo(relationship: relationShips[4], bloodline: bloodLines[0], cancerName: cancersForSelf[0], age: age[25]);
-        family5.addCancer( "brain",age: 25)
+        //family5.addCancer( "brain",age: 25)
 
         // grandmother (p)
         var family6 = HarvardCheckFamilyInfo(relationship: relationShips[5], bloodline: bloodLines[1], cancerName: cancersForSelf[0], age: age[25]);
-        family6.addCancer( "brain",age: 25)
+        //family6.addCancer( "brain",age: 25)
 
         // grandfather (p)
         var family7 = HarvardCheckFamilyInfo(relationship: relationShips[6], bloodline: bloodLines[1], cancerName: cancersForSelf[0], age: age[25]);
-        family7.addCancer( "brain",age: 25)
+        //family7.addCancer( "brain",age: 25)
 
         familyInfos.append(family1)
         familyInfos.append(family2)
@@ -133,6 +136,8 @@ class HarvardCheckModel: NSObject {
             _age=[Int]()
             _age?.append(age)
             ++_cancerCount
+            ++_cancerCount
+             println("_cancerCount:\(_cancerCount)")
 
         }
         
@@ -142,6 +147,7 @@ class HarvardCheckModel: NSObject {
             
             _age?.append(age)
             ++_cancerCount
+            println("add cancaeName\(cancerName)")
             
         }
 

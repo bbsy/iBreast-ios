@@ -133,19 +133,44 @@ class RecordViewController: UIViewController,UITableViewDataSource ,UITableViewD
   
         var label=cell?.textLabel?.text=(recordData!.allValues[indexPath.section] as! NSArray).objectAtIndex(indexPath.row) as! String;
         //
+        var dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat="yyyy-MM-dd"
+        var  today:NSDate = NSDate();
+        var dateStr = dateFormatter.stringFromDate(today)
         
         if(indexPath.section == 0)
         {
             if(indexPath.row == 0)
             {
+                var  today:NSDate = NSDate();
+                var dateStr = dateFormatter.stringFromDate(today)
+
+                if(remindModel.lastPeriodFrom == nil)
+                 {
+                    remindModel.lastPeriodFrom = dateStr;
+                 }
                 cell?.detailTextLabel?.text = "\(remindModel.lastPeriodFrom)"
             }
             else if(indexPath.row == 1)
             {
+                var  today:NSDate = NSDate();
+                var dateStr = dateFormatter.stringFromDate(today)
+
+                if(remindModel.lastPeriodTo == nil)
+                 {
+                    remindModel.lastPeriodTo = dateStr;
+                 }
                 cell?.detailTextLabel?.text = "\(remindModel.lastPeriodTo)"
             }
             else if(indexPath.row == 2)
             {
+                var  today:NSDate = NSDate();
+                var dateStr = dateFormatter.stringFromDate(today)
+
+                if(remindModel.suggestedExamlDate == nil)
+                 {
+                    remindModel.suggestedExamlDate = dateStr;
+                 }
                 cell?.detailTextLabel?.text = "\(remindModel.suggestedExamlDate)"
             }
         }
@@ -153,6 +178,13 @@ class RecordViewController: UIViewController,UITableViewDataSource ,UITableViewD
         {
             if(indexPath.row == 0)
             {
+                var  today:NSDate = NSDate();
+                var dateStr = dateFormatter.stringFromDate(today)
+
+                if(remindModel.everyMonthSuggestDate == nil)
+                 {
+                    remindModel.everyMonthSuggestDate = dateStr;
+                 }
                 cell?.detailTextLabel?.text = "\(remindModel.everyMonthSuggestDate)";
             }
         }
@@ -201,6 +233,7 @@ class RecordViewController: UIViewController,UITableViewDataSource ,UITableViewD
     func onNoticeValueChanged(sender:AnyObject?){
         
         var sw:UISwitch=sender as! UISwitch
+        remindModel.needNotify = sw.on;
         println("the state of sw is \(sw.on) ")
     }
 
@@ -217,14 +250,45 @@ class RecordViewController: UIViewController,UITableViewDataSource ,UITableViewD
 }
 
 extension RecordViewController:AlertDatePickerViewValueChanged{
+
     
+
     func onValueChanged(date:NSDate,tag:Int){
+
         var dateFormatter = NSDateFormatter()
+
         dateFormatter.dateFormat="yyyy-MM-dd"
+
         var dateStr = dateFormatter.stringFromDate(date)
+
         
+
+        switch(tag)
+
+        {
+
+        case 0:remindModel.lastPeriodFrom = dateStr;
+
+        case 1:remindModel.lastPeriodTo = dateStr;
+
+        case 2:remindModel.suggestedExamlDate = dateStr;
+
+        case 3:remindModel.everyMonthSuggestDate = dateStr;
+
+        case 4:remindModel.lastPeriodFrom = dateStr;
+
+        default:remindModel.lastPeriodFrom = dateStr;
+
+        }
+
+        
+
         tableView.reloadData()
+
         
+
         println("dateStr: \(dateStr), tag: \(tag)")
+
     }
+
 }

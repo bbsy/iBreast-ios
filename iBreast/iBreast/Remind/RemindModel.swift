@@ -13,15 +13,15 @@ var remindModel = RemindModel()
 class RemindModel: NSObject {
     
     
-    var lastPeriodFrom:NSDate!
+    var lastPeriodFrom:String!
     
-    var lastPeriodTo:NSDate!
+    var lastPeriodTo:String!
     
     var menopauseStatus:MenopauseStatus!
     
-    var suggestedExamlDate:NSDate!
+    var suggestedExamlDate:String!
     
-    var everyMonthSuggestDate:NSDate!
+    var everyMonthSuggestDate:String!
     
     var needNotify:Bool!
     
