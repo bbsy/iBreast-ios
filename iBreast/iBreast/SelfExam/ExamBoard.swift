@@ -155,6 +155,8 @@ class ExamBoard: UIImageView {
         
         add(model)
         
+        lesionViews.last?.setHighLight(true)
+        
             
         
     }
