@@ -13,6 +13,7 @@ class SelfExamHisModel: NSObject {
     
     static let DELETE:Int = 0
     static let ADD:Int = 1
+    static let ADD_DELETE = 2
     
     var id:Int!
     //产生记录的时间
@@ -30,9 +31,11 @@ class SelfExamHisModel: NSObject {
     var lastId:Int = 0
     
     //该次编辑被删除或者增加的id
-    var ids:[Int]?
+    var idsForAdd:[Int]?
     
-    init(lastId:Int,action:Int,time:NSDate,imageUrl:String,title:String,detail:String,ids:[Int]?) {
+    var idsForDelete:[Int]?
+    
+    init(lastId:Int,action:Int,time:NSDate,imageUrl:String,title:String,detail:String,addIds:[Int]?,deleteIds:[Int]?) {
         
         self.lastId = lastId
         self.action = action
@@ -40,7 +43,8 @@ class SelfExamHisModel: NSObject {
         self.imageUrl=imageUrl
         self.title=title
         self.detail=detail
-        self.ids = ids
+        self.idsForAdd = addIds
+        self.idsForDelete = deleteIds
     }
     
     

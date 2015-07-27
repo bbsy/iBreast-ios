@@ -494,7 +494,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="harvardResultCell0" rowHeight="128" id="LOK-Kq-pZS">
-                                        <rect key="frame" x="0.0" y="86" width="320" height="128"/>
+                                        <rect key="frame" x="0.0" y="22" width="320" height="128"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="LOK-Kq-pZS" id="sjj-rT-zdB">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="127.5"/>
@@ -515,7 +515,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="harvardResultCell1" rowHeight="125" id="zt0-pJ-V7u">
-                                        <rect key="frame" x="0.0" y="214" width="320" height="125"/>
+                                        <rect key="frame" x="0.0" y="150" width="320" height="125"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zt0-pJ-V7u" id="DaV-RE-LFu">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="124.5"/>
@@ -581,7 +581,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="harvardResultCell2" rowHeight="125" id="gMV-9z-RbZ">
-                                        <rect key="frame" x="0.0" y="339" width="320" height="125"/>
+                                        <rect key="frame" x="0.0" y="275" width="320" height="125"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gMV-9z-RbZ" id="bsa-YR-K3s">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="124.5"/>
@@ -939,7 +939,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="RecordListTag" textLabel="MxT-oW-SJ9" detailTextLabel="Ors-pw-pcL" style="IBUITableViewCellStyleValue1" id="I6F-rx-PL0">
-                                        <rect key="frame" x="0.0" y="86" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="I6F-rx-PL0" id="lYN-yE-oBq">
                                             <rect key="frame" x="0.0" y="0.0" width="287" height="43.5"/>
@@ -1156,7 +1156,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="appointmentCell" rowHeight="74" id="2rY-n9-slo">
-                                        <rect key="frame" x="0.0" y="86" width="320" height="74"/>
+                                        <rect key="frame" x="0.0" y="22" width="320" height="74"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2rY-n9-slo" id="gfS-8j-KPi">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="73.5"/>

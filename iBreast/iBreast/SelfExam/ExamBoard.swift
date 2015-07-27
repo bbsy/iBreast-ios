@@ -16,6 +16,8 @@ enum DrawingState {
 class ExamBoard: UIImageView {
     
      var historyModel:SelfExamHisModel?
+    
+    
 
     var didSave = false
  
@@ -32,6 +34,7 @@ class ExamBoard: UIImageView {
     
     var addedLesions:[LesionModel] = [LesionModel]()
     var deletedLesions:[LesionModel] = [LesionModel]()
+    var totalLesions:[LesionModel] = [LesionModel]()
     
  //   var brush: BaseBrush?
     
@@ -82,7 +85,16 @@ class ExamBoard: UIImageView {
         if didSave == true {
             //把临时列表的数据清空，没作用了
            
+            var maxid:Int = -Int.max
             
+            var localLesion = lesionsData.getLocalLesions()
+            
+            for item in localLesion {
+                 var lesion = item as! LesionModel
+                if(lesion.id > maxid){
+                    maxid = lesion.id
+                }
+            }
           
             if(deletedLesions.isEmpty && addedLesions.isEmpty){
                 //什么都没干
@@ -92,20 +104,27 @@ class ExamBoard: UIImageView {
                 
               
 //                
-                SelfExamHisManager.getInstance().addHistory(addedLesions)
+                SelfExamHisManager.getInstance().addHistory(addedLesions,maxId:addedLesions.last!.id )
                 
                 
             }
             else if(!deletedLesions.isEmpty && addedLesions.isEmpty){
                 //减少了
+                SelfExamHisManager.getInstance().addHistory(deletedLesions,maxId:maxid)
                 
-//                var model = deletedLesions.removeLast()
-//                
-//                SelfExamHisManager.getInstance().addHistory(model)
             }
             else {
                 //增加了新的，减少了老的
-                 //SelfExamHisManager.getInstance().addHistory(item.lesion)
+                
+                for item in addedLesions {
+                    totalLesions.append(item)
+                }
+                for item in deletedLesions {
+                    totalLesions.append(item)
+                }
+
+                
+                 SelfExamHisManager.getInstance().addHistory(totalLesions,maxId: addedLesions.last!.id)
             }
             
             
@@ -124,6 +143,13 @@ class ExamBoard: UIImageView {
         }
     }
     
+    func setLesionsToRemove(removedLesions:[LesionModel] ){
+        
+        for item in removedLesions {
+            item.didRemove = true
+        }
+    }
+    
     
     func showHistoryLesions(maxId:Int){
         
@@ -131,12 +157,43 @@ class ExamBoard: UIImageView {
         lesionsModels = lesionsData.getLesions(maxId)
         
         for obj in lesionsModels {
+             var lesion = obj as! LesionModel
+            //表示查看历史记录
+            if let his = historyModel {
+                if his.idsForDelete != nil {
+                    for i in 0...his.idsForDelete!.count-1{
+                        if lesion.id == his.idsForDelete![i]{
+                            lesion.setDelete()
+                        }
+                    }
+                }
+                if his.idsForAdd != nil {
+                    for i in 0...his.idsForAdd!.count-1{
+                        if lesion.id == his.idsForAdd![i]{
+                            lesion.setAdd()
+                        }
+                    }
+
+                }
+                
+                
+               
+            }
+            else {//表示从编辑界面直接进来
+                
+                println(".... \(lesion.didRemove)")
+               
+                if( lesion.didRemove == true){
+                    lesionsModels.removeObject(lesion)
+                }
+            }
             
-            
-            add(obj as! LesionModel)
+          
 
         }
-        
+        for obj in lesionsModels {
+          add(obj as! LesionModel)
+        }
     }
     
     func addNewLesion(){
@@ -149,33 +206,58 @@ class ExamBoard: UIImageView {
         model.size = 30
         model.firmness=LesionModel.SOFT
         model.highlight=true
-        
+        model.setAdd()
         
         addedLesions.append(model)
         
         add(model)
+        lesionViews.last?.firtlyAdd = true
+        setHighlight(lesionViews.last!)
+        //lesionViews.last?.setHighLight(true)
         
-        lesionViews.last?.setHighLight(true)
+        
         
             
         
     }
     
+    func setHighlight(lesionView:LesionView){
+        for item in lesionViews {
+            if(item.lesion.id == lesionView.lesion.id){
+                if(item.isHightlight()){
+                    println("item already in highlight")
+                    return
+                }
+                item.setHighLight(true)
+            }
+            else{
+                item.setHighLight(false)
+
+            }
+        }
+    }
+    //在编辑模板中暂时删除一个记录,使图片变删除的闪动效果
     func deleteALesion(){
         
         for (index,item)  in enumerate(lesionViews){
             
             if item.lesion.highlight==true{
-                
-                item.removeFromSuperview()
-                lesionViews.removeAtIndex(index)
-                lesionsData.removeLesion(item.lesion)
-                hightlightedLesion = nil
-                
-                //如果删除的这个
-                item.lesion.didDelete = true
-                
-                deletedLesions.append(item.lesion)
+                //如果是本次增加的直接去除,永久去除
+                item.setDeleteAndRemove()
+                if (item.firtlyAdd == true){
+                    item.removeFromSuperview()
+                    lesionViews.removeAtIndex(index)
+                    lesionsData.removeLesion(item.lesion)
+                    hightlightedLesion = nil
+                    //如果删除的这个
+                   
+                }//如果不是本次增加的，只能画一个x
+                else{
+               
+                    item.reDisplay()
+                    deletedLesions.append(item.lesion)
+
+                }
                 
             }
             
@@ -188,12 +270,16 @@ class ExamBoard: UIImageView {
        
     func save(){
         
-        lesionsData.save()
+        for item in lesionViews{
+            item.firtlyAdd = false
+        }
         
         didSave = true
         
         check()
         
+        lesionsData.save()
+
         
         didSave = false
     }
@@ -213,21 +299,22 @@ class ExamBoard: UIImageView {
         
         var circleView :LesionView=LesionView(frame: CGRectMake(circleCenter.x, circleCenter.y, circleWidth, circleHeight))
         
-        circleView.lesion = item
+        circleView.setMyLesion(item) 
+       
         
         if let hisModel = historyModel {
-            if(hisModel.action == SelfExamHisModel.ADD){
-                for i in 0...hisModel.ids!.count-1{
-                    if item.id == hisModel.ids![i]{
-                         item.didAdd = true
+            if(hisModel.idsForAdd != nil){
+                for i in 0...hisModel.idsForAdd!.count-1{
+                    if item.id == hisModel.idsForAdd![i]{
+                         item.setAdd()
                     }
                 }
                
             }
-            else{
-                for i in 0...hisModel.ids!.count{
-                    if item.id == hisModel.ids![i]{
-                        item.didDelete = true
+            if(hisModel.idsForDelete != nil){
+                for i in 0...hisModel.idsForDelete!.count-1{
+                    if item.id == hisModel.idsForDelete![i]{
+                        item.setDelete()
                     }
                 }
                 
@@ -298,7 +385,7 @@ class ExamBoard: UIImageView {
             
         }
         
-        if(!lesionViews.isEmpty){
+        if(!lesionViews.isEmpty ){
             var rectx = CGFloat(hightlightedLesion.lesion.size) + hightlightedLesion.lesion.point.x
             var recty = CGFloat(hightlightedLesion.lesion.size) + hightlightedLesion.lesion.point.y
             
@@ -306,12 +393,13 @@ class ExamBoard: UIImageView {
             
             var yb = point.y >= CGFloat(hightlightedLesion.lesion.point.y) && point.y <= CGFloat(recty)
             
-            if( xb && yb){
+            if( xb && yb && hightlightedLesion.firtlyAdd == true){
                 hightlightedLesion?.lesion.allowedMoving = true
             }
             else{
                 hightlightedLesion?.lesion.allowedMoving = false
             }
+            setHighlight(hightlightedLesion)
         }
        
      
@@ -342,7 +430,7 @@ class ExamBoard: UIImageView {
         
         if let cir=hightlightedLesion{
             
-            if(hightlightedLesion.lesion.allowedMoving == true){
+            if(hightlightedLesion.lesion.allowedMoving == true ){
                 var movePoint=(touches as NSSet).anyObject()!.locationInView(self)
                 cir.lesion.point=movePoint
                 cir.frame=CGRectMake(movePoint.x, movePoint.y, cir.frame.size.width, cir.frame.size.height)
