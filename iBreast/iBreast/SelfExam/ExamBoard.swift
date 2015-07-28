@@ -17,7 +17,7 @@ class ExamBoard: UIImageView {
     
      var historyModel:SelfExamHisModel?
     
-    
+    var sizeController: UISlider!
 
     var didSave = false
  
@@ -69,16 +69,33 @@ class ExamBoard: UIImageView {
         
         super.init(coder: aDecoder)
         
-        var img=UIImage(named: "breast.png")
-      
-        self.image=img
         
       
-       
+        self.image = UIImage(named: "breast.png")
+
+        
+      
+        
     
         
         
         
+    }
+    
+    func getBackground()->UIImage{
+        
+        var image=UIImage(named: "breast.png")
+        
+        var scaleSize = self.frame.size.height/image!.size.width
+        
+        UIGraphicsBeginImageContext(CGSizeMake(self.frame.size.width,self.frame.size.height))
+        
+        image!.drawInRect(CGRectMake(0, 0, self.frame.size.width/2, self.frame.size.height/2))
+       
+        var scaledImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        return scaledImage
     }
     
     func check(){
@@ -140,6 +157,33 @@ class ExamBoard: UIImageView {
             lesionsData.addLesions(deletedLesions)
             lesionsData.removeLesions(addedLesions)
             
+        }
+    }
+    
+    func setSize(value:Float){
+        
+        if let light = hightlightedLesion{
+            
+            var size = CGFloat(value)
+            var orgSize = light.lesion.size
+            light.lesion.size = size
+            var orgX = light.lesion.point.x
+            var orgY = light.lesion.point.y
+            
+            
+            
+            
+            
+            var x = light.lesion.point.x - (size - orgSize)/2
+            var y = light.lesion.point.y - (size - orgSize)/2
+            
+            light.lesion.point.x = x
+            light.lesion.point.y = y
+            
+            var rect = CGRectMake(x, y, light.lesion.size, light.lesion.size)
+            hightlightedLesion.frame = rect
+            
+          
         }
     }
     
@@ -229,6 +273,8 @@ class ExamBoard: UIImageView {
                     return
                 }
                 item.setHighLight(true)
+                self.sizeController.value = Float(item.lesion.size)
+                
             }
             else{
                 item.setHighLight(false)

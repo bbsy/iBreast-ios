@@ -155,30 +155,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="hgN-pR-ZKm" customClass="ExamBoard" customModule="iBreast" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="107" width="320" height="214"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                            </imageView>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="sus-mX-ykE">
-                                <rect key="frame" x="36" y="466" width="248" height="29"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <segments>
-                                    <segment title="软"/>
-                                    <segment title="中"/>
-                                    <segment title="硬"/>
-                                </segments>
-                            </segmentedControl>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="大小" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ekL-9U-Zex">
-                                <rect key="frame" x="36" y="417" width="34" height="21"/>
+                                <rect key="frame" x="22" y="324" width="34" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="10" minValue="10" maxValue="100" id="Mtn-FW-aFb">
-                                <rect key="frame" x="96" y="413" width="185" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </slider>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Cji-GX-7ec">
                                 <rect key="frame" x="266" y="69" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -199,6 +182,17 @@
                                     <action selector="didAddLesion:" destination="H0x-Wv-bDi" eventType="touchUpInside" id="qYa-S6-eZF"/>
                                 </connections>
                             </button>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="hgN-pR-ZKm" customClass="ExamBoard" customModule="iBreast" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="112" width="320" height="184"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="50" minValue="50" maxValue="100" id="Mtn-FW-aFb">
+                                <rect key="frame" x="85" y="320" width="185" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="onSizeChanged:" destination="H0x-Wv-bDi" eventType="valueChanged" id="NVI-9z-i8W"/>
+                                </connections>
+                            </slider>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -212,11 +206,12 @@
                     </navigationItem>
                     <connections>
                         <outlet property="checkBoard" destination="hgN-pR-ZKm" id="TWw-OB-M3d"/>
+                        <outlet property="sizeController" destination="Mtn-FW-aFb" id="rb8-1h-x9D"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dmh-96-7fL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1294" y="-278"/>
+            <point key="canvasLocation" x="1419" y="-278"/>
         </scene>
         <!--基本资料1-->
         <scene sceneID="OKe-XQ-YJM">
@@ -494,7 +489,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="harvardResultCell0" rowHeight="128" id="LOK-Kq-pZS">
-                                        <rect key="frame" x="0.0" y="22" width="320" height="128"/>
+                                        <rect key="frame" x="0.0" y="86" width="320" height="128"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="LOK-Kq-pZS" id="sjj-rT-zdB">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="127.5"/>
@@ -515,7 +510,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="harvardResultCell1" rowHeight="125" id="zt0-pJ-V7u">
-                                        <rect key="frame" x="0.0" y="150" width="320" height="125"/>
+                                        <rect key="frame" x="0.0" y="214" width="320" height="125"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zt0-pJ-V7u" id="DaV-RE-LFu">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="124.5"/>
@@ -581,7 +576,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="harvardResultCell2" rowHeight="125" id="gMV-9z-RbZ">
-                                        <rect key="frame" x="0.0" y="275" width="320" height="125"/>
+                                        <rect key="frame" x="0.0" y="339" width="320" height="125"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gMV-9z-RbZ" id="bsa-YR-K3s">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="124.5"/>
@@ -1156,7 +1151,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="appointmentCell" rowHeight="74" id="2rY-n9-slo">
-                                        <rect key="frame" x="0.0" y="22" width="320" height="74"/>
+                                        <rect key="frame" x="0.0" y="86" width="320" height="74"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2rY-n9-slo" id="gfS-8j-KPi">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="73.5"/>

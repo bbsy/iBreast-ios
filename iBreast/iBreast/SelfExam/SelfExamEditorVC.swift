@@ -17,12 +17,22 @@ class SelfExamEditorVC: UIViewController {
     
     var historyModel:SelfExamHisModel?
     
+    @IBOutlet weak var sizeController: UISlider!
+    
     @IBAction func didSave(sender: AnyObject) {
         
         checkBoard.save()
     }
   
     
+    @IBAction func onSizeChanged(sender: AnyObject) {
+        
+        var slider = sender as! UISlider
+        
+        println(slider.value)
+        
+        checkBoard.setSize(slider.value)
+    }
     
     @IBOutlet weak var checkBoard: ExamBoard!
    
@@ -50,6 +60,7 @@ class SelfExamEditorVC: UIViewController {
             maxId = hisModel.lastId
             checkBoard.historyModel = hisModel
         }
+        checkBoard.sizeController = self.sizeController
         
         checkBoard.showHistoryLesions(maxId)
         // Do any additional setup after loading the view.

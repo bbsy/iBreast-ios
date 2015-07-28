@@ -21,8 +21,8 @@ class LesionModel: NSObject{
     var firmness:Int! = HARD
     var size:CGFloat! = 0
     var point:CGPoint! = CGPoint(x: 0, y: 0)
-    var x:Float! = 0
-    var y:Float! = 0
+    var x:CGFloat! = 0
+    var y:CGFloat! = 0
     var allowedMoving:Bool! = false
     //在记录中被删除
     var didDelete:Bool! = false
@@ -60,8 +60,8 @@ class LesionModel: NSObject{
          self.firmness = decoder.decodeObjectForKey("_firmness") as! Int
         self.size = decoder.decodeObjectForKey("_size") as! CGFloat
         self.point = decoder.decodeCGPointForKey("_point") as! CGPoint
-        self.x = decoder.decodeObjectForKey("_x") as! Float
-        self.y = decoder.decodeObjectForKey("_y") as! Float
+        self.x = decoder.decodeObjectForKey("_x") as! CGFloat
+        self.y = decoder.decodeObjectForKey("_y") as! CGFloat
          self.allowedMoving = decoder.decodeObjectForKey("_allowedMoving") as! Bool
          self.didDelete = decoder.decodeObjectForKey("_didDelete") as! Bool
          self.didAdd = decoder.decodeObjectForKey("_didAdd") as! Bool

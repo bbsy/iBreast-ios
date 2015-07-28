@@ -118,17 +118,39 @@ class LesionView: UIView {
     func getImage()->String{
         
         if(firtlyAdd == true){
-            return "new"
+            return "new_soft_lesion"
         }
         else if(lesion.didAdd == true){
          //此时用户在查看记录
-            return "add"
+            if(lesion.firmness == LesionModel.HARD){
+                 return "new_soft_lesion"
+            }
+            else if(lesion.firmness == LesionModel.MEDIUM)
+            {
+                 return "new_medium_lesion"
+            }
+            else if(lesion.firmness == LesionModel.SOFT){
+                
+                 return "new_hard_lesion"
+            }
+            return "new_soft_lesion"
         }
         else if(lesion.didDelete == true){
-            return "delete"
+            if(lesion.firmness == LesionModel.HARD){
+                return "old_soft_lesion_del"
+            }
+            else if(lesion.firmness == LesionModel.MEDIUM)
+            {
+                return "old_medium_lesion_del"
+            }
+            else if(lesion.firmness == LesionModel.SOFT){
+                
+                return "old_hard_lesion_del"
+            }
+            return "new_soft_lesion_del"
         }
         else {
-            return "highlight"
+            return "old_soft_lesion"
         }
     }
     
@@ -189,10 +211,10 @@ class LesionView: UIView {
 //            UIColor.redColor().set()
 //        }
 //        else {
-//           // UIColor.grayColor().set()
+//           UIColor.grayColor().set()
 //        }
         
-         UIColor.yellowColor().set()
+        
         
         
 //        
