@@ -21,7 +21,7 @@ class SelfExamHisService: HttpObjectMapper,HttpCallBack{
         
         
     
-        var model = SelfExamHisModel(lastId:100,action:1, time: time, imageUrl: obj.valueForKey("imageUrl") as! String, title: obj.valueForKey("name") as! String, detail: obj.valueForKey("password") as! String,ids:nil)
+        var model = SelfExamHisModel(lastId:100,action:1, time: time, imageUrl: obj.valueForKey("imageUrl") as! String, title: obj.valueForKey("name") as! String, detail: obj.valueForKey("password") as! String,addIds:nil,deleteIds:nil)
         
         println(model.imageUrl)
         

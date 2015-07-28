@@ -19,24 +19,49 @@ class LesionView: UIView {
     var scaleToSize:CGSize!
     var highLightImage:UIImage?
     var origImage:UIImage?
+    var image:UIImage!
+    var orgFront:UIImage!
     //是否第一次增加
     var firtlyAdd = false
     
     var lesion: LesionModel = LesionModel()
     
     var  context:CGContext?
+    
+    var timer:NSTimer?
 
     override init(frame: CGRect) {
         
         super.init(frame: frame)
         self.backgroundColor = UIColor.clearColor()
         scaleToSize = CGSize(width: frame.size.width,height: frame.size.height)
+         orgFront = UIImage(named: getImage())
     }
+    
+    
     
    
     
     required init(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    func setMyLesion(lesion:LesionModel){
+        self.lesion = lesion
+        reDisplay()
+    }
+    
+    //确认删除一个历史中的肿块
+    func setDeleteAndRemove(){
+        lesion.setDeleteAndRemove()
+    }
+    //删除历史记录中的肿块，但是没确认。用户返回后会被重新设置会原始状态
+    func setDelete(){
+        lesion.setDelete()
+    }
+    
+    func setAdd(){
+        lesion.setAdd()
     }
     
     func setSize(size:CGFloat){
@@ -57,25 +82,77 @@ class LesionView: UIView {
     
     func setHighLight(high:Bool){
         lesion.highlight = high
+      
         if(high == true){
-            if origImage == nil{
-                if(firtlyAdd == true){
-                    
-                }
-                else{
-                     origImage = UIImage(named: "0")!;
-                   
-                }
-            }
+            
+            
+            orgFront = UIImage(named: getImage())
+            
           
-                 NSTimer.scheduledTimerWithTimeInterval(0.5, target: self, selector: "zoomImage:", userInfo: nil, repeats: true)
+            timer = NSTimer.scheduledTimerWithTimeInterval(0.5, target: self, selector: "zoomImage:", userInfo: nil, repeats: true)
             
            
             
 
         }
+        else{
+            if let t = timer {
+                t.invalidate()
+                timer = nil
+                origImage = nil
+                setNeedsDisplay()
+            }
+        }
         
     }
+    
+    func isHightlight()->Bool{
+        if (timer != nil){
+            return true
+        }
+        else{
+            return false
+        }
+    }
+    
+    func getImage()->String{
+        
+        if(firtlyAdd == true){
+            return "new"
+        }
+        else if(lesion.didAdd == true){
+         //此时用户在查看记录
+            return "add"
+        }
+        else if(lesion.didDelete == true){
+            return "delete"
+        }
+        else {
+            return "highlight"
+        }
+    }
+    
+    func getBackgroundImage()->String{
+        
+        if(firtlyAdd == true){
+            return "new"
+        }
+        else if(lesion.didDelete == true){
+            return "delete"
+        }
+        else if(lesion.didAdd == true){
+            return "add"
+        }
+        
+        return "highlight"
+    }
+    
+    func reDisplay(){
+       
+          orgFront = UIImage(named: getImage())
+        
+    }
+    
     
     func zoomImage(sender:AnyObject?){
     
@@ -86,13 +163,41 @@ class LesionView: UIView {
         }
         else{
             
-            scaleToSize.width = frame.size.width - 20
-            scaleToSize.height = frame.size.height - 20
+            scaleToSize.width = frame.size.width - 5
+            scaleToSize.height = frame.size.height - 5
         }
         
         setNeedsDisplay()
-        if( origImage != nil && context != nil){
-            
+ 
+    }
+    
+    
+    override func drawRect(rect: CGRect) {
+        // Get the Graphics Context
+        context = UIGraphicsGetCurrentContext();
+        
+        CGContextSetAllowsAntialiasing(context, true) //抗锯齿设置
+        
+        // Set the circle outerline-width
+        CGContextSetLineWidth(context, 5.0);
+        
+//        // Set the circle outerline-colour
+//        if(lesion.didAdd == true){
+//            UIColor.yellowColor().set()
+//        }
+//        else if(lesion.didDelete == true){
+//            UIColor.redColor().set()
+//        }
+//        else {
+//           // UIColor.grayColor().set()
+//        }
+        
+         UIColor.yellowColor().set()
+        
+        
+//        
+//        if( origImage != nil){
+//            
 //            
 //            CGContextSetShadow(context, CGSizeMake(3, 3),10)
 //            
@@ -109,39 +214,13 @@ class LesionView: UIView {
 //            // 使当前的context出堆栈
 //            UIGraphicsEndImageContext();
 //            
-//            highLightImage!.drawAtPoint(CGPointMake(0, 0));
+//            highLightImage!.drawAtPoint(CGPointMake((frame.size.width - scaleToSize.width)/2 ,(frame.size.height - scaleToSize.height)/2));
+//
+//        }
+        
+        if(orgFront != nil){
             
-        }
-
-    }
-    
-    
-    override func drawRect(rect: CGRect) {
-        // Get the Graphics Context
-        context = UIGraphicsGetCurrentContext();
-        
-        CGContextSetAllowsAntialiasing(context, true) //抗锯齿设置
-        
-        // Set the circle outerline-width
-        CGContextSetLineWidth(context, 5.0);
-        
-        // Set the circle outerline-colour
-        if(lesion.didAdd == true){
-            UIColor.yellowColor().set()
-        }
-        else if(lesion.didDelete == true){
-            UIColor.redColor().set()
-        }
-        else {
-           // UIColor.grayColor().set()
-        }
-        
-        
-        
-        
-        
-        if( origImage != nil){
-            
+           
             
             CGContextSetShadow(context, CGSizeMake(3, 3),10)
             
@@ -150,21 +229,24 @@ class LesionView: UIView {
             UIGraphicsBeginImageContext(frame.size);
             
             // 绘制改变大小的图片
-            origImage!.drawInRect(CGRectMake(0, 0, scaleToSize.width, scaleToSize.height))
+            orgFront.drawInRect(CGRectMake(0, 0, scaleToSize.width, scaleToSize.height))
             
             // 从当前context中创建一个改变大小后的图片
-            highLightImage = UIGraphicsGetImageFromCurrentImageContext();
+            image = UIGraphicsGetImageFromCurrentImageContext();
             
             // 使当前的context出堆栈
             UIGraphicsEndImageContext();
             
-            highLightImage!.drawAtPoint(CGPointMake((frame.size.width - scaleToSize.width)/2 ,(frame.size.height - scaleToSize.height)/2));
-
+          
+            
+            
         }
+        image.drawAtPoint(CGPointMake((frame.size.width - scaleToSize.width)/2 ,(frame.size.height - scaleToSize.height)/2))
+
         
         
-        // Create Circle
-        CGContextAddArc(context, (frame.size.width)/2, (frame.size.height)/2, (frame.size.width-15)/2, 0.0, CGFloat(M_PI * 2.0), 1)
+//        // Create Circle
+//        CGContextAddArc(context, (frame.size.width)/2, (frame.size.height)/2, (frame.size.width-15)/2, 0.0, CGFloat(M_PI * 2.0), 1)
         // Draw
         CGContextStrokePath(context);
         

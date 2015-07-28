@@ -116,7 +116,7 @@ class SelfExamHisManager: NSObject {
         return 100
     }
     
-    func addHistory(lesions:[LesionModel]!){
+    func addHistory(lesions:[LesionModel],maxId:Int){
     
         if(lesions.isEmpty){
             
@@ -125,27 +125,61 @@ class SelfExamHisManager: NSObject {
         
         var title:String!
         var action:Int = SelfExamHisModel.DELETE
-        var lesion:LesionModel = lesions.last!
+        var lesion:LesionModel!
         
-        var ids:[Int] = [Int]()
+       
+        var his:SelfExamHisModel?
+        var addIds:[Int] = [Int]()
+        var delIds:[Int] = [Int]()
+        
+//        /**
+//        *找到id最大的lesion
+//        **/
+//        var maxId = -Int.max
+//        var index:Int = 0
+//        var cusor = 0
+//        for item in lesions {
+//          
+//            if(item.id > maxId){
+//                
+//                maxId = item.id
+//                index = cusor
+//            }
+//            ++cusor
+//        }
+//        lesion = lesions[index]
         
         for item in lesions {
-            ids.append(item.id)
+            
+            if(item.didAdd == true){
+                addIds.append(item.id)
+            }
+            else if(item.didDelete == true){
+                delIds.append(item.id)
+            }
         }
         
-        if(lesion.didDelete==false){
-            action = SelfExamHisModel.ADD
-        }
-        if(action == SelfExamHisModel.ADD){
-            title = "增加一个硬块"
-        }
-        else{
-            title = "减少一个硬块"
+        if(addIds.isEmpty && delIds.isEmpty){
+            return
         }
         
-        var his=SelfExamHisModel(lastId:lesion.id,action:action,time: NSDate(), imageUrl: "empty", title: title, detail:"\(lesion.firmness) ,\(lesion.size)",ids: ids)
+        if(!addIds.isEmpty && !delIds.isEmpty){
+            title = "增加，减少硬块"
+            his=SelfExamHisModel(lastId: maxId,action:action,time: NSDate(), imageUrl: "empty", title: title, detail:"复杂的心情",addIds: addIds,deleteIds:delIds)
+        }
+        else if(!addIds.isEmpty && delIds.isEmpty){
+            title = "增加硬块"
+            his=SelfExamHisModel(lastId: maxId,action:action,time: NSDate(), imageUrl: "empty", title: title, detail:"伤心",addIds:addIds,deleteIds:nil)
+        }
+        else if(addIds.isEmpty && !delIds.isEmpty){
+            title = "减少硬块"
+            his=SelfExamHisModel(lastId: maxId,action:action,time: NSDate(), imageUrl: "empty", title: title, detail:"心情好",addIds: nil,deleteIds:delIds)
+        }
         
-        historyList.append(his)
+            
+        
+        
+        historyList.append(his!)
         
     }
     

@@ -28,13 +28,17 @@ class SelfExamData: NSObject {
         
     }
     
-    
+    //在数据库中获取所有的lesion
     func getLesions(maxId:Int)->NSMutableOrderedSet{
         
         if(fetch(maxId) == false)
         {
             setDefalutData()
         }
+        return localLesions
+    }
+    //获取当前画板上所有的lesion
+    func getLocalLesions()->NSMutableOrderedSet{
         return localLesions
     }
     
@@ -114,7 +118,13 @@ class SelfExamData: NSObject {
             
             userDefault.removeObjectForKey(LESIONS_DATA_PATH)
         }
-        
+        for item in lesions {
+            
+            var l = item as! LesionModel
+            println("id \(l.id) , didremove = \(l.didRemove)")
+            
+            (l).resetAddAndDelete()
+        }
         var modelData:NSData = NSKeyedArchiver.archivedDataWithRootObject(lesions)
         userDefault.setObject(modelData, forKey: LESIONS_DATA_PATH)
         
