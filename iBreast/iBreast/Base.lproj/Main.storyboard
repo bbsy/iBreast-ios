@@ -12,42 +12,97 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="IHN-J9-qWz" colorLabel="IBBuiltInLabel-Red">
-                                <rect key="frame" x="16" y="94" width="288" height="30"/>
+                            <view contentMode="scaleToFill" id="hm3-Yr-pIA">
+                                <rect key="frame" x="28" y="138" width="104" height="104"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="哈佛自测">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="ECE-pA-6K4" kind="push" id="e0F-Rd-nTY"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="pVC-2a-7Om">
-                                <rect key="frame" x="16" y="227" width="288" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="IHN-J9-qWz" colorLabel="IBBuiltInLabel-Red">
+                                        <rect key="frame" x="11" y="62" width="79" height="42"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="哈佛自测">
+                                            <color key="titleShadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="ECE-pA-6K4" kind="push" id="e0F-Rd-nTY"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="VfQ-7c-DrX">
+                                        <rect key="frame" x="28" y="21" width="46" height="43"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" backgroundImage="icon_item_harvard">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="ECE-pA-6K4" kind="push" id="819-Rh-7Bk"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="0.41467626212809083" blue="0.78239849089817548" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <view contentMode="scaleToFill" id="mB6-2y-Ag3">
+                                <rect key="frame" x="28" y="292" width="104" height="104"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="专业检查">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="I2E-fe-rfK" kind="push" id="HpY-s0-EHp"/>
-                                </connections>
-                            </button>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Lym-Wx-Cer">
+                                        <rect key="frame" x="-2" y="64" width="104" height="40"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <state key="normal" title="自检">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="Ryg-gE-xnl" kind="push" id="cv3-Ho-aTq"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Pqt-Tr-6rn">
+                                        <rect key="frame" x="29" y="26" width="46" height="37"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" backgroundImage="icon_item_check">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="Ryg-gE-xnl" kind="push" id="wBT-HX-9Pi"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="0.41455234439999999" blue="0.77785852789999999" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <view contentMode="scaleToFill" id="135-gP-mcx">
+                                <rect key="frame" x="185" y="138" width="104" height="104"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="pVC-2a-7Om">
+                                        <rect key="frame" x="8" y="63" width="86" height="41"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <state key="normal" title="专业检查">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="I2E-fe-rfK" kind="push" id="HpY-s0-EHp"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="PTq-UC-1oB">
+                                        <rect key="frame" x="28" y="22" width="46" height="41"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" backgroundImage="icon_item_professional">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="I2E-fe-rfK" kind="push" id="42D-oH-xrl"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="0.41455234439999999" blue="0.77785852789999999" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="QZJ-lG-vPI">
-                                <rect key="frame" x="16" y="312" width="288" height="30"/>
+                                <rect key="frame" x="169" y="305" width="110" height="84"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="登录/注册">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Lym-Wx-Cer">
-                                <rect key="frame" x="16" y="161" width="288" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="自检">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="Ryg-gE-xnl" kind="push" id="cv3-Ho-aTq"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -57,7 +112,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-580" y="-474"/>
+            <point key="canvasLocation" x="-526" y="-632"/>
         </scene>
         <!--家族肿瘤历史-->
         <scene sceneID="3N5-Ri-qs0">
@@ -155,17 +210,29 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="大小" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ekL-9U-Zex">
-                                <rect key="frame" x="22" y="324" width="34" height="21"/>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ibreast_type3" id="hgN-pR-ZKm" customClass="ExamBoard" customModule="iBreast" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="65" width="320" height="178"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="肿块大小" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ekL-9U-Zex">
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Cji-GX-7ec">
-                                <rect key="frame" x="266" y="69" width="30" height="30"/>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="50" minValue="10" maxValue="100" id="Mtn-FW-aFb">
+                                <rect key="frame" x="96" y="413" width="185" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="删除">
+                                <color key="tintColor" red="0.95127051770000004" green="0.098662455359999998" blue="0.28188429079999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="thumbTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <action selector="sizeChanged:" destination="H0x-Wv-bDi" eventType="valueChanged" id="PU8-zi-jYc"/>
+                                </connections>
+                            </slider>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Cji-GX-7ec">
+                                <rect key="frame" x="274" y="279" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" backgroundImage="icon_delete">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -173,28 +240,27 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="RCh-8p-ojY">
-                                <rect key="frame" x="24" y="69" width="30" height="30"/>
+                                <rect key="frame" x="16" y="279" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="增加">
+                                <state key="normal" backgroundImage="icon_add">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="didAddLesion:" destination="H0x-Wv-bDi" eventType="touchUpInside" id="qYa-S6-eZF"/>
                                 </connections>
                             </button>
-                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="hgN-pR-ZKm" customClass="ExamBoard" customModule="iBreast" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="112" width="320" height="184"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                            </imageView>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="50" minValue="50" maxValue="100" id="Mtn-FW-aFb">
-                                <rect key="frame" x="85" y="320" width="185" height="31"/>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="sus-mX-ykE">
+                                <rect key="frame" x="36" y="466" width="248" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <connections>
-                                    <action selector="onSizeChanged:" destination="H0x-Wv-bDi" eventType="valueChanged" id="NVI-9z-i8W"/>
-                                </connections>
-                            </slider>
+                                <segments>
+                                    <segment title="软"/>
+                                    <segment title="中"/>
+                                    <segment title="硬"/>
+                                </segments>
+                                <color key="tintColor" red="0.95127051770000004" green="0.098662455359999998" blue="0.28188429079999999" alpha="1" colorSpace="calibratedRGB"/>
+                            </segmentedControl>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="自检" id="eFg-xe-vpi">
@@ -211,7 +277,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dmh-96-7fL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1419" y="-278"/>
+            <point key="canvasLocation" x="1472" y="-278"/>
         </scene>
         <!--基本资料1-->
         <scene sceneID="OKe-XQ-YJM">
@@ -769,35 +835,35 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="meTableViewCellIdentifierKeyInfo" rowHeight="146" id="FdS-4m-qaM">
-                                        <rect key="frame" x="0.0" y="22" width="320" height="146"/>
+                                        <rect key="frame" x="0.0" y="86" width="320" height="146"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="FdS-4m-qaM" id="pBE-fR-0aK">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="145.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" tag="102" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="距离体检时间还有7天" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Pj4-wg-OWQ">
-                                                    <rect key="frame" x="107" y="102" width="106" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="101" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="林志玲" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="nfw-18-Qnl">
+                                                    <rect key="frame" x="135" y="87" width="51" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" tag="100" contentMode="center" image="0" id="iLe-DD-K33">
-                                                    <rect key="frame" x="115" y="-13" width="90" height="90"/>
+                                                    <rect key="frame" x="115" y="3" width="90" height="90"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" tag="101" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="林志玲" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="nfw-18-Qnl">
-                                                    <rect key="frame" x="135" y="62" width="51" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="102" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="距离体检时间还有7天" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Pj4-wg-OWQ">
+                                                    <rect key="frame" x="73" y="116" width="175" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="highlightedColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="meTableViewCellIdentifierKey" textLabel="1PM-dH-NCT" rowHeight="74" style="IBUITableViewCellStyleDefault" id="x7x-03-f9o">
-                                        <rect key="frame" x="0.0" y="168" width="320" height="74"/>
+                                        <rect key="frame" x="0.0" y="232" width="320" height="74"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="x7x-03-f9o" id="Cp6-6I-gmh">
                                             <rect key="frame" x="0.0" y="0.0" width="287" height="73.5"/>
@@ -806,11 +872,11 @@
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="1PM-dH-NCT">
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -1003,13 +1069,15 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ecw-8i-X3e" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-821" y="-440"/>
+            <point key="canvasLocation" x="-1083" y="118"/>
         </scene>
         <!--首页-->
         <scene sceneID="9He-NE-Lmt">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ZNC-DP-Zro" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="首页" id="4TG-NR-KBT"/>
+                    <tabBarItem key="tabBarItem" title="首页" image="icon_bar_index_noraml" id="4TG-NR-KBT">
+                        <inset key="imageInsets" minX="3" minY="2" maxX="3" maxY="8"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="c7H-ME-4oN">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -1022,7 +1090,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o7a-ID-wKt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-659" y="-492"/>
+            <point key="canvasLocation" x="-909" y="-535"/>
         </scene>
         <!--专业检查-->
         <scene sceneID="S3q-KS-qpe">
@@ -1151,7 +1219,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="appointmentCell" rowHeight="74" id="2rY-n9-slo">
-                                        <rect key="frame" x="0.0" y="86" width="320" height="74"/>
+                                        <rect key="frame" x="0.0" y="22" width="320" height="74"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2rY-n9-slo" id="gfS-8j-KPi">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="73.5"/>
@@ -1203,7 +1271,9 @@
         <scene sceneID="hhH-No-f1R">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="MWN-Y3-B9W" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="记录" id="AXK-U1-g5T"/>
+                    <tabBarItem key="tabBarItem" title="记录" image="icon_bar_recorde_normal" id="AXK-U1-g5T">
+                        <inset key="imageInsets" minX="3" minY="2" maxX="3" maxY="8"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="qC7-PT-J0e">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -1222,7 +1292,9 @@
         <scene sceneID="oNC-ag-fkv">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="xj9-Mf-5IY" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="我" id="Aal-Ky-Kdh"/>
+                    <tabBarItem key="tabBarItem" title="我" image="icon_bar_me_normal" id="Aal-Ky-Kdh">
+                        <inset key="imageInsets" minX="3" minY="2" maxX="3" maxY="8"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Yt5-fU-dGV">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -1241,7 +1313,9 @@
         <scene sceneID="qED-EE-m3f">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="GY0-q1-zFo" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="小知识" id="Z0i-5O-LJZ"/>
+                    <tabBarItem key="tabBarItem" title="小知识" image="icon_bar_knowledge_normal" id="Z0i-5O-LJZ">
+                        <inset key="imageInsets" minX="3" minY="2" maxX="3" maxY="8"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="GZW-hq-geZ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -1259,6 +1333,16 @@
     </scenes>
     <resources>
         <image name="0" width="90" height="90"/>
+        <image name="ibreast_type3" width="480" height="320"/>
+        <image name="icon_add" width="61" height="60"/>
+        <image name="icon_bar_index_noraml" width="52" height="42"/>
+        <image name="icon_bar_knowledge_normal" width="41" height="43"/>
+        <image name="icon_bar_me_normal" width="36" height="43"/>
+        <image name="icon_bar_recorde_normal" width="41" height="41"/>
+        <image name="icon_delete" width="61" height="60"/>
+        <image name="icon_item_check" width="84" height="86"/>
+        <image name="icon_item_harvard" width="93" height="92"/>
+        <image name="icon_item_professional" width="89" height="90"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
@@ -1267,5 +1351,8 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="reb-EZ-Xqd"/>
+        <segue reference="wBT-HX-9Pi"/>
+        <segue reference="HpY-s0-EHp"/>
+        <segue reference="e0F-Rd-nTY"/>
     </inferredMetricsTieBreakers>
 </document>

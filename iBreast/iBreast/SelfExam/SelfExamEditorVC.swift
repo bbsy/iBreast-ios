@@ -24,9 +24,7 @@ class SelfExamEditorVC: UIViewController {
         checkBoard.save()
     }
   
-    
-    @IBAction func onSizeChanged(sender: AnyObject) {
-        
+    @IBAction func sizeChanged(sender: AnyObject) {
         var slider = sender as! UISlider
         
         println(slider.value)
@@ -34,6 +32,7 @@ class SelfExamEditorVC: UIViewController {
         checkBoard.setSize(slider.value)
     }
     
+      
     @IBOutlet weak var checkBoard: ExamBoard!
    
     

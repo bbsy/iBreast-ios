@@ -69,11 +69,12 @@ class ExamBoard: UIImageView {
         
         super.init(coder: aDecoder)
         
+
         
       
         self.image = UIImage(named: "breast.png")
 
-        
+
       
         
     
