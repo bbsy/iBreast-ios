@@ -33,7 +33,7 @@ class SelfExamData: NSObject {
         
         if(fetch(maxId) == false)
         {
-            setDefalutData()
+            //setDefalutData()
         }
         return localLesions
     }
