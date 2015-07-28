@@ -72,7 +72,7 @@ class ExamBoard: UIImageView {
 
         
       
-        self.image = UIImage(named: "breast.png")
+        //self.image = UIImage(named: "breast.png")
 
 
       

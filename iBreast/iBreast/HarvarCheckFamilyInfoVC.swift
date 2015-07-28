@@ -76,7 +76,8 @@ extension HarvarCheckFamilyInfoVC:UITableViewDataSource,UITableViewDelegate{
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath){
         
         println("row: \(indexPath.row) , section: \(indexPath.section)")
-        
+
+        //点击了已固定存在的section组
         if(indexPath.section<familyInfos?.count)
         {
             if(indexPath.row==familyInfos![indexPath.section]._cancerCount-1)
@@ -85,11 +86,6 @@ extension HarvarCheckFamilyInfoVC:UITableViewDataSource,UITableViewDelegate{
                 tag = 1
                 sectionId = indexPath.section;
                 pickerAlert.showPickerInActionSheet(indexPath.row)
-//                var newItem=familyInfos![indexPath.section]
-//                newItem.addCancer(cancer, age:20)
-////
-//                tableView.reloadData()
-                
             }
             else if(indexPath.row == 0){//选择血缘关系
                  tag = 0
@@ -100,12 +96,13 @@ extension HarvarCheckFamilyInfoVC:UITableViewDataSource,UITableViewDelegate{
                 pickerAlert.showPickerInActionSheet(indexPath.row)
             }
         }
+        // 点击了固定section之外的增加
         else{
             var family=HarvardCheckModel.HarvardCheckFamilyInfo(relationship: "self",bloodline: "mother",cancerName: "brain",age: 20)
             familyInfos!.append(family)
             
            
-            family.addCancer("乳腺癌", age:18)
+            //family.addCancer("乳腺癌", age:18)
             
 
             
@@ -168,8 +165,6 @@ extension HarvarCheckFamilyInfoVC:UITableViewDataSource,UITableViewDelegate{
                     
                 }
                 else {
-                    
-                  
                         var cancer=cell?.textLabel
                         
                         cancer?.text=familyInfos![indexPath.section]._cancerName![indexPath.row]
@@ -177,27 +172,16 @@ extension HarvarCheckFamilyInfoVC:UITableViewDataSource,UITableViewDelegate{
                         var bloodline=cell?.detailTextLabel
                         
                         bloodline!.text="\(familyInfos![indexPath.section]._age![indexPath.row])"
-                    
-
                 }
             }
-
         }
         else{
                   cell=tableView.dequeueReusableCellWithIdentifier(indentifierAdd) as! UITableViewCell
-            
-            
-        }
-//        
-//        cell=tableView.dequeueReusableCellWithIdentifier(indentifierAdd) as! UITableViewCell
-        
-        
+            }
         return cell!
-        
-        
-        
     }
     
+    // tabview的section组个数
     func numberOfSectionsInTableView(tableView: UITableView) -> Int // Default is
     {
         //最后一个是“增加”项
@@ -206,6 +190,7 @@ extension HarvarCheckFamilyInfoVC:UITableViewDataSource,UITableViewDelegate{
 }
 
 
+// 选择（确定）和取消按钮的事件将在此触发
 extension HarvarCheckFamilyInfoVC:AlertPickerViewControllerDelegate{
     func didSelect(){
         println("didSelect")
@@ -286,8 +271,6 @@ extension HarvarCheckFamilyInfoVC:UIPickerViewDataSource ,UIPickerViewDelegate{
         {
             ageTemp = mHarvardCheckModel.age[row]
         }
-//
-//        println("size: \(mHarvardCheckModel.age.count), cancer: \(mHarvardCheckModel.cancersForSelf[row])   age:\(mHarvardCheckModel.age[row])")
     }
     
     //设置行的长度
