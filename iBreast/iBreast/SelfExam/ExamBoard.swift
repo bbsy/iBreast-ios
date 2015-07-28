@@ -69,9 +69,10 @@ class ExamBoard: UIImageView {
         
         super.init(coder: aDecoder)
         
-        var img=UIImage(named: "breast.png")
-      
-        self.image=img
+        // delete by xushiyong 20150728 for this setting can not right to load UI
+//        var img=UIImage(named: "ibreast_type3.png")
+//      
+//        self.image=img
         
       
        
