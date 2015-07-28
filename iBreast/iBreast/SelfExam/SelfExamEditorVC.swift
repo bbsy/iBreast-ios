@@ -11,6 +11,16 @@ import UIKit
 class SelfExamEditorVC: UIViewController {
     
     
+    @IBAction func firmnessChanged(sender: AnyObject) {
+        
+       var seg = sender as! UISegmentedControl
+        
+        
+        checkBoard.setFirmness(seg.selectedSegmentIndex)
+        
+        println("selected index \(seg.selectedSegmentIndex)")
+        
+    }
     
     //定义一个变量 存储记录中最后一个lesion的Id
     var maxId:Int = Int.max
@@ -32,7 +42,7 @@ class SelfExamEditorVC: UIViewController {
         checkBoard.setSize(slider.value)
     }
     
-      
+    
     @IBOutlet weak var checkBoard: ExamBoard!
    
     

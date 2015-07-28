@@ -83,6 +83,23 @@ class ExamBoard: UIImageView {
         
     }
     
+    func setFirmness(firmness:Int){
+        
+        if let light = hightlightedLesion{
+            if(firmness == 0){
+                light.lesion.firmness = LesionModel.SOFT
+            }
+            else if(firmness == 1){
+                  light.lesion.firmness = LesionModel.MEDIUM
+            }
+            else if(firmness == 2 ){
+                  light.lesion.firmness = LesionModel.HARD
+            }
+            light.reDisplay()
+        }
+        
+    }
+    
     func getBackground()->UIImage{
         
         var image=UIImage(named: "breast.png")

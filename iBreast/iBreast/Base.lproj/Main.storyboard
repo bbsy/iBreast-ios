@@ -220,15 +220,6 @@
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="50" minValue="10" maxValue="100" id="Mtn-FW-aFb">
-                                <rect key="frame" x="96" y="413" width="185" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="tintColor" red="0.95127051770000004" green="0.098662455359999998" blue="0.28188429079999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="thumbTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <connections>
-                                    <action selector="sizeChanged:" destination="H0x-Wv-bDi" eventType="valueChanged" id="PU8-zi-jYc"/>
-                                </connections>
-                            </slider>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Cji-GX-7ec">
                                 <rect key="frame" x="274" y="279" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -250,7 +241,7 @@
                                 </connections>
                             </button>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="sus-mX-ykE">
-                                <rect key="frame" x="36" y="466" width="248" height="29"/>
+                                <rect key="frame" x="36" y="366" width="248" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <segments>
                                     <segment title="软"/>
@@ -258,7 +249,19 @@
                                     <segment title="硬"/>
                                 </segments>
                                 <color key="tintColor" red="0.95127051770000004" green="0.098662455359999998" blue="0.28188429079999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="firmnessChanged:" destination="H0x-Wv-bDi" eventType="valueChanged" id="Xcw-zx-XC3"/>
+                                </connections>
                             </segmentedControl>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="50" minValue="10" maxValue="100" id="Mtn-FW-aFb">
+                                <rect key="frame" x="68" y="320" width="185" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" red="0.95127051770000004" green="0.098662455359999998" blue="0.28188429079999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="thumbTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <action selector="sizeChanged:" destination="H0x-Wv-bDi" eventType="valueChanged" id="PU8-zi-jYc"/>
+                                </connections>
+                            </slider>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                     </view>

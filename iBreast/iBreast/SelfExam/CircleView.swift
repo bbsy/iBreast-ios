@@ -123,7 +123,7 @@ class LesionView: UIView {
         else if(lesion.didAdd == true){
          //此时用户在查看记录
             if(lesion.firmness == LesionModel.HARD){
-                 return "new_soft_lesion"
+                 return "new_hard_lesion"
             }
             else if(lesion.firmness == LesionModel.MEDIUM)
             {
@@ -131,13 +131,13 @@ class LesionView: UIView {
             }
             else if(lesion.firmness == LesionModel.SOFT){
                 
-                 return "new_hard_lesion"
+                 return "new_soft_lesion"
             }
             return "new_soft_lesion"
         }
         else if(lesion.didDelete == true){
             if(lesion.firmness == LesionModel.HARD){
-                return "old_soft_lesion_del"
+                return "old_hard_lesion_del"
             }
             else if(lesion.firmness == LesionModel.MEDIUM)
             {
@@ -145,11 +145,22 @@ class LesionView: UIView {
             }
             else if(lesion.firmness == LesionModel.SOFT){
                 
-                return "old_hard_lesion_del"
+                return "old_soft_lesion_del"
             }
             return "new_soft_lesion_del"
         }
         else {
+            if(lesion.firmness == LesionModel.HARD){
+                return "old_hard_lesion"
+            }
+            else if(lesion.firmness == LesionModel.MEDIUM)
+            {
+                return "old_medium_lesion"
+            }
+            else if(lesion.firmness == LesionModel.SOFT){
+                
+                return "old_soft_lesion"
+            }
             return "old_soft_lesion"
         }
     }
