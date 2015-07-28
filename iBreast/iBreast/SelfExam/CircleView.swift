@@ -118,6 +118,18 @@ class LesionView: UIView {
     func getImage()->String{
         
         if(firtlyAdd == true){
+            if(lesion.firmness == LesionModel.HARD){
+                return "new_hard_lesion"
+            }
+            else if(lesion.firmness == LesionModel.MEDIUM)
+            {
+                return "new_medium_lesion"
+            }
+            else if(lesion.firmness == LesionModel.SOFT){
+                
+                return "new_soft_lesion"
+            }
+
             return "new_soft_lesion"
         }
         else if(lesion.didAdd == true){
