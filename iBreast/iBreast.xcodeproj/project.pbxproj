@@ -21,6 +21,8 @@
 		8A5F925D1B5D5C2A00F5BB81 /* AlertDatePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A5F925C1B5D5C2A00F5BB81 /* AlertDatePickerView.swift */; };
 		8A6335001B68CB6E00BBA939 /* SelfExamDirection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6334FF1B68CB6E00BBA939 /* SelfExamDirection.swift */; };
 		8A6335031B68D91C00BBA939 /* IJReachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6335021B68D91C00BBA939 /* IJReachability.swift */; };
+		8A6335061B68E04300BBA939 /* DeviceInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6335051B68E04300BBA939 /* DeviceInfo.swift */; };
+		8A6335081B68E80A00BBA939 /* GuideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6335071B68E80A00BBA939 /* GuideViewController.swift */; };
 		8A6EB9911B46D16A0003CFAB /* HarvardCheckMenu.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8A6EB9901B46D16A0003CFAB /* HarvardCheckMenu.plist */; };
 		8A6EB9931B46D3170003CFAB /* HarhardCheckBaseInfo1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6EB9921B46D3170003CFAB /* HarhardCheckBaseInfo1.swift */; };
 		8A6EB9951B46D4520003CFAB /* harvardMenuList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8A6EB9941B46D4520003CFAB /* harvardMenuList.plist */; };
@@ -142,6 +144,8 @@
 		8A5F925C1B5D5C2A00F5BB81 /* AlertDatePickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertDatePickerView.swift; sourceTree = "<group>"; };
 		8A6334FF1B68CB6E00BBA939 /* SelfExamDirection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SelfExamDirection.swift; path = iBreast/SelfExam/SelfExamDirection.swift; sourceTree = SOURCE_ROOT; };
 		8A6335021B68D91C00BBA939 /* IJReachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IJReachability.swift; sourceTree = "<group>"; };
+		8A6335051B68E04300BBA939 /* DeviceInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceInfo.swift; sourceTree = "<group>"; };
+		8A6335071B68E80A00BBA939 /* GuideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuideViewController.swift; sourceTree = "<group>"; };
 		8A6EB9901B46D16A0003CFAB /* HarvardCheckMenu.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = HarvardCheckMenu.plist; sourceTree = "<group>"; };
 		8A6EB9921B46D3170003CFAB /* HarhardCheckBaseInfo1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HarhardCheckBaseInfo1.swift; sourceTree = "<group>"; };
 		8A6EB9941B46D4520003CFAB /* harvardMenuList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = harvardMenuList.plist; sourceTree = "<group>"; };
@@ -269,6 +273,14 @@
 			path = NetWork;
 			sourceTree = "<group>";
 		};
+		8A6335041B68E02E00BBA939 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				8A6335051B68E04300BBA939 /* DeviceInfo.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		8A74DED21B461CAB0091DA2E = {
 			isa = PBXGroup;
 			children = (
@@ -293,6 +305,7 @@
 		8A74DEDD1B461CAB0091DA2E /* iBreast */ = {
 			isa = PBXGroup;
 			children = (
+				8A6335041B68E02E00BBA939 /* Utils */,
 				8A6335011B68D8E600BBA939 /* NetWork */,
 				8A5F925B1B5D5C0D00F5BB81 /* Views */,
 				8A5F92551B5D4F5300F5BB81 /* Remind */,
@@ -335,6 +348,7 @@
 				8A93E36E1B5950E100B734FA /* SelfExamHisModel.swift */,
 				8A93E3701B5952EA00B734FA /* SelfExamHisManager.swift */,
 				8A93E3721B5954B800B734FA /* Constant.swift */,
+				8A6335071B68E80A00BBA939 /* GuideViewController.swift */,
 			);
 			path = iBreast;
 			sourceTree = "<group>";
@@ -543,6 +557,7 @@
 				8A93E0A81B4D1E9F00B734FA /* MeViewController.swift in Sources */,
 				8A6335031B68D91C00BBA939 /* IJReachability.swift in Sources */,
 				8A5F925D1B5D5C2A00F5BB81 /* AlertDatePickerView.swift in Sources */,
+				8A6335081B68E80A00BBA939 /* GuideViewController.swift in Sources */,
 				8A7BB0711B49278000AFE5E2 /* EraserBrush.swift in Sources */,
 				8A93D2511B4AD28900B734FA /* AlertPickerViewController.swift in Sources */,
 				8A6EB99D1B46EA5A0003CFAB /* HarvardCheckBaseInfo4VC.swift in Sources */,
@@ -572,6 +587,7 @@
 				8A6EB9931B46D3170003CFAB /* HarhardCheckBaseInfo1.swift in Sources */,
 				8A93E36D1B58E70F00B734FA /* UserManager.swift in Sources */,
 				8A5323941B5AC8660095F568 /* Appointment.swift in Sources */,
+				8A6335061B68E04300BBA939 /* DeviceInfo.swift in Sources */,
 				8A7BB06B1B491CCA00AFE5E2 /* ExamBoard.swift in Sources */,
 				8A93E3711B5952EA00B734FA /* SelfExamHisManager.swift in Sources */,
 				8A93E09E1B4BADC700B734FA /* ClinicsHistoryModel.swift in Sources */,
