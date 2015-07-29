@@ -85,6 +85,15 @@ class HarvardCheckBaseInfo2VC: UIViewController ,UITableViewDataSource,UITableVi
         }
     }
     
+    func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        var view:UIView = UIView(frame: CGRectMake(0, 0, self.view.frame.size.width, 20));
+        //view.backgroundColor = UIColor.yellowColor()
+        var label:UILabel = UILabel(frame: CGRectMake(0, 0, self.view.frame.size.width, 20));
+        view.addSubview(label);
+        label.textAlignment = NSTextAlignment.Center
+        label.text = selfData?.allKeys[section] as! String
+        return view;
+    }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
         
@@ -92,8 +101,7 @@ class HarvardCheckBaseInfo2VC: UIViewController ,UITableViewDataSource,UITableVi
         
     }
         func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String?{
-    
-            println("section =\(section)");
+//            tableView.headerViewForSection(section)?.textLabel.textAlignment = NSTextAlignment.Center;
            return selfData?.allKeys[section] as! String
         }
     
@@ -102,6 +110,9 @@ class HarvardCheckBaseInfo2VC: UIViewController ,UITableViewDataSource,UITableVi
         return 2
     }
     
+    func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat{
+        return 60
+    }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
         

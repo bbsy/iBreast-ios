@@ -90,6 +90,22 @@ class HarvardCheckBaseInfo3VC: UIViewController ,UITableViewDataSource,UITableVi
         return selfData?.allKeys[section] as! String
     }
     
+    // 设置自定义的Section View视图，并在此添加自己的label，并设置居中
+    func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        var view:UIView = UIView(frame: CGRectMake(0, 0, self.view.frame.size.width, 20));
+        //view.backgroundColor = UIColor.brownColor()//.yellowColor()
+        var label:UILabel = UILabel(frame: CGRectMake(0, 0, self.view.frame.size.width, 20));
+        view.addSubview(label);
+        label.textAlignment = NSTextAlignment.Center
+        label.text = selfData?.allKeys[section] as! String
+        return view;
+    }
+    
+    // 设置section的间隔距离
+    func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat{
+        return 60
+    }
+    
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int{
         return 2
