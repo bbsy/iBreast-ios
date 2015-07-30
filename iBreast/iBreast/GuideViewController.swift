@@ -37,7 +37,7 @@ class GuideViewController: UIViewController,UIScrollViewDelegate  {
         scrollView.showsHorizontalScrollIndicator=false
         scrollView.showsVerticalScrollIndicator=false
         scrollView.contentSize=CGSizeMake(3*size.width,size.height)
-        for i in 1...4{
+        for i in 1...3{
             var image=UIImage(named: "Guideline-\(i)")
             var imageView=UIImageView(image: image)
             imageView.frame=CGRectMake(CGFloat((i-1))*size.width, 0, size.width, size.height)
@@ -46,7 +46,7 @@ class GuideViewController: UIViewController,UIScrollViewDelegate  {
             
         }
         pageControl=UIPageControl(frame: CGRectMake(size.width/2-100, size.height-100, 200, 100))
-        startBtn=UIButton(frame: CGRectMake(size.width/2-60, size.height/2+50, 120, 35))
+        startBtn=UIButton(frame: CGRectMake(size.width/2-60, size.height/2+150, 120, 35))
         
         pageControl.numberOfPages=3;
         pageControl.currentPage=0
@@ -61,7 +61,7 @@ class GuideViewController: UIViewController,UIScrollViewDelegate  {
         scrollView.bounces=false
         scrollView.delegate=self
         self.view.addSubview(scrollView)
-        self.view.addSubview(pageControl)
+        //self.view.addSubview(pageControl)
         self.view.addSubview(startBtn)
     }
     //开始使用app

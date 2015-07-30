@@ -48,10 +48,17 @@ class SelfExamHisVC: UIViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
         if segue.identifier == "GoToLesionEditor" {
-            var vc = segue.destinationViewController as! SelfExamEditorVC
-            vc.maxId = selfExamHisList[selectedIndex].lastId
-            vc.historyModel = selfExamHisList[selectedIndex]
-            println("selectedIndex \(selectedIndex)")
+            
+            if let indexPath = self.tableView.indexPathForSelectedRow() {
+                var row = indexPath.row
+                
+                
+                var vc = segue.destinationViewController as! SelfExamEditorVC
+                vc.maxId = selfExamHisList[row].lastId
+                vc.historyModel = selfExamHisList[row]
+                println("selectedIndex \(row)")
+            }
+            
             
         }
         
