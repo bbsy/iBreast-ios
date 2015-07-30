@@ -10,7 +10,9 @@ import UIKit
 
 class SelfExamEditorVC: UIViewController {
     
+    @IBOutlet weak var delButton: UIButton!
     
+    @IBOutlet weak var addButton: UIButton!
     @IBAction func firmnessChanged(sender: AnyObject) {
         
        var seg = sender as! UISegmentedControl
@@ -68,7 +70,11 @@ class SelfExamEditorVC: UIViewController {
         if let hisModel = historyModel{
             maxId = hisModel.lastId
             checkBoard.historyModel = hisModel
+            
+            delButton.hidden = true
+            addButton.hidden = true
         }
+        
         checkBoard.sizeController = self.sizeController
         
         checkBoard.showHistoryLesions(maxId)
