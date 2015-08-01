@@ -1104,10 +1104,6 @@
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                 </button>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background_bottom" id="bZ4-ab-Z3Z">
-                                                    <rect key="frame" x="8" y="327" width="304" height="70"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                </imageView>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image_news" id="CvB-Ic-4GA">
                                                     <rect key="frame" x="8" y="8" width="304" height="128"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1298,7 +1294,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="appointmentCell" rowHeight="74" id="2rY-n9-slo">
-                                        <rect key="frame" x="0.0" y="22" width="320" height="74"/>
+                                        <rect key="frame" x="0.0" y="86" width="320" height="74"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2rY-n9-slo" id="gfS-8j-KPi">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="73"/>
@@ -1412,7 +1408,6 @@
     </scenes>
     <resources>
         <image name="0" width="90" height="90"/>
-        <image name="background_bottom" width="320" height="100"/>
         <image name="background_button" width="236" height="51"/>
         <image name="breasts" width="640" height="531"/>
         <image name="icon_add" width="61" height="60"/>
