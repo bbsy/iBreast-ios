@@ -12,7 +12,7 @@ import UIKit
 class NewsUI: UIViewController
 {
     
-    @IBOutlet weak var newsTableView: UITableView!
+//    @IBOutlet weak var newsTableView: UITableView!
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
@@ -20,7 +20,7 @@ class NewsUI: UIViewController
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        newsTableView.dataSource = self;
+       // newsTableView.dataSource = self;
         //newsTableView.delegate = self;
     }
     

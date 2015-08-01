@@ -69,6 +69,7 @@
 		8A93E37C1B595EAA00B734FA /* SelfExamHisVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A93E37A1B595EAA00B734FA /* SelfExamHisVC.xib */; };
 		8A93E37E1B59665A00B734FA /* SelfExamEditorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A93E37D1B59665A00B734FA /* SelfExamEditorModel.swift */; };
 		8A93E3881B596A4100B734FA /* LesionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A93E3871B596A4100B734FA /* LesionModel.swift */; };
+		8AA446E21B6CA531001A90EF /* NewsUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA446E11B6CA531001A90EF /* NewsUI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -196,6 +197,7 @@
 		8A93E37A1B595EAA00B734FA /* SelfExamHisVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SelfExamHisVC.xib; path = iBreast/SelfExamHisVC.xib; sourceTree = SOURCE_ROOT; };
 		8A93E37D1B59665A00B734FA /* SelfExamEditorModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SelfExamEditorModel.swift; path = iBreast/SelfExamEditorModel.swift; sourceTree = SOURCE_ROOT; };
 		8A93E3871B596A4100B734FA /* LesionModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LesionModel.swift; path = iBreast/SelfExam/LesionModel.swift; sourceTree = "<group>"; };
+		8AA446E11B6CA531001A90EF /* NewsUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsUI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -305,6 +307,7 @@
 		8A74DEDD1B461CAB0091DA2E /* iBreast */ = {
 			isa = PBXGroup;
 			children = (
+				8AA446E11B6CA531001A90EF /* NewsUI.swift */,
 				8A6335041B68E02E00BBA939 /* Utils */,
 				8A6335011B68D8E600BBA939 /* NetWork */,
 				8A5F925B1B5D5C0D00F5BB81 /* Views */,
@@ -598,6 +601,7 @@
 				8A7040931B6266BA00B7923A /* AppDataState.swift in Sources */,
 				8A93E37B1B595EAA00B734FA /* SelfExamHisVC.swift in Sources */,
 				8A74DEE11B461CAB0091DA2E /* AppDelegate.swift in Sources */,
+				8AA446E21B6CA531001A90EF /* NewsUI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
