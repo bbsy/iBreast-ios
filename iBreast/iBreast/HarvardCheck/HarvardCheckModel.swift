@@ -119,11 +119,11 @@ class HarvardCheckModel: NSObject {
         
         
         var _cancerCount:Int=0
-        var _relationship:String?
+        var _relationship:String!
         
-        var _bloodline:String
-        var _cancerName:[String]?
-        var _age:[Int]?
+        var _bloodline:String!
+        var _cancerName:[String]!
+        var _age:[Int]!
         
         init(relationship:String,bloodline:String,cancerName:String,age:Int){
            

@@ -81,6 +81,7 @@
 		8AA4484B1B6CF1CB001A90EF /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA4483E1B6CF1CB001A90EF /* FMDatabaseQueue.m */; };
 		8AA4484C1B6CF1CB001A90EF /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA448411B6CF1CB001A90EF /* FMResultSet.m */; };
 		8AA448511B6CF26C001A90EF /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AA448501B6CF26C001A90EF /* libsqlite3.dylib */; };
+		8AA448531B6D0F2C001A90EF /* RiskCalcHttp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA448521B6D0F2C001A90EF /* RiskCalcHttp.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -232,6 +233,7 @@
 		8AA448411B6CF1CB001A90EF /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
 		8AA448421B6CF1CB001A90EF /* SwiftWithOC-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SwiftWithOC-Bridging-Header.h"; sourceTree = "<group>"; };
 		8AA448501B6CF26C001A90EF /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		8AA448521B6D0F2C001A90EF /* RiskCalcHttp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RiskCalcHttp.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -282,6 +284,7 @@
 			isa = PBXGroup;
 			children = (
 				8A5F92531B5C93A900F5BB81 /* HarvardExamModel.swift */,
+				8AA448521B6D0F2C001A90EF /* RiskCalcHttp.swift */,
 			);
 			path = HarvardExam;
 			sourceTree = "<group>";
@@ -688,6 +691,7 @@
 				8A7BB06F1B4924D600AFE5E2 /* PencilBrush.swift in Sources */,
 				8AA4484B1B6CF1CB001A90EF /* FMDatabaseQueue.m in Sources */,
 				8A6EB9991B46E40E0003CFAB /* HarvardCheckBaseInfo3VC.swift in Sources */,
+				8AA448531B6D0F2C001A90EF /* RiskCalcHttp.swift in Sources */,
 				8A7BB0771B49745200AFE5E2 /* SelfExamData.swift in Sources */,
 				8A6EB9971B46DBDF0003CFAB /* HarvardCheckBaseInfo2VC.swift in Sources */,
 				8A7BB0731B49439000AFE5E2 /* CircleView.swift in Sources */,

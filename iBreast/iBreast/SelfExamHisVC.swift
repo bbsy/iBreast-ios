@@ -22,6 +22,9 @@ class SelfExamHisVC: UIViewController {
 
         tableView.dataSource = self
         tableView.delegate = self
+            
+            
+        SelfExamHisManager.sharedInstance.selectedAll()
         
     }
     override func viewWillAppear(animated: Bool){
@@ -36,7 +39,7 @@ class SelfExamHisVC: UIViewController {
     
     func initData(){
         
-        var data=SelfExamHisManager.getInstance().fetchHisRecord(0, num: 10)
+        var data=SelfExamHisManager.sharedInstance.fetchHisRecord(0, num: 10)
         
         if let list = data {
             
