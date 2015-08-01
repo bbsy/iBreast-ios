@@ -23,7 +23,7 @@ class HarvardCheckBaseInfo2VC: UIViewController ,UITableViewDataSource,UITableVi
     var first_haschild_age:[Int]=[Int]()//=[16,17,18,19,20,21,22,23,24,25]
     
     // get a Model object for fill user data  获取一个用于填充用户数据的数据模型对象
-    var harvardExamModel:HarvardExamModel = HarvardExamModel();
+  //  var harvardExamModel:HarvardExamModel = HarvardExamModel();
     
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -46,8 +46,9 @@ class HarvardCheckBaseInfo2VC: UIViewController ,UITableViewDataSource,UITableVi
         tableBaseInof2.dataSource=self
         tableBaseInof2.delegate=self
         
-        var riskCalc = RiskCalcHttp()
-        riskCalc.wrapFamilyInfo(mHarvardCheckModel)
+      
+        
+        RiskCalcHttp.sharedInstance.wrapPhysicalData(harvardExamModel.physicalDataModel)
     }
     
     func initSelfData(){

@@ -28,6 +28,7 @@ class SectionAndRow{
     var row:Int = -1
 }
 
+//var harvardExamModel:HarvardExamModel = HarvardExamModel();
 
 
 class HarvardCheckBaseInfo1: UIViewController ,UITableViewDataSource,UITableViewDelegate{
@@ -49,8 +50,8 @@ class HarvardCheckBaseInfo1: UIViewController ,UITableViewDataSource,UITableView
     let alertPicker:AlertPickerViewController=AlertPickerViewController()
     
     // get a Model object for fill user data  获取一个用于填充用户数据的数据模型对象
-    var harvardExamModel:HarvardExamModel = HarvardExamModel();
-    
+    //var harvardExamModel:HarvardExamModel = HarvardExamModel();
+ 
     
     required init(coder aDecoder: NSCoder) {
         
@@ -72,6 +73,9 @@ class HarvardCheckBaseInfo1: UIViewController ,UITableViewDataSource,UITableView
         
         initHarvardCheckMenuData()
         initData()
+        
+
+        RiskCalcHttp.sharedInstance.wrapFamilyInfo(mHarvardCheckModel)
        }
     
     func initData(){

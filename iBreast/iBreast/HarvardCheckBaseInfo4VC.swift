@@ -23,7 +23,7 @@ class HarvardCheckBaseInfo4VC: UIViewController,UITableViewDataSource,UITableVie
     let alertPicker:AlertPickerViewController=AlertPickerViewController()
     
     // get a Model object for fill user data  获取一个用于填充用户数据的数据模型对象
-    var harvardExamModel:HarvardExamModel = HarvardExamModel();
+    //var harvardExamModel:HarvardExamModel = HarvardExamModel();
     
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -41,6 +41,8 @@ class HarvardCheckBaseInfo4VC: UIViewController,UITableViewDataSource,UITableVie
         tableMenu.dataSource=self
         
          tableMenu.delegate=self
+        
+        RiskCalcHttp.sharedInstance.wrapEthnicity(harvardExamModel.ethnicity)
         
     }
     

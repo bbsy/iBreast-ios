@@ -131,7 +131,7 @@ class ChildbirthHistory{
 //活体组织检查
 class Biopsies{
     
-    enum Atypia{
+     enum Atypia{
         case NAOrUnknow
         case BenignBreastCondition
         case Hyperplasia_NoAtypia

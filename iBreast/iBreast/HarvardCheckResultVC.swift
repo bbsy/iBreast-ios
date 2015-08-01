@@ -17,10 +17,16 @@ class HarvardCheckResultVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        // Do any additional setup after loading the view
         
         tableView.dataSource=self
         tableView.delegate=self
+        
+        
+        
+        RiskCalcHttp.sharedInstance.wrapHormoneReplacementTherapy(harvardExamModel.hormoneReplacementTherapy)
+        
+        RiskCalcHttp.sharedInstance.printRisk()
     }
 
     override func didReceiveMemoryWarning() {
