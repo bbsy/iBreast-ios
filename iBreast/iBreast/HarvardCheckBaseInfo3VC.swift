@@ -30,7 +30,7 @@ class HarvardCheckBaseInfo3VC: UIViewController ,UITableViewDataSource,UITableVi
     let alertPicker:AlertPickerViewController=AlertPickerViewController()
     
     // get a Model object for fill user data  获取一个用于填充用户数据的数据模型对象
-    var harvardExamModel:HarvardExamModel = HarvardExamModel();
+    //var harvardExamModel:HarvardExamModel = HarvardExamModel();
     
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -52,6 +52,9 @@ class HarvardCheckBaseInfo3VC: UIViewController ,UITableViewDataSource,UITableVi
         
         tableBaseInfo3.dataSource=self
         tableBaseInfo3.delegate=self
+        
+        RiskCalcHttp.sharedInstance.wrapBiopsies(harvardExamModel.biopsies)
+        RiskCalcHttp.sharedInstance.wrapChildbirthHistory(harvardExamModel.childbirthHistory)
     }
     
     func initSelfData(){
