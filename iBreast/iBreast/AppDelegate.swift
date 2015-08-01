@@ -19,15 +19,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         
-        self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
-        
-        var viewCtrl:UIViewController!
-        
-        viewCtrl = GuideViewController()
-        
-      
-        
-        self.window!.rootViewController = viewCtrl
+//        self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
+//        
+//        var viewCtrl:UIViewController!
+//        
+//        viewCtrl = GuideViewController()
+//        
+//      
+//        
+//        self.window!.rootViewController = viewCtrl
         
         
         return true
