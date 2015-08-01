@@ -25,7 +25,7 @@ class ExamBoard: UIImageView {
     
     private var drawingState: DrawingState!
     
-  
+    private var allowedMoving = false
     
     var lesionsModels:NSMutableOrderedSet!
     
@@ -65,11 +65,15 @@ class ExamBoard: UIImageView {
 //        
 //        self.brush=PencilBrush()
         
+        var size = DeviceInfo.getDeviceSize()
+        
         
         
         super.init(coder: aDecoder)
         
-
+        self.frame.size.width = size.width
+        
+        self.frame.size.height = 200
         
       
         //self.image = UIImage(named: "breast.png")
@@ -413,6 +417,15 @@ class ExamBoard: UIImageView {
         
         var point=(touches as NSSet).anyObject()!.locationInView(self)
         
+        if(point.y > self.frame.size.height){
+            
+            println("not allowed to touch")
+            allowedMoving = false
+            return
+        }
+        else{
+            allowedMoving = true
+        }
         getNearestPoint(point)
         
         
@@ -490,6 +503,12 @@ class ExamBoard: UIImageView {
 //            self.drawingState = .Moved
 //            self.drawingImage()
 //        }
+        
+        if(allowedMoving == false){
+            
+            println("not allowed to move")
+            return
+        }
         
         
         if let cir=hightlightedLesion{

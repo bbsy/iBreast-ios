@@ -210,7 +210,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ibreast_type3" id="hgN-pR-ZKm" customClass="ExamBoard" customModule="iBreast" customModuleProvider="target">
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="breasts" id="hgN-pR-ZKm" customClass="ExamBoard" customModule="iBreast" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="65" width="320" height="178"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
@@ -305,7 +305,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="hfcheckBI1TableCell" textLabel="Pw9-2H-DkG" detailTextLabel="2XJ-df-KP8" style="IBUITableViewCellStyleValue1" id="xVw-Bl-K7o">
-                                        <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="86" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xVw-Bl-K7o" id="hbB-jf-F9i">
                                             <rect key="frame" x="0.0" y="0.0" width="287" height="43.5"/>
@@ -1345,7 +1345,7 @@
     </scenes>
     <resources>
         <image name="0" width="90" height="90"/>
-        <image name="ibreast_type3" width="480" height="320"/>
+        <image name="breasts" width="640" height="531"/>
         <image name="icon_add" width="61" height="60"/>
         <image name="icon_bar_index_noraml" width="52" height="42"/>
         <image name="icon_bar_knowledge_normal" width="41" height="43"/>
