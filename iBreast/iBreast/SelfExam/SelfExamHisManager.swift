@@ -8,7 +8,9 @@
 
 import UIKit
 
- var instance:SelfExamHisManager!
+
+
+let _SingletonSharedInstance = SelfExamHisManager()
 
 class SelfExamHisManager: NSObject {
     
@@ -25,11 +27,33 @@ class SelfExamHisManager: NSObject {
     
     var userName:String!
     
+    var lesions:NSMutableOrderedSet!
+    
+    var localLesions = NSMutableOrderedSet()
+    
+    
+    let dbManager = DBManager.defaultDBManager().dataBase;
+    
+    let tableName = "selfExamHisTable"
+    
+    
     override init(){
         
+        super.init()
         
+        createTable()
+        
+        initData()
+        
+       
         
     }
+    
+    class var sharedInstance : SelfExamHisManager {
+        
+        return _SingletonSharedInstance
+    }
+    
     
     func initData(){
         
@@ -47,22 +71,11 @@ class SelfExamHisManager: NSObject {
         }
         
         historyList = AppDataState.getInstance().getSelfExamHisList()
+        
+        
     }
     
     
-    class func getInstance()->SelfExamHisManager{
-        
-        if let ins = instance {
-            return ins
-        }
-        else {
-            instance = SelfExamHisManager()
-            instance.initData()
-          
-        }
-        
-        return instance
-    }
     
     func fetchHistoryRecord(offset:Int,num:Int)->AnyObject?{
         
@@ -181,10 +194,192 @@ class SelfExamHisManager: NSObject {
         
         historyList.append(his!)
         
+        addHistory(his!)
+        
     }
     
     
     
     
+    
+    
    
+}
+
+extension SelfExamHisManager{
+    
+    private func createTable() -> Bool {
+        
+        var result:FMResultSet = dbManager.executeQuery("select count(*) from sqlite_master where type = 'table' and name = '\(tableName)' ", withArgumentsInArray: nil)
+        if result.next() {
+            var count = result.intForColumnIndex(0)
+            
+            var exist = count > 0 ?true :false
+            
+            if exist {
+                println("表： \(tableName) 已经存在")
+            }else{
+                var sql:String = "create table \(tableName) (id integer primary key autoincrement not null, _id inteter, time varchar(50), detail varchar(50), imageUrl varchar(50), title varchar(50), action integer, lastId integer, idsForAdd blob, idsForDelete blob )"
+                var res = dbManager.executeUpdate(sql, withArgumentsInArray: nil)
+                if res {
+                    println("创建成功")
+                }else{
+                    println("创建失败")
+                    println("sql:\(sql)")
+                }
+            }
+        }
+        return true
+    }
+    
+    func addHistory(model:SelfExamHisModel) -> Bool{
+        
+        // 三种种参数的传递方式
+        // 拼接字符串 这是常用的方式 但是你的保证拼接的字符串是正确的
+        // 特别是当你使用 \(paramName) 来拼接的时候 如果参数是 optional value （后面带有“？” 的变量）的时候 会得到你不想要的结果 你打印拼接后的 sql  就知道了 因此使用该方法的时候引用的变量需要加!
+        
+        //注意对一些特殊的数据的处理方式（主要是bool，date；这就是我把sex 定义成bool 的原因，date 大家就自己测试把，其实这和其他语言的sql处理方式是一样的） 因为sex 不为空因此我强制拆箱了
+        /*
+        // method 1
+        var insertSql = "insert into \(tableName) (name,age,sex) values('\(user.name)',\(user.age),\(user.sex! ? 1 : 0)) "
+        
+        var res = dbManager.executeUpdate(insertSql, withArgumentsInArray: nil)
+        
+        */
+        // 通过数组或者字典传递参数
+        // 特别注意的是，通常我们使用的 sql 参数占位符（?）这里不能时候，通过查看FMDB 的源码可以知道 他们是通过 “: + 参数名称” 来定位你所传递的参数值应该插入的位置的
+        /*
+        // method 2
+        var insertSql2 = "insert into userTable (name,age,sex) values(:name,:age,:sex) "
+        
+        var values = [user.name,user.age,user.sex]
+        var res = dbManager.executeUpdate(insertSql2, withArgumentsInArray: values)
+        */
+        
+        /*
+        // method 3
+        var insertSql = "insert into userTable (name,age,sex) values(:name,:age,:sex) "
+        var values = Dictionary<String, NSObject>()
+        values["name"] = user.name
+        values["age"] = user.age
+        values["sex"] = user.sex
+        
+        var res = dbManager.executeUpdate(insertSql, withParameterDictionary: values)
+        // */
+        
+        ///*
+        //  optional value
+        var insertSql = "insert into \(tableName) "
+        var keys = "("
+        var values = " values ("
+        //  当我们判断不为空的时候 强制拆包就可以了
+        if (model.id != nil) {
+            keys += " _id,"
+            values += "\(model.id),"
+        }
+        
+        if (model.time != nil) {
+            keys += " time,"
+            values += "20151111,"
+        }
+        
+        if (model.detail != nil) {
+            keys += " detail,"
+            values += "shangxin,"
+        }
+//
+//        if (model.imageUrl != nil) {
+//            keys += " imageUrl,"
+//            values += "http,"
+//        }
+//        if (model.title != nil) {
+//            keys += " title,"
+//            values += "zengjia,"
+//        }
+//        if (model.action != nil) {
+//            keys += " action,"
+//            values += "\(model.action),"
+//        }
+        //if (model.lastId != nil)
+        //{
+//        keys += " lastId,"
+//        values += "\(model.lastId)"
+        //   }
+        
+//        if let idsForAdd = model.idsForAdd{
+//            var dataImageUrls:NSData = NSKeyedArchiver.archivedDataWithRootObject(idsForAdd)
+//            keys += " idsForAdd,"
+//            values += "\(dataImageUrls),"
+//            
+//        }
+//        
+//        if let idsFordel = model.idsForDelete{
+//            var dataImageUrls:NSData = NSKeyedArchiver.archivedDataWithRootObject(idsFordel)
+//            keys += " idsForDelete,"
+//            values += "\(dataImageUrls),"
+//            
+//        }
+        
+        
+        
+        keys += ")"
+        values += ")"
+        
+        // 有时候我们需要循环遍历参数，因此，通常我们需要处理一下尾部多余的字符 当然处理方式有很多 这只是一个参考
+        
+        
+        var keysRange = keys.rangeOfString(",)", options: NSStringCompareOptions.BackwardsSearch, range: Range(start: keys.startIndex, end: keys.endIndex), locale: NSLocale.autoupdatingCurrentLocale())
+        
+        if (keysRange != nil) {
+            keys.replaceRange(keysRange!, with: ")")
+        }
+        var valuesRange = values.rangeOfString(",)", options: NSStringCompareOptions.BackwardsSearch, range: Range(start: values.startIndex,end: values.endIndex))
+        
+        if (valuesRange != nil) {
+            values.replaceRange(valuesRange!, with: ")")
+        }
+        
+        insertSql += keys + values
+        
+        println("keys \(keys)")
+        println(insertSql)
+        println(keysRange)
+        println(valuesRange)
+        
+        var res = dbManager.executeUpdate(insertSql, withArgumentsInArray: nil)
+        //  */
+        return res;
+        
+    }
+    
+    func selectedAll() ->[SelfExamHisModel] {
+        
+        var sql:String = "select * from \(tableName)"
+        
+        var res:FMResultSet = dbManager.executeQuery(sql, withArgumentsInArray: nil)
+        
+        var array:[SelfExamHisModel] = []
+        
+        while (res.next()) {
+           // var model:SelfExamHisModel = SelfExamHisModel()
+            
+            //     查看OC 的方法可以知道 intForColumn 的返回值是 int 类型，（注意是小写的 int）我们都知道它会更具系统32或者64位的编译的时候自动确定是16位的int 类型呢还是32的int 类型，这和swift 的Int类型是一样的，但是当你调用oc方法的时候你可以发现，当你的系统是64位的时候 他的返回值 会变成 Int32 ，不能直接赋值，但是你也不能把变量定义成Int32的对吧，这样32位系统运行该程序就会报错 ，所以我们强制转换成Int 就好了（这只是一个例子了，其他oc int 来到swift 之后都可以这样处理）
+            
+            
+//            var id = res.intForColumn("_id") as! Int
+//           // model.time = res.stringForColumn("title") as! String
+//            var detail = res.stringForColumn("detail")
+//            var lastId = res.intForColumn("lastId") as! Int
+//            
+//            //array.append(model)
+            
+            var time = res.stringForColumn("time") as! String
+            
+            println("history: time:\(time)")
+        }
+        return array;
+        
+    }
+    
+
 }

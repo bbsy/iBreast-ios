@@ -20,7 +20,7 @@ class  ProfessionalInspection:UIViewController{
     {
         super.viewDidLoad()
         
-        var data=SelfExamHisManager.getInstance().fetchHisRecord(0, num: 10)
+        var data=SelfExamHisManager.sharedInstance.fetchHisRecord(0, num: 10)
         
         if let list = data {
             

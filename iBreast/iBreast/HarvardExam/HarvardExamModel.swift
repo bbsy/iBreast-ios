@@ -144,3 +144,5 @@ class Biopsies{
     var atypia:Atypia!
     
 }
+
+

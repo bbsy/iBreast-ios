@@ -35,6 +35,8 @@ class SelfExamHisModel: NSObject {
     
     var idsForDelete:[Int]?
     
+    
+    
     init(lastId:Int,action:Int,time:NSDate,imageUrl:String,title:String,detail:String,addIds:[Int]?,deleteIds:[Int]?) {
         
         self.lastId = lastId

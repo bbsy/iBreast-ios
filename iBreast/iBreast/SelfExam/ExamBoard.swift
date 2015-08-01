@@ -143,13 +143,13 @@ class ExamBoard: UIImageView {
                 
               
 //                
-                SelfExamHisManager.getInstance().addHistory(addedLesions,maxId:addedLesions.last!.id )
+                SelfExamHisManager.sharedInstance.addHistory(addedLesions,maxId:addedLesions.last!.id )
                 
                 
             }
             else if(!deletedLesions.isEmpty && addedLesions.isEmpty){
                 //减少了
-                SelfExamHisManager.getInstance().addHistory(deletedLesions,maxId:maxid)
+                SelfExamHisManager.sharedInstance.addHistory(deletedLesions,maxId:maxid)
                 
             }
             else {
@@ -163,7 +163,7 @@ class ExamBoard: UIImageView {
                 }
 
                 
-                 SelfExamHisManager.getInstance().addHistory(totalLesions,maxId: addedLesions.last!.id)
+                 SelfExamHisManager.sharedInstance.addHistory(totalLesions,maxId: addedLesions.last!.id)
             }
             
             

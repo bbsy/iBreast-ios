@@ -45,6 +45,9 @@ class HarvardCheckBaseInfo2VC: UIViewController ,UITableViewDataSource,UITableVi
         
         tableBaseInof2.dataSource=self
         tableBaseInof2.delegate=self
+        
+        var riskCalc = RiskCalcHttp()
+        riskCalc.wrapFamilyInfo(mHarvardCheckModel)
     }
     
     func initSelfData(){

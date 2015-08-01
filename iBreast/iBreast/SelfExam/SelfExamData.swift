@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class SelfExamData: NSObject {
     
     
@@ -18,15 +19,20 @@ class SelfExamData: NSObject {
     var userDefault = NSUserDefaults.standardUserDefaults()
     
     var LESIONS_DATA_PATH:String = "\(Constant.LESIONS_DATA_PATH)"
-    
-    
+ 
     
     override init(){
         super.init();
         
        lesions = AppDataState.getInstance().getLesionList()
         
+        
     }
+    
+    
+    
+    
+
     
     //在数据库中获取所有的lesion
     func getLesions(maxId:Int)->NSMutableOrderedSet{
@@ -170,5 +176,13 @@ class SelfExamData: NSObject {
     
     
     
+    
+    
    
+}
+
+extension SelfExamData{
+    
+        
+    
 }

@@ -70,6 +70,18 @@
 		8A93E37E1B59665A00B734FA /* SelfExamEditorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A93E37D1B59665A00B734FA /* SelfExamEditorModel.swift */; };
 		8A93E3881B596A4100B734FA /* LesionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A93E3871B596A4100B734FA /* LesionModel.swift */; };
 		8AA446E21B6CA531001A90EF /* NewsUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA446E11B6CA531001A90EF /* NewsUI.swift */; };
+		8AA448431B6CF1CB001A90EF /* DBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA448281B6CF1CB001A90EF /* DBManager.m */; };
+		8AA448441B6CF1CB001A90EF /* FMDatabase+FTS3.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA4482D1B6CF1CB001A90EF /* FMDatabase+FTS3.m */; };
+		8AA448451B6CF1CB001A90EF /* FMTokenizers.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA4482F1B6CF1CB001A90EF /* FMTokenizers.m */; };
+		8AA448461B6CF1CB001A90EF /* FMDatabase+InMemoryOnDiskIO.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA448331B6CF1CB001A90EF /* FMDatabase+InMemoryOnDiskIO.m */; };
+		8AA448471B6CF1CB001A90EF /* FMDatabaseVariadic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA448351B6CF1CB001A90EF /* FMDatabaseVariadic.swift */; };
+		8AA448481B6CF1CB001A90EF /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA448381B6CF1CB001A90EF /* FMDatabase.m */; };
+		8AA448491B6CF1CB001A90EF /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA4483A1B6CF1CB001A90EF /* FMDatabaseAdditions.m */; };
+		8AA4484A1B6CF1CB001A90EF /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA4483C1B6CF1CB001A90EF /* FMDatabasePool.m */; };
+		8AA4484B1B6CF1CB001A90EF /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA4483E1B6CF1CB001A90EF /* FMDatabaseQueue.m */; };
+		8AA4484C1B6CF1CB001A90EF /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA448411B6CF1CB001A90EF /* FMResultSet.m */; };
+		8AA448511B6CF26C001A90EF /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AA448501B6CF26C001A90EF /* libsqlite3.dylib */; };
+		8AA448531B6D0F2C001A90EF /* RiskCalcHttp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA448521B6D0F2C001A90EF /* RiskCalcHttp.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -198,6 +210,30 @@
 		8A93E37D1B59665A00B734FA /* SelfExamEditorModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SelfExamEditorModel.swift; path = iBreast/SelfExamEditorModel.swift; sourceTree = SOURCE_ROOT; };
 		8A93E3871B596A4100B734FA /* LesionModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LesionModel.swift; path = iBreast/SelfExam/LesionModel.swift; sourceTree = "<group>"; };
 		8AA446E11B6CA531001A90EF /* NewsUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsUI.swift; sourceTree = "<group>"; };
+		8AA448271B6CF1CB001A90EF /* DBManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBManager.h; sourceTree = "<group>"; };
+		8AA448281B6CF1CB001A90EF /* DBManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBManager.m; sourceTree = "<group>"; };
+		8AA4482C1B6CF1CB001A90EF /* FMDatabase+FTS3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FMDatabase+FTS3.h"; sourceTree = "<group>"; };
+		8AA4482D1B6CF1CB001A90EF /* FMDatabase+FTS3.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "FMDatabase+FTS3.m"; sourceTree = "<group>"; };
+		8AA4482E1B6CF1CB001A90EF /* FMTokenizers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMTokenizers.h; sourceTree = "<group>"; };
+		8AA4482F1B6CF1CB001A90EF /* FMTokenizers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMTokenizers.m; sourceTree = "<group>"; };
+		8AA448301B6CF1CB001A90EF /* fts3_tokenizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fts3_tokenizer.h; sourceTree = "<group>"; };
+		8AA448321B6CF1CB001A90EF /* FMDatabase+InMemoryOnDiskIO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FMDatabase+InMemoryOnDiskIO.h"; sourceTree = "<group>"; };
+		8AA448331B6CF1CB001A90EF /* FMDatabase+InMemoryOnDiskIO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "FMDatabase+InMemoryOnDiskIO.m"; sourceTree = "<group>"; };
+		8AA448351B6CF1CB001A90EF /* FMDatabaseVariadic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FMDatabaseVariadic.swift; sourceTree = "<group>"; };
+		8AA448371B6CF1CB001A90EF /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
+		8AA448381B6CF1CB001A90EF /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
+		8AA448391B6CF1CB001A90EF /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
+		8AA4483A1B6CF1CB001A90EF /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseAdditions.m; sourceTree = "<group>"; };
+		8AA4483B1B6CF1CB001A90EF /* FMDatabasePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabasePool.h; sourceTree = "<group>"; };
+		8AA4483C1B6CF1CB001A90EF /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabasePool.m; sourceTree = "<group>"; };
+		8AA4483D1B6CF1CB001A90EF /* FMDatabaseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseQueue.h; sourceTree = "<group>"; };
+		8AA4483E1B6CF1CB001A90EF /* FMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseQueue.m; sourceTree = "<group>"; };
+		8AA4483F1B6CF1CB001A90EF /* FMDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDB.h; sourceTree = "<group>"; };
+		8AA448401B6CF1CB001A90EF /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
+		8AA448411B6CF1CB001A90EF /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
+		8AA448421B6CF1CB001A90EF /* SwiftWithOC-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SwiftWithOC-Bridging-Header.h"; sourceTree = "<group>"; };
+		8AA448501B6CF26C001A90EF /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		8AA448521B6D0F2C001A90EF /* RiskCalcHttp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RiskCalcHttp.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -205,6 +241,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8AA448511B6CF26C001A90EF /* libsqlite3.dylib in Frameworks */,
 				8A93E3661B58E42300B734FA /* CoreData.framework in Frameworks */,
 				8A5F923E1B5B94C100F5BB81 /* Alamofire.framework in Frameworks */,
 			);
@@ -247,6 +284,7 @@
 			isa = PBXGroup;
 			children = (
 				8A5F92531B5C93A900F5BB81 /* HarvardExamModel.swift */,
+				8AA448521B6D0F2C001A90EF /* RiskCalcHttp.swift */,
 			);
 			path = HarvardExam;
 			sourceTree = "<group>";
@@ -286,6 +324,7 @@
 		8A74DED21B461CAB0091DA2E = {
 			isa = PBXGroup;
 			children = (
+				8AA448501B6CF26C001A90EF /* libsqlite3.dylib */,
 				8A5F922F1B5B948900F5BB81 /* Alamofire.xcodeproj */,
 				8A93E3871B596A4100B734FA /* LesionModel.swift */,
 				8A93E3651B58E42300B734FA /* CoreData.framework */,
@@ -307,6 +346,9 @@
 		8A74DEDD1B461CAB0091DA2E /* iBreast */ = {
 			isa = PBXGroup;
 			children = (
+				8AA448261B6CF1CB001A90EF /* DBManager */,
+				8AA448291B6CF1CB001A90EF /* FMDBSource */,
+				8AA448421B6CF1CB001A90EF /* SwiftWithOC-Bridging-Header.h */,
 				8AA446E11B6CA531001A90EF /* NewsUI.swift */,
 				8A6335041B68E02E00BBA939 /* Utils */,
 				8A6335011B68D8E600BBA939 /* NetWork */,
@@ -405,6 +447,81 @@
 				8A6334FF1B68CB6E00BBA939 /* SelfExamDirection.swift */,
 			);
 			path = SelfExamination;
+			sourceTree = "<group>";
+		};
+		8AA448261B6CF1CB001A90EF /* DBManager */ = {
+			isa = PBXGroup;
+			children = (
+				8AA448271B6CF1CB001A90EF /* DBManager.h */,
+				8AA448281B6CF1CB001A90EF /* DBManager.m */,
+			);
+			path = DBManager;
+			sourceTree = "<group>";
+		};
+		8AA448291B6CF1CB001A90EF /* FMDBSource */ = {
+			isa = PBXGroup;
+			children = (
+				8AA4482A1B6CF1CB001A90EF /* extra */,
+				8AA448361B6CF1CB001A90EF /* fmdb */,
+			);
+			path = FMDBSource;
+			sourceTree = "<group>";
+		};
+		8AA4482A1B6CF1CB001A90EF /* extra */ = {
+			isa = PBXGroup;
+			children = (
+				8AA4482B1B6CF1CB001A90EF /* fts3 */,
+				8AA448311B6CF1CB001A90EF /* InMemoryOnDiskIO */,
+				8AA448341B6CF1CB001A90EF /* Swift extensions */,
+			);
+			path = extra;
+			sourceTree = "<group>";
+		};
+		8AA4482B1B6CF1CB001A90EF /* fts3 */ = {
+			isa = PBXGroup;
+			children = (
+				8AA4482C1B6CF1CB001A90EF /* FMDatabase+FTS3.h */,
+				8AA4482D1B6CF1CB001A90EF /* FMDatabase+FTS3.m */,
+				8AA4482E1B6CF1CB001A90EF /* FMTokenizers.h */,
+				8AA4482F1B6CF1CB001A90EF /* FMTokenizers.m */,
+				8AA448301B6CF1CB001A90EF /* fts3_tokenizer.h */,
+			);
+			path = fts3;
+			sourceTree = "<group>";
+		};
+		8AA448311B6CF1CB001A90EF /* InMemoryOnDiskIO */ = {
+			isa = PBXGroup;
+			children = (
+				8AA448321B6CF1CB001A90EF /* FMDatabase+InMemoryOnDiskIO.h */,
+				8AA448331B6CF1CB001A90EF /* FMDatabase+InMemoryOnDiskIO.m */,
+			);
+			path = InMemoryOnDiskIO;
+			sourceTree = "<group>";
+		};
+		8AA448341B6CF1CB001A90EF /* Swift extensions */ = {
+			isa = PBXGroup;
+			children = (
+				8AA448351B6CF1CB001A90EF /* FMDatabaseVariadic.swift */,
+			);
+			path = "Swift extensions";
+			sourceTree = "<group>";
+		};
+		8AA448361B6CF1CB001A90EF /* fmdb */ = {
+			isa = PBXGroup;
+			children = (
+				8AA448371B6CF1CB001A90EF /* FMDatabase.h */,
+				8AA448381B6CF1CB001A90EF /* FMDatabase.m */,
+				8AA448391B6CF1CB001A90EF /* FMDatabaseAdditions.h */,
+				8AA4483A1B6CF1CB001A90EF /* FMDatabaseAdditions.m */,
+				8AA4483B1B6CF1CB001A90EF /* FMDatabasePool.h */,
+				8AA4483C1B6CF1CB001A90EF /* FMDatabasePool.m */,
+				8AA4483D1B6CF1CB001A90EF /* FMDatabaseQueue.h */,
+				8AA4483E1B6CF1CB001A90EF /* FMDatabaseQueue.m */,
+				8AA4483F1B6CF1CB001A90EF /* FMDB.h */,
+				8AA448401B6CF1CB001A90EF /* FMResultSet.h */,
+				8AA448411B6CF1CB001A90EF /* FMResultSet.m */,
+			);
+			path = fmdb;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -567,17 +684,27 @@
 				8A93E0AE1B4E458800B734FA /* HarvardCheckResultVC.swift in Sources */,
 				8A93E3881B596A4100B734FA /* LesionModel.swift in Sources */,
 				8A7BB06D1B4921A000AFE5E2 /* BaseBrush.swift in Sources */,
+				8AA448441B6CF1CB001A90EF /* FMDatabase+FTS3.m in Sources */,
 				8A5323921B5AC7BB0095F568 /* ProfessionalInspection.swift in Sources */,
+				8AA448471B6CF1CB001A90EF /* FMDatabaseVariadic.swift in Sources */,
 				8A93E3731B5954B800B734FA /* Constant.swift in Sources */,
 				8A7BB06F1B4924D600AFE5E2 /* PencilBrush.swift in Sources */,
+				8AA4484B1B6CF1CB001A90EF /* FMDatabaseQueue.m in Sources */,
 				8A6EB9991B46E40E0003CFAB /* HarvardCheckBaseInfo3VC.swift in Sources */,
+				8AA448531B6D0F2C001A90EF /* RiskCalcHttp.swift in Sources */,
 				8A7BB0771B49745200AFE5E2 /* SelfExamData.swift in Sources */,
 				8A6EB9971B46DBDF0003CFAB /* HarvardCheckBaseInfo2VC.swift in Sources */,
 				8A7BB0731B49439000AFE5E2 /* CircleView.swift in Sources */,
+				8AA448461B6CF1CB001A90EF /* FMDatabase+InMemoryOnDiskIO.m in Sources */,
 				8A93E0A41B4C042600B734FA /* RecordViewController.swift in Sources */,
+				8AA4484C1B6CF1CB001A90EF /* FMResultSet.m in Sources */,
+				8AA448491B6CF1CB001A90EF /* FMDatabaseAdditions.m in Sources */,
 				8A5F92491B5BD9BF00F5BB81 /* HttpObjectMapper.swift in Sources */,
 				8A74DEE31B461CAB0091DA2E /* ViewController.swift in Sources */,
+				8AA448481B6CF1CB001A90EF /* FMDatabase.m in Sources */,
+				8AA4484A1B6CF1CB001A90EF /* FMDatabasePool.m in Sources */,
 				8A93E0B21B4E551800B734FA /* HarvardCheckModel.swift in Sources */,
+				8AA448451B6CF1CB001A90EF /* FMTokenizers.m in Sources */,
 				8A5F92451B5BD7B600F5BB81 /* URLRouter.swift in Sources */,
 				8A5F92541B5C93A900F5BB81 /* HarvardExamModel.swift in Sources */,
 				8A5F924E1B5BEFA900F5BB81 /* HttpRequest.swift in Sources */,
@@ -594,6 +721,7 @@
 				8A7BB06B1B491CCA00AFE5E2 /* ExamBoard.swift in Sources */,
 				8A93E3711B5952EA00B734FA /* SelfExamHisManager.swift in Sources */,
 				8A93E09E1B4BADC700B734FA /* ClinicsHistoryModel.swift in Sources */,
+				8AA448431B6CF1CB001A90EF /* DBManager.m in Sources */,
 				8A93E36B1B58E6C100B734FA /* User.swift in Sources */,
 				8A7BB0751B4969F500AFE5E2 /* SelfExamEditorVC.swift in Sources */,
 				8A5F92571B5D4F7B00F5BB81 /* RemindModel.swift in Sources */,
@@ -736,6 +864,7 @@
 				INFOPLIST_FILE = iBreast/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				"SWIFT_OBJC_BRIDGING_HEADER[arch=*]" = "iBreast/SwiftWithOC-Bridging-Header.h";
 			};
 			name = Debug;
 		};
@@ -746,6 +875,7 @@
 				INFOPLIST_FILE = iBreast/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				"SWIFT_OBJC_BRIDGING_HEADER[arch=*]" = "iBreast/SwiftWithOC-Bridging-Header.h";
 			};
 			name = Release;
 		};
