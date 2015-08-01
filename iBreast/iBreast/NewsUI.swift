@@ -11,6 +11,7 @@ import UIKit
 
 class NewsUI: UIViewController
 {
+    @IBOutlet weak var tableview: UITableView!
     
 //    @IBOutlet weak var newsTableView: UITableView!
     required init(coder aDecoder: NSCoder) {
@@ -20,8 +21,7 @@ class NewsUI: UIViewController
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       // newsTableView.dataSource = self;
-        //newsTableView.delegate = self;
+        tableview.dataSource = self;
     }
     
     
@@ -35,8 +35,6 @@ extension NewsUI:UITableViewDataSource
     {
         return 1;
     }
-    // Row display. Implementers should *always* try to reuse cells by setting each cell's reuseIdentifier and querying for available reusable cells with dequeueReusableCellWithIdentifier:
-    // Cell gets various attributes set automatically based on table (separators) and data source (accessory views, editing controls)
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
     {
