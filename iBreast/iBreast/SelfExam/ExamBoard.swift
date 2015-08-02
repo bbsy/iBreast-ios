@@ -30,7 +30,7 @@ class ExamBoard: UIImageView {
     var lesionsModels:NSMutableOrderedSet!
     
     var lesionViews:[LesionView]=[LesionView]()
-    
+    var rect:CGRect!
     
     var addedLesions:[LesionModel] = [LesionModel]()
     var deletedLesions:[LesionModel] = [LesionModel]()
@@ -39,6 +39,8 @@ class ExamBoard: UIImageView {
  //   var brush: BaseBrush?
     
     private var realImage: UIImage?
+    
+    private var statuHeight:CGFloat!
     
 //    var strokeWidth: CGFloat
 //    var strokeColor: UIColor
@@ -67,25 +69,41 @@ class ExamBoard: UIImageView {
         
         var size = DeviceInfo.getDeviceSize()
         
-        
-        
+       
         super.init(coder: aDecoder)
         
-        self.frame.size.width = size.width
         
-        self.frame.size.height = 200
+        statuHeight = UIApplication.sharedApplication().statusBarFrame.size.height
         
+        println("statueHeith: \(statuHeight)")
+        
+        var orgY = self.frame.origin.y - 45
       
-        //self.image = UIImage(named: "breast.png")
+        var point = CGPoint(x: 0,y: orgY)
+       
+        self.frame.origin = point
 
-
-      
+        var bg = UIImage(named: "breasts.png")
         
+        var imgSize = CGSize(width: size.width, height: size.width)
+        
+         self.frame.size = imgSize
+        
+        
+        
+        self.contentMode = UIViewContentMode.ScaleAspectFit
+      
+        self.image = ImageUtil.scaleImage(imgSize, img: bg!)
     
+         rect = CGRect(x: self.frame.origin.x,y: self.frame.origin.y,width: self.frame.size.width,height: self.frame.height)
+        
+        println("rect: \(rect)")
+        
         
         
         
     }
+    
     
     func setFirmness(firmness:Int){
         
@@ -267,8 +285,8 @@ class ExamBoard: UIImageView {
         
         var model = LesionModel()
         model.id = lesionsData.generateId()
-        model.point.x = CGFloat(100)
-        model.point.y = CGFloat(200)
+        model.point.x = CGFloat(20)
+        model.point.y = CGFloat(50)
         model.size = 30
         model.firmness=LesionModel.SOFT
         model.highlight=true
@@ -504,6 +522,9 @@ class ExamBoard: UIImageView {
 //            self.drawingImage()
 //        }
         
+        
+        
+        
         if(allowedMoving == false){
             
             println("not allowed to move")
@@ -511,12 +532,34 @@ class ExamBoard: UIImageView {
         }
         
         
+        var movePoint=(touches as NSSet).anyObject()!.locationInView(self)
+        
+        
         if let cir=hightlightedLesion{
             
             if(hightlightedLesion.lesion.allowedMoving == true ){
-                var movePoint=(touches as NSSet).anyObject()!.locationInView(self)
+                
+                 println("orgy: \(rect.origin.y+rect.size.height) , pointy: \(movePoint.y - statuHeight )")
+                
+                var overHeight:Bool = (rect.origin.y + rect.size.height/2) < movePoint.y - statuHeight + hightlightedLesion.lesion.size
+                
+                var overWidth = rect.origin.x + rect.size.width < movePoint.x + hightlightedLesion.lesion.size
+                
+                if(overHeight || overWidth){
+                    
+                    println("越界，越界")
+                    
+                    return
+                }
+                
+                
+
                 cir.lesion.point=movePoint
                 cir.frame=CGRectMake(movePoint.x, movePoint.y, cir.frame.size.width, cir.frame.size.height)
+                
+               
+                
+               
             }
            
         }

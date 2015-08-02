@@ -43,6 +43,7 @@
 		8A7BB0731B49439000AFE5E2 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A7BB0721B49439000AFE5E2 /* CircleView.swift */; };
 		8A7BB0751B4969F500AFE5E2 /* SelfExamEditorVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A7BB0741B4969F500AFE5E2 /* SelfExamEditorVC.swift */; };
 		8A7BB0771B49745200AFE5E2 /* SelfExamData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A7BB0761B49745200AFE5E2 /* SelfExamData.swift */; };
+		8A7EA87A1B6E4C9200CE7A2E /* ImageUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A7EA8791B6E4C9200CE7A2E /* ImageUtil.swift */; };
 		8A93D2511B4AD28900B734FA /* AlertPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A93D24F1B4AD28900B734FA /* AlertPickerViewController.swift */; };
 		8A93D2541B4B911900B734FA /* SelfExam in Resources */ = {isa = PBXBuildFile; fileRef = 8A93D2531B4B911900B734FA /* SelfExam */; };
 		8A93E09C1B4BACE200B734FA /* ClinicsHistoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A93E09B1B4BACE200B734FA /* ClinicsHistoryVC.swift */; };
@@ -183,6 +184,7 @@
 		8A7BB0721B49439000AFE5E2 /* CircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CircleView.swift; path = SelfExam/CircleView.swift; sourceTree = "<group>"; };
 		8A7BB0741B4969F500AFE5E2 /* SelfExamEditorVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SelfExamEditorVC.swift; path = SelfExam/SelfExamEditorVC.swift; sourceTree = "<group>"; };
 		8A7BB0761B49745200AFE5E2 /* SelfExamData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SelfExamData.swift; path = SelfExam/SelfExamData.swift; sourceTree = "<group>"; };
+		8A7EA8791B6E4C9200CE7A2E /* ImageUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageUtil.swift; sourceTree = "<group>"; };
 		8A93D24F1B4AD28900B734FA /* AlertPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertPickerViewController.swift; sourceTree = "<group>"; };
 		8A93D2531B4B911900B734FA /* SelfExam */ = {isa = PBXFileReference; lastKnownFileType = folder; path = SelfExam; sourceTree = "<group>"; };
 		8A93E09B1B4BACE200B734FA /* ClinicsHistoryVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ClinicsHistoryVC.swift; path = ClinicsCheck/ClinicsHistoryVC.swift; sourceTree = "<group>"; };
@@ -317,6 +319,7 @@
 			isa = PBXGroup;
 			children = (
 				8A6335051B68E04300BBA939 /* DeviceInfo.swift */,
+				8A7EA8791B6E4C9200CE7A2E /* ImageUtil.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -689,6 +692,7 @@
 				8AA448471B6CF1CB001A90EF /* FMDatabaseVariadic.swift in Sources */,
 				8A93E3731B5954B800B734FA /* Constant.swift in Sources */,
 				8A7BB06F1B4924D600AFE5E2 /* PencilBrush.swift in Sources */,
+				8A7EA87A1B6E4C9200CE7A2E /* ImageUtil.swift in Sources */,
 				8AA4484B1B6CF1CB001A90EF /* FMDatabaseQueue.m in Sources */,
 				8A6EB9991B46E40E0003CFAB /* HarvardCheckBaseInfo3VC.swift in Sources */,
 				8AA448531B6D0F2C001A90EF /* RiskCalcHttp.swift in Sources */,

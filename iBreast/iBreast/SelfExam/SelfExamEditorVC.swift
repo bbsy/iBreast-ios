@@ -78,6 +78,11 @@ class SelfExamEditorVC: UIViewController {
         checkBoard.sizeController = self.sizeController
         
         checkBoard.showHistoryLesions(maxId)
+        
+        
+      
+        
+        
         // Do any additional setup after loading the view.
     }
     
