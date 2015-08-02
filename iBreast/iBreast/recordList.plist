@@ -6,7 +6,7 @@
 	<array>
 		<string>上次月经来潮日期</string>
 		<string>上次月经结束日期</string>
-		<string>建议检查日期</string>
+		<string>每月提醒日期</string>
 	</array>
 	<key>怀孕或已绝经女性设置</key>
 	<array>

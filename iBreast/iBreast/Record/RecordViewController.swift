@@ -16,6 +16,7 @@ class RecordViewController: UIViewController,UITableViewDataSource ,UITableViewD
 
     @IBOutlet weak var tableView: UITableView!
     
+    @IBOutlet weak var sw: UISwitch!
     let RecordListTag="RecordListTag"
     
     var alertPicker:AlertDatePickerView = AlertDatePickerView()
@@ -23,6 +24,9 @@ class RecordViewController: UIViewController,UITableViewDataSource ,UITableViewD
    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        sw.addTarget(self, action: "onNoticeValueChanged:", forControlEvents: UIControlEvents.ValueChanged)
+//        cell?.accessoryView=sw
 
         // Do any additional setup after loading the view.
         
@@ -31,11 +35,8 @@ class RecordViewController: UIViewController,UITableViewDataSource ,UITableViewD
         tableView.dataSource=self
         tableView.delegate=self
         
-         alertPicker.mUIViewController=self
+        alertPicker.mUIViewController=self
         alertPicker.valueChangedDeletgete = self
-        
-
-        
     }
 
     override func didReceiveMemoryWarning() {
@@ -67,9 +68,7 @@ class RecordViewController: UIViewController,UITableViewDataSource ,UITableViewD
         {
             alertPicker.showPickerInActionSheet(indexPath.row+3)
         }
-        else if(indexPath.section == 2){
-            
-        }
+
     }
     
     // Row display. Implementers should *always* try to reuse cells by setting each cell's reuseIdentifier and querying for available reusable cells with dequeueReusableCellWithIdentifier:
@@ -188,13 +187,7 @@ class RecordViewController: UIViewController,UITableViewDataSource ,UITableViewD
                 cell?.detailTextLabel?.text = "\(remindModel.everyMonthSuggestDate)";
             }
         }
-//        else if(indexPath.section == 2)
-//        {
-//            if(indexPath.row == 1)
-//            {
-//                
-//            }
-//        }
+
         
         
         //cell?.detailTextLabel?.text=String(indexPath.row)
@@ -205,14 +198,14 @@ class RecordViewController: UIViewController,UITableViewDataSource ,UITableViewD
     
      func numberOfSectionsInTableView(tableView: UITableView) -> Int // Default is 1 if not implemented
     {
-        return (recordData?.allKeys as! NSArray).count
+        return 1;//(recordData?.allKeys as! NSArray).count
     }
     
-    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String?{
-        
-        
-        return recordData?.allKeys[section] as! String
-    }
+//    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String?{
+//        
+//        
+//        return recordData?.allKeys[section] as! String
+//    }
 
 
     
