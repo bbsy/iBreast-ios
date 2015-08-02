@@ -116,6 +116,10 @@ class SelfExamHisManager: NSObject {
 //            
 //        }
         
+        historyList.removeAll(keepCapacity: false)
+        
+        selectedAll()
+        
         return historyList
     }
     
@@ -219,7 +223,12 @@ extension SelfExamHisManager{
             if exist {
                 println("表： \(tableName) 已经存在")
             }else{
-                var sql:String = "create table \(tableName) (id integer primary key autoincrement not null, _id inteter, time varchar(50), detail varchar(50), imageUrl varchar(50), title varchar(50), action integer, lastId integer, idsForAdd blob, idsForDelete blob )"
+                var sql:String = "create table \(tableName) (id integer primary key autoincrement not null, _id inteter,_title varchar(50),_detail varchar(50), _time varchar(50), _imageUrl varchar(50),  _action integer, _lastId integer, _idsForAdd blob, _idsForDelete blob )"
+                
+//                var sql:String = "create table \(tableName) (id integer primary key autoincrement not null, _id inteter, _title nvarchar(20),_detail text , _age integer ,_time nvarchar(20))"
+                
+                println(sql)
+                
                 var res = dbManager.executeUpdate(sql, withArgumentsInArray: nil)
                 if res {
                     println("创建成功")
@@ -277,48 +286,58 @@ extension SelfExamHisManager{
             keys += " _id,"
             values += "\(model.id),"
         }
-        
-        if (model.time != nil) {
-            keys += " time,"
-            values += "20151111,"
+        if (model.title != nil) {
+            keys += " _title,"
+            values += "'\(model.title)',"
         }
+        
         
         if (model.detail != nil) {
-            keys += " detail,"
-            values += "shangxin,"
+            keys += " _detail,"
+            values += "'\(model.detail)',"
         }
-//
-//        if (model.imageUrl != nil) {
-//            keys += " imageUrl,"
-//            values += "http,"
-//        }
-//        if (model.title != nil) {
-//            keys += " title,"
-//            values += "zengjia,"
-//        }
-//        if (model.action != nil) {
-//            keys += " action,"
-//            values += "\(model.action),"
-//        }
-        //if (model.lastId != nil)
-        //{
-//        keys += " lastId,"
-//        values += "\(model.lastId)"
-        //   }
+
         
-//        if let idsForAdd = model.idsForAdd{
-//            var dataImageUrls:NSData = NSKeyedArchiver.archivedDataWithRootObject(idsForAdd)
-//            keys += " idsForAdd,"
-//            values += "\(dataImageUrls),"
-//            
-//        }
-//        
-//        if let idsFordel = model.idsForDelete{
-//            var dataImageUrls:NSData = NSKeyedArchiver.archivedDataWithRootObject(idsFordel)
-//            keys += " idsForDelete,"
-//            values += "\(dataImageUrls),"
-//            
-//        }
+        if (model.time != nil) {
+            keys += " _time,"
+            values += "'\(model.time)',"
+        }
+        
+       
+        
+        if (model.imageUrl != nil) {
+            keys += " _imageUrl,"
+            values += "'\(model.imageUrl )',"
+        }
+
+        if (model.action != nil) {
+            keys += " _action,"
+            values += "\(model.action),"
+        }
+        
+        if (model.lastId != -Int.max)
+        {
+            keys += " _lastId,"
+            values += "\(model.lastId),"
+        }
+         var dataForAdd:NSData!
+        if let idsForAdd = model.idsForAdd{
+            dataForAdd = NSKeyedArchiver.archivedDataWithRootObject(idsForAdd)
+            keys += " _idsForAdd,"
+            values += "?,"
+
+            
+        }
+
+        
+       var dataForDel:NSData!
+        
+        if let idsFordel = model.idsForDelete{
+            dataForDel = NSKeyedArchiver.archivedDataWithRootObject(idsFordel)
+            keys += " _idsForDelete,"
+            values += "?,"
+            
+        }
         
         
         
@@ -346,8 +365,32 @@ extension SelfExamHisManager{
         println(keysRange)
         println(valuesRange)
         
-        var res = dbManager.executeUpdate(insertSql, withArgumentsInArray: nil)
-        //  */
+        
+        
+        var res:Bool = false
+            
+        if(dataForAdd != nil && dataForDel != nil){
+            
+             res = dbManager.executeUpdate(insertSql, dataForAdd,dataForDel)
+        }
+        else if(dataForAdd == nil && dataForDel == nil){
+            
+            res = dbManager.executeUpdate(insertSql, withArgumentsInArray: nil)
+
+        }
+        else if(dataForAdd != nil && dataForDel == nil){
+             res = dbManager.executeUpdate(insertSql, dataForAdd)
+        }
+        else if(dataForAdd==nil && dataForDel != nil){
+             res = dbManager.executeUpdate(insertSql,dataForDel)
+        }
+
+
+
+            
+           //  */
+        
+        println("res = \(res)")
         return res;
         
     }
@@ -361,7 +404,8 @@ extension SelfExamHisManager{
         var array:[SelfExamHisModel] = []
         
         while (res.next()) {
-           // var model:SelfExamHisModel = SelfExamHisModel()
+            
+            
             
             //     查看OC 的方法可以知道 intForColumn 的返回值是 int 类型，（注意是小写的 int）我们都知道它会更具系统32或者64位的编译的时候自动确定是16位的int 类型呢还是32的int 类型，这和swift 的Int类型是一样的，但是当你调用oc方法的时候你可以发现，当你的系统是64位的时候 他的返回值 会变成 Int32 ，不能直接赋值，但是你也不能把变量定义成Int32的对吧，这样32位系统运行该程序就会报错 ，所以我们强制转换成Int 就好了（这只是一个例子了，其他oc int 来到swift 之后都可以这样处理）
             
@@ -372,10 +416,57 @@ extension SelfExamHisManager{
 //            var lastId = res.intForColumn("lastId") as! Int
 //            
 //            //array.append(model)
+            var adds:[Int]!
+            var dels:[Int]!
+            var id = Int(res.intForColumn("id"))
+            var title = res.stringForColumn("_title") as! String
+            var detail = res.stringForColumn("_detail") as! String
+            var action = Int(res.intForColumn("_action"))
+            var lastId = Int(res.intForColumn("_lastId"))
+            var imageUrl = res.stringForColumn("_imageUrl")
+            var idsForAdd = res.dataForColumn("_idsForAdd")
             
-            var time = res.stringForColumn("time") as! String
             
-            println("history: time:\(time)")
+           
+                
+            
+            println("==============id: \(id) =================")
+            
+            if (idsForAdd != nil) {
+                
+                
+                adds = NSKeyedUnarchiver.unarchiveObjectWithData(idsForAdd) as! [Int]
+                
+                for i in 0...adds.count-1{
+                    println("adds: \(adds[i])")
+                }
+                
+            }
+            
+            var idsForDel = res.dataForColumn("_idsForDelete")
+            
+            
+            
+            if (idsForDel != nil) {
+                
+                
+                dels = NSKeyedUnarchiver.unarchiveObjectWithData(idsForDel) as! [Int]
+                
+                for i in 0...dels.count-1{
+                    println("dels: \(dels[i])")
+                }
+                
+            }
+            
+            var model:SelfExamHisModel = SelfExamHisModel(lastId: lastId, action: action, time: NSDate(), imageUrl: imageUrl, title: title, detail: detail, addIds:adds ,deleteIds: dels)
+
+            
+            
+          //  var time =  res.stringForColumn("_time") as! String
+            
+            println("history: title:\(title), detail:\(detail) ,action:\(action), lastId:\(lastId)")
+            
+            historyList.append(model)
         }
         return array;
         

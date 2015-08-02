@@ -24,7 +24,7 @@ class SelfExamHisVC: UIViewController {
         tableView.delegate = self
             
             
-        SelfExamHisManager.sharedInstance.selectedAll()
+       
         
     }
     override func viewWillAppear(animated: Bool){
