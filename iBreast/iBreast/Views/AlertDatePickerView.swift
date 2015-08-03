@@ -83,7 +83,7 @@ class AlertDatePickerView: NSObject {
         //add the toolbar to the alert controller
         alert.view.addSubview(toolView);
         
-        mUIViewController!.presentViewController(alert, animated: true, completion: nil);
+        //mUIViewController!.presentViewController(alert, animated: true, completion: nil);
     }
     
     func confirmSelection(sender: UIButton){
