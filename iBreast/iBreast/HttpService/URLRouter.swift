@@ -14,10 +14,13 @@ class URLRouter: NSObject {
     
     enum Router:URLRequestConvertible{
         
-        static let baseURLString="http://192.168.0.105:8080/iBreast/servlet/"
+        static let baseURLString=Constant.SERVER_HOST
+        
         static let consumerKey=""
         
         case PopularPhotos(Int)
+        
+        case PopularClinics(Int,Int)
         
         
         var URLRequest:NSURLRequest{
@@ -27,6 +30,9 @@ class URLRouter: NSObject {
                  case .PopularPhotos(let page):
                     let params=["consumer_key":Router.consumerKey,"page":"\(page)"]
                     return ("Schedule",params)
+                case .PopularClinics(let pageIndex,let pageNum):
+                    let params=["g":"Api","m":"Api","a":"clinicinfo"]
+                    return ("",params)
                 }
             }()
             

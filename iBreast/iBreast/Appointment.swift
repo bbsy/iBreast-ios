@@ -8,21 +8,65 @@
 
 import Foundation
 import UIKit
-
-class  Appointment:UIViewController {
+import Alamofire
+class  Appointment:UIViewController,HttpObjectMapper,HttpCallBack {
     //appointmentCell
     
     @IBOutlet weak var tabview: UITableView!
     
+    var clinics:[ClinicBriefModel] = [ClinicBriefModel]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tabview.dataSource = self
+        
+       
+        var httpRequest = HttpRequest()
+        httpRequest.mapKey="history"
+        httpRequest.objMapper = self
+        httpRequest.callback = self
+        httpRequest.urlRequest = URLRouter.Router.PopularClinics(0, 10)
+        
+        var http = HttpObject()
+        
+        http.fetch(httpRequest)
+
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+       
     }
+    
+    
+    func objectMap(data:AnyObject)->AnyObject?{
+        
+        var obj = data as! NSDictionary
+        
+        var time = NSDate()
+        
+        var model = ClinicBriefModel()
+        model.id = obj.valueForKey("id") as! Int
+        model.name = obj.valueForKey("name") as! String
+        model.address = obj.valueForKey("address") as! String
+        model.imageUrl = obj.valueForKey("imgageUrl") as! String
+        
+        
+
+        
+        println("id:\(model.id) , name:\(model.name) , address:\(model.address) , imageUrl: \(model.imageUrl)")
+        
+        clinics.append(model)
+        
+        return model
+    }
+    
+    func callback(result:AnyObject){
+        println("\(result)")
+        
+       tabview.reloadData()
+    }
+
 }
 
 
@@ -30,7 +74,7 @@ extension Appointment:UITableViewDataSource{
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
         
-        return 10
+        return clinics.count
     }
     
     // Row display. Implementers should *always* try to reuse cells by setting each cell's reuseIdentifier and querying for available reusable cells with dequeueReusableCellWithIdentifier:
@@ -50,6 +94,35 @@ extension Appointment:UITableViewDataSource{
         else {
             cell = c as! UITableViewCell
         }
+        
+        var name = cell.viewWithTag(101) as! UILabel
+        
+        name.text = clinics[indexPath.row].name
+        
+        var address = cell.viewWithTag(102) as! UILabel
+        
+        address.text = clinics[indexPath.row].address
+        
+        
+         var pic = cell.viewWithTag(100) as! UIImageView
+        
+         pic.layer.cornerRadius = 8;
+         pic.layer.masksToBounds = true;
+        
+        let imageURL = clinics[indexPath.row].imageUrl
+        
+            Alamofire.request(.GET, imageURL).response() {
+                (_, _, data, _) in
+            
+                let image = UIImage(data: data! as! NSData)
+                
+               
+                
+                pic.image = image
+        }
+
+        
+        
         
         //var model = selfExamHisList[indexPath.row] as SelfExamHisModel
         //

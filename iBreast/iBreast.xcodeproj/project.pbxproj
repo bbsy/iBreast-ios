@@ -83,6 +83,8 @@
 		8AA4484C1B6CF1CB001A90EF /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA448411B6CF1CB001A90EF /* FMResultSet.m */; };
 		8AA448511B6CF26C001A90EF /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AA448501B6CF26C001A90EF /* libsqlite3.dylib */; };
 		8AA448531B6D0F2C001A90EF /* RiskCalcHttp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA448521B6D0F2C001A90EF /* RiskCalcHttp.swift */; };
+		8AC4A0E41B6FC0CE0082DCB4 /* ClinicBriefModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC4A0E31B6FC0CE0082DCB4 /* ClinicBriefModel.swift */; };
+		8AC4A0E61B6FC1480082DCB4 /* ClinicBriefHttp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC4A0E51B6FC1480082DCB4 /* ClinicBriefHttp.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -236,6 +238,8 @@
 		8AA448421B6CF1CB001A90EF /* SwiftWithOC-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SwiftWithOC-Bridging-Header.h"; sourceTree = "<group>"; };
 		8AA448501B6CF26C001A90EF /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		8AA448521B6D0F2C001A90EF /* RiskCalcHttp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RiskCalcHttp.swift; sourceTree = "<group>"; };
+		8AC4A0E31B6FC0CE0082DCB4 /* ClinicBriefModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClinicBriefModel.swift; sourceTree = "<group>"; };
+		8AC4A0E51B6FC1480082DCB4 /* ClinicBriefHttp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClinicBriefHttp.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -349,6 +353,7 @@
 		8A74DEDD1B461CAB0091DA2E /* iBreast */ = {
 			isa = PBXGroup;
 			children = (
+				8AC4A0DF1B6FC0B40082DCB4 /* Clinics */,
 				8AA448261B6CF1CB001A90EF /* DBManager */,
 				8AA448291B6CF1CB001A90EF /* FMDBSource */,
 				8AA448421B6CF1CB001A90EF /* SwiftWithOC-Bridging-Header.h */,
@@ -527,6 +532,15 @@
 			path = fmdb;
 			sourceTree = "<group>";
 		};
+		8AC4A0DF1B6FC0B40082DCB4 /* Clinics */ = {
+			isa = PBXGroup;
+			children = (
+				8AC4A0E31B6FC0CE0082DCB4 /* ClinicBriefModel.swift */,
+				8AC4A0E51B6FC1480082DCB4 /* ClinicBriefHttp.swift */,
+			);
+			path = Clinics;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -681,12 +695,14 @@
 				8A6335031B68D91C00BBA939 /* IJReachability.swift in Sources */,
 				8A5F925D1B5D5C2A00F5BB81 /* AlertDatePickerView.swift in Sources */,
 				8A6335081B68E80A00BBA939 /* GuideViewController.swift in Sources */,
+				8AC4A0E61B6FC1480082DCB4 /* ClinicBriefHttp.swift in Sources */,
 				8A7BB0711B49278000AFE5E2 /* EraserBrush.swift in Sources */,
 				8A93D2511B4AD28900B734FA /* AlertPickerViewController.swift in Sources */,
 				8A6EB99D1B46EA5A0003CFAB /* HarvardCheckBaseInfo4VC.swift in Sources */,
 				8A93E0AE1B4E458800B734FA /* HarvardCheckResultVC.swift in Sources */,
 				8A93E3881B596A4100B734FA /* LesionModel.swift in Sources */,
 				8A7BB06D1B4921A000AFE5E2 /* BaseBrush.swift in Sources */,
+				8AC4A0E41B6FC0CE0082DCB4 /* ClinicBriefModel.swift in Sources */,
 				8AA448441B6CF1CB001A90EF /* FMDatabase+FTS3.m in Sources */,
 				8A5323921B5AC7BB0095F568 /* ProfessionalInspection.swift in Sources */,
 				8AA448471B6CF1CB001A90EF /* FMDatabaseVariadic.swift in Sources */,
