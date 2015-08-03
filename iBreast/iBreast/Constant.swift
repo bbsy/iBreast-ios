@@ -15,6 +15,8 @@ class Constant: NSObject {
     static let EMPTY_STRING="EMPTY_STRING"
     
     static let LESIONS_DATA_PATH = "LESIONS_DATA"
+    
+    static let SERVER_HOST = "http://ibreast.ultrafancn.com"
     override init(){
         super.init()
     }
