@@ -1357,7 +1357,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ZNC-DP-Zro" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="首页" image="icon_bar_index_noraml" id="4TG-NR-KBT">
-                        <inset key="imageInsets" minX="3" minY="2" maxX="3" maxY="8"/>
+                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
                     </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="c7H-ME-4oN">
@@ -1548,9 +1548,7 @@
         <scene sceneID="hhH-No-f1R">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="MWN-Y3-B9W" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="记录" image="icon_bar_recorde_normal" id="AXK-U1-g5T">
-                        <inset key="imageInsets" minX="3" minY="2" maxX="3" maxY="8"/>
-                    </tabBarItem>
+                    <tabBarItem key="tabBarItem" title="记录" image="icon_bar_recorde_normal" id="AXK-U1-g5T"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="qC7-PT-J0e">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -1569,9 +1567,7 @@
         <scene sceneID="oNC-ag-fkv">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="xj9-Mf-5IY" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="我" image="icon_bar_me_normal" id="Aal-Ky-Kdh">
-                        <inset key="imageInsets" minX="3" minY="2" maxX="3" maxY="8"/>
-                    </tabBarItem>
+                    <tabBarItem key="tabBarItem" title="我" image="icon_bar_me_normal" id="Aal-Ky-Kdh"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Yt5-fU-dGV">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -1590,9 +1586,7 @@
         <scene sceneID="qED-EE-m3f">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="GY0-q1-zFo" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="小知识" image="icon_bar_knowledge_normal" id="Z0i-5O-LJZ">
-                        <inset key="imageInsets" minX="3" minY="2" maxX="3" maxY="8"/>
-                    </tabBarItem>
+                    <tabBarItem key="tabBarItem" title="小知识" image="icon_bar_knowledge_normal" id="Z0i-5O-LJZ"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="GZW-hq-geZ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -1617,10 +1611,10 @@
         <image name="background_tips2" width="520" height="294"/>
         <image name="breasts" width="640" height="640"/>
         <image name="icon_add" width="61" height="60"/>
-        <image name="icon_bar_index_noraml" width="52" height="42"/>
-        <image name="icon_bar_knowledge_normal" width="41" height="43"/>
-        <image name="icon_bar_me_normal" width="36" height="43"/>
-        <image name="icon_bar_recorde_normal" width="41" height="41"/>
+        <image name="icon_bar_index_noraml" width="35" height="35"/>
+        <image name="icon_bar_knowledge_normal" width="35" height="35"/>
+        <image name="icon_bar_me_normal" width="35" height="35"/>
+        <image name="icon_bar_recorde_normal" width="35" height="35"/>
         <image name="icon_bell" width="33" height="38"/>
         <image name="icon_delete" width="61" height="60"/>
         <image name="icon_faver" width="31" height="30"/>
