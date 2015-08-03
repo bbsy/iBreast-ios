@@ -846,39 +846,49 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="meTableViewCellIdentifierKeyInfo" rowHeight="146" id="FdS-4m-qaM">
-                                        <rect key="frame" x="0.0" y="22" width="320" height="146"/>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="meTableViewCellIdentifierKeyInfo" rowHeight="172" id="FdS-4m-qaM">
+                                        <rect key="frame" x="0.0" y="86" width="320" height="172"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="FdS-4m-qaM" id="pBE-fR-0aK">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="145"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="171"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background_center_top" id="dEn-ys-elW">
+                                                    <rect key="frame" x="-7" y="1" width="327" height="168"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_header" id="arB-t5-u9l">
+                                                    <rect key="frame" x="115" y="5" width="90" height="90"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="101" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="林志玲" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="nfw-18-Qnl">
-                                                    <rect key="frame" x="135" y="87" width="51" height="21"/>
+                                                    <rect key="frame" x="135" y="103" width="51" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" tag="100" contentMode="center" image="0" id="iLe-DD-K33">
-                                                    <rect key="frame" x="115" y="3" width="90" height="90"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="102" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="距离体检时间还有7天" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Pj4-wg-OWQ">
-                                                    <rect key="frame" x="73" y="116" width="175" height="21"/>
+                                                    <rect key="frame" x="73" y="132" width="175" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
                                                     <color key="highlightedColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
+                                                <view contentMode="scaleToFill" id="2QI-96-Pf3">
+                                                    <rect key="frame" x="0.0" y="127" width="320" height="1"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" red="1" green="0.52651089529757233" blue="0.59053631402583018" alpha="1" colorSpace="calibratedRGB"/>
+                                                </view>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="meTableViewCellIdentifierKey" textLabel="1PM-dH-NCT" rowHeight="74" style="IBUITableViewCellStyleDefault" id="x7x-03-f9o">
-                                        <rect key="frame" x="0.0" y="168" width="320" height="74"/>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="meTableViewCellIdentifierKey" textLabel="1PM-dH-NCT" rowHeight="68" style="IBUITableViewCellStyleDefault" id="x7x-03-f9o">
+                                        <rect key="frame" x="0.0" y="258" width="320" height="68"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="x7x-03-f9o" id="Cp6-6I-gmh">
-                                            <rect key="frame" x="0.0" y="0.0" width="287" height="73"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="287" height="67"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="1PM-dH-NCT">
@@ -1257,7 +1267,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="news_item" rowHeight="420" id="mjs-NV-lp0">
-                                        <rect key="frame" x="0.0" y="86" width="320" height="420"/>
+                                        <rect key="frame" x="0.0" y="22" width="320" height="420"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mjs-NV-lp0" id="P67-UU-Jh5">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="419"/>
@@ -1601,6 +1611,7 @@
     <resources>
         <image name="0" width="90" height="90"/>
         <image name="background_button" width="236" height="51"/>
+        <image name="background_center_top" width="640" height="517"/>
         <image name="background_red" width="541" height="85"/>
         <image name="background_tips" width="640" height="276"/>
         <image name="background_tips2" width="520" height="294"/>
@@ -1613,6 +1624,7 @@
         <image name="icon_bell" width="33" height="38"/>
         <image name="icon_delete" width="61" height="60"/>
         <image name="icon_faver" width="31" height="30"/>
+        <image name="icon_header" width="200" height="200"/>
         <image name="icon_item_check" width="84" height="86"/>
         <image name="icon_item_harvard" width="93" height="92"/>
         <image name="icon_item_professional" width="89" height="90"/>
