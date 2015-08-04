@@ -85,6 +85,9 @@
 		8AA448531B6D0F2C001A90EF /* RiskCalcHttp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA448521B6D0F2C001A90EF /* RiskCalcHttp.swift */; };
 		8AC4A0E41B6FC0CE0082DCB4 /* ClinicBriefModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC4A0E31B6FC0CE0082DCB4 /* ClinicBriefModel.swift */; };
 		8AC4A0E61B6FC1480082DCB4 /* ClinicBriefHttp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC4A0E51B6FC1480082DCB4 /* ClinicBriefHttp.swift */; };
+		8AC4A0EE1B70A0230082DCB4 /* PersonalityVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC4A0ED1B70A0230082DCB4 /* PersonalityVC.swift */; };
+		8AC4A0F01B70A3300082DCB4 /* About.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC4A0EF1B70A3300082DCB4 /* About.swift */; };
+		8AC4A0F71B70AEA40082DCB4 /* aboutus.docx in Resources */ = {isa = PBXBuildFile; fileRef = 8AC4A0F61B70AEA40082DCB4 /* aboutus.docx */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -240,6 +243,9 @@
 		8AA448521B6D0F2C001A90EF /* RiskCalcHttp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RiskCalcHttp.swift; sourceTree = "<group>"; };
 		8AC4A0E31B6FC0CE0082DCB4 /* ClinicBriefModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClinicBriefModel.swift; sourceTree = "<group>"; };
 		8AC4A0E51B6FC1480082DCB4 /* ClinicBriefHttp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClinicBriefHttp.swift; sourceTree = "<group>"; };
+		8AC4A0ED1B70A0230082DCB4 /* PersonalityVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonalityVC.swift; sourceTree = "<group>"; };
+		8AC4A0EF1B70A3300082DCB4 /* About.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = About.swift; sourceTree = "<group>"; };
+		8AC4A0F61B70AEA40082DCB4 /* aboutus.docx */ = {isa = PBXFileReference; lastKnownFileType = file; path = aboutus.docx; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -353,6 +359,8 @@
 		8A74DEDD1B461CAB0091DA2E /* iBreast */ = {
 			isa = PBXGroup;
 			children = (
+				8AC4A0F61B70AEA40082DCB4 /* aboutus.docx */,
+				8AC4A0E91B709FCC0082DCB4 /* Personality */,
 				8AC4A0DF1B6FC0B40082DCB4 /* Clinics */,
 				8AA448261B6CF1CB001A90EF /* DBManager */,
 				8AA448291B6CF1CB001A90EF /* FMDBSource */,
@@ -541,6 +549,15 @@
 			path = Clinics;
 			sourceTree = "<group>";
 		};
+		8AC4A0E91B709FCC0082DCB4 /* Personality */ = {
+			isa = PBXGroup;
+			children = (
+				8AC4A0ED1B70A0230082DCB4 /* PersonalityVC.swift */,
+				8AC4A0EF1B70A3300082DCB4 /* About.swift */,
+			);
+			path = Personality;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -667,6 +684,7 @@
 				8A74DEEB1B461CAB0091DA2E /* LaunchScreen.xib in Resources */,
 				8A6EB9951B46D4520003CFAB /* harvardMenuList.plist in Resources */,
 				8A74DEE81B461CAB0091DA2E /* Images.xcassets in Resources */,
+				8AC4A0F71B70AEA40082DCB4 /* aboutus.docx in Resources */,
 				8A93E0A01B4C01DE00B734FA /* recordList.plist in Resources */,
 				8A6EB9911B46D16A0003CFAB /* HarvardCheckMenu.plist in Resources */,
 				8A93D2541B4B911900B734FA /* SelfExam in Resources */,
@@ -692,6 +710,7 @@
 				8A93E3691B58E4B600B734FA /* iBreast.xcdatamodeld in Sources */,
 				8A5F92471B5BD97E00F5BB81 /* HttpObject.swift in Sources */,
 				8A93E0A81B4D1E9F00B734FA /* MeViewController.swift in Sources */,
+				8AC4A0EE1B70A0230082DCB4 /* PersonalityVC.swift in Sources */,
 				8A6335031B68D91C00BBA939 /* IJReachability.swift in Sources */,
 				8A5F925D1B5D5C2A00F5BB81 /* AlertDatePickerView.swift in Sources */,
 				8A6335081B68E80A00BBA939 /* GuideViewController.swift in Sources */,
@@ -704,6 +723,7 @@
 				8A7BB06D1B4921A000AFE5E2 /* BaseBrush.swift in Sources */,
 				8AC4A0E41B6FC0CE0082DCB4 /* ClinicBriefModel.swift in Sources */,
 				8AA448441B6CF1CB001A90EF /* FMDatabase+FTS3.m in Sources */,
+				8AC4A0F01B70A3300082DCB4 /* About.swift in Sources */,
 				8A5323921B5AC7BB0095F568 /* ProfessionalInspection.swift in Sources */,
 				8AA448471B6CF1CB001A90EF /* FMDatabaseVariadic.swift in Sources */,
 				8A93E3731B5954B800B734FA /* Constant.swift in Sources */,

@@ -33,16 +33,16 @@ class MeViewController: UIViewController {
 //        
 //        println(UserManager.getUser())
 //        
-        var selfExamService =  SelfExamHisService()
-        var httpRequest = HttpRequest()
-        httpRequest.mapKey="productlist"
-        httpRequest.objMapper = selfExamService
-        httpRequest.callback = selfExamService
-        httpRequest.urlRequest = URLRouter.Router.PopularPhotos(0)
-        
-        var http = HttpObject()
-       
-        http.fetch(httpRequest)
+//        var selfExamService =  SelfExamHisService()
+//        var httpRequest = HttpRequest()
+//        httpRequest.mapKey="productlist"
+//        httpRequest.objMapper = selfExamService
+//        httpRequest.callback = selfExamService
+//        httpRequest.urlRequest = URLRouter.Router.PopularPhotos(0)
+//        
+//        var http = HttpObject()
+//       
+//        http.fetch(httpRequest)
         
     }
 
@@ -73,7 +73,7 @@ extension MeViewController:UITableViewDataSource,UITableViewDelegate{
     
      func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath){
         
-        alertPicker.showPickerInActionSheet(indexPath.row)
+       // alertPicker.showPickerInActionSheet(indexPath.row)
         
         if(indexPath.section == 0) {
             if(indexPath.row==0){
@@ -91,6 +91,27 @@ extension MeViewController:UITableViewDataSource,UITableViewDelegate{
         }
         else if(indexPath.section == 1)
         {
+            if(indexPath.row==0){
+                
+            }
+            else if(indexPath.row==1){
+                
+                let myStoryBoard = self.storyboard
+                let anotherView:UIViewController = myStoryBoard?.instantiateViewControllerWithIdentifier("about")! as! UIViewController
+                
+                self.navigationController!.pushViewController(anotherView, animated: true)
+                
+              //  self.presentViewController(anotherView, animated: true, completion: nil)
+                
+                
+            }
+            else if(indexPath.row==2){
+                
+            }
+            else if(indexPath.row==3){
+                
+            }
+
             
         }
         else if(indexPath.section == 2){
