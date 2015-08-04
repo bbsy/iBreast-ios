@@ -20,7 +20,7 @@ class  Appointment:UIViewController,HttpObjectMapper,HttpCallBack {
         super.viewDidLoad()
         tabview.dataSource = self
         
-       
+        
         var httpRequest = HttpRequest()
         httpRequest.mapKey="history"
         httpRequest.objMapper = self
