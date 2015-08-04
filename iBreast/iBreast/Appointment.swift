@@ -64,7 +64,12 @@ class  Appointment:UIViewController,HttpObjectMapper,HttpCallBack {
     func callback(result:AnyObject){
         println("\(result)")
         
-       tabview.reloadData()
+        
+        dispatch_async(dispatch_get_main_queue()){
+            
+             self.tabview.reloadData()
+        }
+      
     }
 
 }
