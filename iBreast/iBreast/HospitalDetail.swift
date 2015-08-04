@@ -14,7 +14,8 @@ class HospitalDetail: UIViewController,HttpObjectMapper,HttpCallBack {
     
     @IBOutlet weak var hospital_image: UIImageView!
     
-    @IBOutlet weak var hospital_address: UILabel!
+    @IBOutlet weak var hospital_address: UITextView!
+    
     // 定义数据模型对象
     var clinics:[ClinicBriefModel] = [ClinicBriefModel]()
     
@@ -63,6 +64,10 @@ class HospitalDetail: UIViewController,HttpObjectMapper,HttpCallBack {
         println("--------------------\(result)")
         
         
+        dispatch_async(dispatch_get_main_queue()){
+            self.hospital_name.text = self.clinics[0].name;
+            self.hospital_address.text = self.clinics[0].address
+        }
         
         let imageURL = clinics[0].imageUrl
         
@@ -73,8 +78,8 @@ class HospitalDetail: UIViewController,HttpObjectMapper,HttpCallBack {
             self.hospital_image.image = image;
         }
         
-        hospital_name.text = clinics[0].name;
-        hospital_address.text = clinics[0].address;
+//        hospital_name.text = clinics[0].name;
+//        hospital_address.text = clinics[0].address
 //        tabview.reloadData()
     }
     
