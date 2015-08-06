@@ -116,12 +116,20 @@ extension SelfExamHisVC:UITableViewDataSource,UITableViewDelegate{
 //        
         var title=cell.viewWithTag(200) as! UILabel
         title.text=model.title
-//        
-//        var subTitle=cell.viewWithTag(101) as! UILabel
-        //subTitle.text=model.detail
+        
+        var subTitle=cell.viewWithTag(201) as! UILabel
+        subTitle.text=model.detail
         
         
-        //subTitle.text=dateStr
+        var image = cell.viewWithTag(202) as! UIImageView
+        
+        if(model.idsForAdd != nil && !model.idsForAdd!.isEmpty){
+            
+            image.image = UIImage(named: "newlesion")
+        }
+        else{
+            image.image = UIImage(named: "dellesion")
+        }
         
         
         
