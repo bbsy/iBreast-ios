@@ -148,6 +148,7 @@ class SelfExamHisManager: NSObject {
         var his:SelfExamHisModel?
         var addIds:[Int] = [Int]()
         var delIds:[Int] = [Int]()
+        var all:[Int] = [Int]()
         
 //        /**
 //        *找到id最大的lesion
@@ -180,17 +181,34 @@ class SelfExamHisManager: NSObject {
             return
         }
         
+        for item in SelfExamData.sharedInstance.getCurrentLesions() {
+            
+            var model = item as! LesionModel
+            
+            //说明这个lesion并没有在当前可见
+            if(model.didRemove == true && (model.didDelete == false))
+            {
+                
+            }
+            else{
+                all.append(item.id)
+            }
+            
+        }
+        
+        
+        
         if(!addIds.isEmpty && !delIds.isEmpty){
             title = "增加，减少硬块"
-            his=SelfExamHisModel(lastId: maxId,action:action,time: NSDate(), imageUrl: "empty", title: title, detail:"复杂的心情",addIds: addIds,deleteIds:delIds)
+            his=SelfExamHisModel(lastId: maxId,action:action,time: NSDate(), imageUrl: "empty", title: title, detail:"复杂的心情",addIds: addIds,deleteIds:delIds,idsForAll:all)
         }
         else if(!addIds.isEmpty && delIds.isEmpty){
             title = "增加硬块"
-            his=SelfExamHisModel(lastId: maxId,action:action,time: NSDate(), imageUrl: "empty", title: title, detail:"伤心",addIds:addIds,deleteIds:nil)
+            his=SelfExamHisModel(lastId: maxId,action:action,time: NSDate(), imageUrl: "empty", title: title, detail:"伤心",addIds:addIds,deleteIds:nil,idsForAll:all)
         }
         else if(addIds.isEmpty && !delIds.isEmpty){
             title = "减少硬块"
-            his=SelfExamHisModel(lastId: maxId,action:action,time: NSDate(), imageUrl: "empty", title: title, detail:"心情好",addIds: nil,deleteIds:delIds)
+            his=SelfExamHisModel(lastId: maxId,action:action,time: NSDate(), imageUrl: "empty", title: title, detail:"心情好",addIds: nil,deleteIds:delIds,idsForAll:all)
         }
         
             
@@ -223,7 +241,7 @@ extension SelfExamHisManager{
             if exist {
                 println("表： \(tableName) 已经存在")
             }else{
-                var sql:String = "create table \(tableName) (id integer primary key autoincrement not null, _id inteter,_title varchar(50),_detail varchar(50), _time varchar(50), _imageUrl varchar(50),  _action integer, _lastId integer, _idsForAdd blob, _idsForDelete blob )"
+                var sql:String = "create table \(tableName) (id integer primary key autoincrement not null, _id inteter,_title varchar(50),_detail varchar(50), _time varchar(50), _imageUrl varchar(50),  _action integer, _lastId integer, _idsForAdd blob, _idsForDelete blob,_idsForAll blob )"
                 
 //                var sql:String = "create table \(tableName) (id integer primary key autoincrement not null, _id inteter, _title nvarchar(20),_detail text , _age integer ,_time nvarchar(20))"
                 
@@ -339,6 +357,17 @@ extension SelfExamHisManager{
             
         }
         
+        var dataForAll:NSData!
+        
+        
+        if let idsForall = model.idsForAll{
+            dataForAll = NSKeyedArchiver.archivedDataWithRootObject(idsForall)
+            keys += " _idsForAll,"
+            values += "?,"
+            
+        }
+
+        
         
         
         keys += ")"
@@ -371,7 +400,7 @@ extension SelfExamHisManager{
             
         if(dataForAdd != nil && dataForDel != nil){
             
-             res = dbManager.executeUpdate(insertSql, dataForAdd,dataForDel)
+             res = dbManager.executeUpdate(insertSql, dataForAdd,dataForDel,dataForAll)
         }
         else if(dataForAdd == nil && dataForDel == nil){
             
@@ -379,10 +408,10 @@ extension SelfExamHisManager{
 
         }
         else if(dataForAdd != nil && dataForDel == nil){
-             res = dbManager.executeUpdate(insertSql, dataForAdd)
+             res = dbManager.executeUpdate(insertSql, dataForAdd,dataForAll)
         }
         else if(dataForAdd==nil && dataForDel != nil){
-             res = dbManager.executeUpdate(insertSql,dataForDel)
+             res = dbManager.executeUpdate(insertSql,dataForDel,dataForAll)
         }
 
 
@@ -418,6 +447,7 @@ extension SelfExamHisManager{
 //            //array.append(model)
             var adds:[Int]!
             var dels:[Int]!
+            var all:[Int]!
             var id = Int(res.intForColumn("id"))
             var title = res.stringForColumn("_title") as! String
             var detail = res.stringForColumn("_detail") as! String
@@ -458,7 +488,20 @@ extension SelfExamHisManager{
                 
             }
             
-            var model:SelfExamHisModel = SelfExamHisModel(lastId: lastId, action: action, time: NSDate(), imageUrl: imageUrl, title: title, detail: detail, addIds:adds ,deleteIds: dels)
+            var idsForAll = res.dataForColumn("_idsForAll")
+            
+            if(idsForAll != nil ){
+                all = NSKeyedUnarchiver.unarchiveObjectWithData(idsForAll) as! [Int]
+                if(all != nil && !all!.isEmpty){
+                    for i in 0...all.count-1{
+                        println("all: \(all[i])")
+                    }
+                }
+
+            }
+          
+            
+            var model:SelfExamHisModel = SelfExamHisModel(lastId: lastId, action: action, time: NSDate(), imageUrl: imageUrl, title: title, detail: detail, addIds:adds ,deleteIds: dels,idsForAll:all)
 
             
             

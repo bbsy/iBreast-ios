@@ -21,7 +21,7 @@ class ExamBoard: UIImageView {
 
     var didSave = false
  
-    var lesionsData = SelfExamData()
+    var lesionsData = SelfExamData.sharedInstance //SelfExamData()
     
     private var drawingState: DrawingState!
     
@@ -238,7 +238,7 @@ class ExamBoard: UIImageView {
     func showHistoryLesions(maxId:Int){
         
         
-        lesionsModels = lesionsData.getLesions(maxId)
+        lesionsModels = lesionsData.getLesions(maxId,historyModel:historyModel)
         
         for obj in lesionsModels {
              var lesion = obj as! LesionModel

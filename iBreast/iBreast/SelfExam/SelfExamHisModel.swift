@@ -35,9 +35,11 @@ class SelfExamHisModel: NSObject {
     
     var idsForDelete:[Int]?
     
+    var idsForAll:[Int]?
     
     
-    init(lastId:Int,action:Int,time:NSDate,imageUrl:String,title:String,detail:String,addIds:[Int]?,deleteIds:[Int]?) {
+    
+    init(lastId:Int,action:Int,time:NSDate,imageUrl:String,title:String,detail:String,addIds:[Int]?,deleteIds:[Int]?,idsForAll:[Int]?) {
         
         self.lastId = lastId
         self.action = action
@@ -47,6 +49,7 @@ class SelfExamHisModel: NSObject {
         self.detail=detail
         self.idsForAdd = addIds
         self.idsForDelete = deleteIds
+        self.idsForAll = idsForAll
     }
     
     
