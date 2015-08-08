@@ -33,7 +33,7 @@ class SelfExamData: NSObject {
     override init(){
         super.init();
         
-       lesions = AppDataState.getInstance().getLesionList()
+       lesions = AppDataState.sharedInstance.getLesionList()
         
         createTable()
         
@@ -154,27 +154,31 @@ class SelfExamData: NSObject {
         
         saveAll()
         
-//        
-//        var path=NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)[0] as! NSString
-//        
-//        var filePath=path.stringByAppendingPathComponent("lesionsData.archive")
-//        if(userDefault.objectForKey(LESIONS_DATA_PATH) != nil){
-//            
-//            userDefault.removeObjectForKey(LESIONS_DATA_PATH)
-//        }
-//        for item in lesions {
-//            
-//            var l = item as! LesionModel
-//            println("id \(l.id) , didremove = \(l.didRemove)")
-//            
-//            (l).resetAddAndDelete()
-//        }
-//        var modelData:NSData = NSKeyedArchiver.archivedDataWithRootObject(lesions)
-//        userDefault.setObject(modelData, forKey: LESIONS_DATA_PATH)
-        
+
+       // saveToPreference()
       
         
         
+    }
+    
+    func saveToPreference(){
+        //
+                var path=NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)[0] as! NSString
+        
+                var filePath=path.stringByAppendingPathComponent("lesionsData.archive")
+                if(userDefault.objectForKey(LESIONS_DATA_PATH) != nil){
+        
+                    userDefault.removeObjectForKey(LESIONS_DATA_PATH)
+                }
+                for item in lesions {
+        
+                    var l = item as! LesionModel
+                    println("id \(l.id) , didremove = \(l.didRemove)")
+        
+                    (l).resetAddAndDelete()
+                }
+                var modelData:NSData = NSKeyedArchiver.archivedDataWithRootObject(lesions)
+                userDefault.setObject(modelData, forKey: LESIONS_DATA_PATH)
     }
     
   
@@ -234,7 +238,7 @@ extension SelfExamData{
             if exist {
                 println("表： \(tableName) 已经存在")
             }else{
-                var sql:String = "create table \(tableName) (id integer primary key autoincrement not null, _id inteter,highlight integer,time varchar(50), firmness integer, size integer,  pointx integer, pointy integer, allowedMoving integer, didRemove integer )"
+                var sql:String = "create table \(tableName) (id integer primary key autoincrement not null, _id inteter,highlight integer,time varchar(50), firmness integer, size integer,  pointx integer, pointy integer, allowedMoving integer, didRemove integer ,scaledX float, scaledY float, scaledSize float)"
                 
                 //                var sql:String = "create table \(tableName) (id integer primary key autoincrement not null, _id inteter, _title nvarchar(20),_detail text , _age integer ,_time nvarchar(20))"
                 
@@ -322,13 +326,36 @@ extension SelfExamData{
             values += "0,"
         }
         
-    
         
+        //将具体坐标转换成屏幕比例值存储到数据库中，便于显示在不同分辨率上
+        var deviceInfo = DeviceInfo.getDeviceSize()
+        var deviceSize = deviceInfo.size.width
+        var scaledSize =  model.size/deviceSize
+        
+        var scaledX = model.point.x / deviceSize
+        var scaledY = model.point.y / deviceSize
+        
+        
+        keys += " scaledX,"
+        values += "\(scaledX),"
+        
+        
+        
+        keys += " scaledY,"
+        values += "\(scaledY),"
+        
+        
+        keys += " scaledSize,"
+        values += "\(scaledSize),"
+        
+        
+        println("point.x:\(scaledX),point.y:\(scaledX)")
+         //=========================
         
         keys += ")"
         values += ")"
         
-        // 有时候我们需要循环遍历参数，因此，通常我们需要处理一下尾部多余的字符 当然处理方式有很多 这只是一个参考
+    
         
         
         var keysRange = keys.rangeOfString(",)", options: NSStringCompareOptions.BackwardsSearch, range: Range(start: keys.startIndex, end: keys.endIndex), locale: NSLocale.autoupdatingCurrentLocale())
@@ -344,10 +371,10 @@ extension SelfExamData{
         
         insertSql += keys + values
         
-        println("keys \(keys)")
-        println(insertSql)
-        println(keysRange)
-        println(valuesRange)
+//        println("keys \(keys)")
+//        println(insertSql)
+//        println(keysRange)
+//        println(valuesRange)
         
         
         
@@ -448,9 +475,11 @@ extension SelfExamData{
             var highlight = res.boolForColumn("highlight")
             var pointx = res.intForColumn("pointx")
             var pointy = res.intForColumn("pointy")
-            var point:CGPoint = CGPoint()
-            point.x = CGFloat(pointx)
-            point.y = CGFloat(pointy)
+            var scaledX = res.doubleForColumn("scaledX")
+            var scaledY = res.doubleForColumn("scaledY")
+            
+            var scaledSize:CGFloat = CGFloat(res.doubleForColumn("scaledSize"))
+
             var move = res.intForColumn("allowedMoving")
             var allowedMoving:Bool!
             if(move == 1){
@@ -468,17 +497,39 @@ extension SelfExamData{
                 didRemove = false
             }
             
+            
+            var deviceInfo = DeviceInfo.getDeviceSize()
+            var realSize = scaledSize*deviceInfo.size.width
+            
+    
+            
+            var point:CGPoint = CGPoint()
+            point.x = CGFloat(scaledX)*deviceInfo.size.width
+            point.y = CGFloat(scaledY)*deviceInfo.size.width
+            
+            
+            println("scaledSize: \(scaledSize), currSize:\(size) realSize:\(realSize),point.x:\(point.x ),point.y:\(point.y)")
+
+            
+            
+            
             model.id = id
             model.time = NSDate()
             model.highlight = highlight
-            model.size = CGFloat(size)
+            model.size = realSize
             model.firmness = Int(firmness)
             model.point = point
             model.didRemove = didRemove
+            
+            
+            
+            
+
+            
           //  model.allowedMoving = allowedMoving
             
             
-            println("lesion: id:\( model.id), time:\(time) ,hightlight:\(model.highlight ),size:\(model.size ),firmness:\(model.firmness),point:\(model.point),didremove:\(model.didRemove)")
+//            println("lesion: id:\( model.id), time:\(time) ,hightlight:\(model.highlight ),size:\(model.size ),firmness:\(model.firmness),point:\(model.point),didremove:\(model.didRemove)")
             
             if(all != nil && !all!.isEmpty){
                 var find = false

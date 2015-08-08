@@ -70,7 +70,7 @@ class SelfExamHisManager: NSObject {
             userName = Constant.DEFAULT_USER_NAME
         }
         
-        historyList = AppDataState.getInstance().getSelfExamHisList()
+        historyList = AppDataState.sharedInstance.getSelfExamHisList()
         
         
     }
