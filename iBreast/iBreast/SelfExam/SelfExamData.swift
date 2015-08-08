@@ -469,7 +469,7 @@ extension SelfExamData{
             var model = LesionModel()
 
             var id = Int(res.intForColumn("_id"))
-            var time = res.stringForColumn("time") as! String
+            var time = res.stringForColumn("time") as String
             var size = res.intForColumn("size")
             var firmness = res.intForColumn("firmness")
             var highlight = res.boolForColumn("highlight")

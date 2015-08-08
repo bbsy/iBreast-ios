@@ -267,7 +267,7 @@ class LesionView: UIView {
             
            
             
-            CGContextSetShadow(context, CGSizeMake(3, 3),10)
+           // CGContextSetShadow(context, CGSizeMake(3, 3),10)
             
             // 创建一个bitmap的context
             // 并把它设置成为当前正在使用的context
