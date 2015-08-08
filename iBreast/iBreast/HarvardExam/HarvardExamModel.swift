@@ -110,9 +110,9 @@ class 	HormoneReplacementTherapy{
       
     }
     //是否使用过激素
-    var everUsedHormones:UsedHormones!
+    var everUsedHormones:UsedHormones = UsedHormones.No_Never
     //组合使用
-    var combined:YesOrNo!
+    var combined:YesOrNo = YesOrNo.No
     //使用年限
     var yearsTaken:Int!
     
@@ -141,7 +141,7 @@ class Biopsies{
     //检查次数
     var biopsiesNum:Int!
     //检查报告
-    var atypia:Atypia!
+    var atypia:Atypia =  Atypia.NAOrUnknow;
     
 }
 

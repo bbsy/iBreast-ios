@@ -147,7 +147,7 @@ class HarvardCheckBaseInfo2VC: UIViewController ,UITableViewDataSource,UITableVi
             {
                 // change value type
                 
-                if(harvardExamModel.biopsies.atypia == nil)
+                if(harvardExamModel.biopsies.atypia == Biopsies.Atypia.NAOrUnknow)
                 {
                     cell?.detailTextLabel?.text = "NA or Unknown";
                 }

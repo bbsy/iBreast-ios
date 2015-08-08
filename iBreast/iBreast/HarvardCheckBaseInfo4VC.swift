@@ -96,7 +96,7 @@ class HarvardCheckBaseInfo4VC: UIViewController,UITableViewDataSource,UITableVie
         //var hormone_info_temp=["No Never","Not Sure","Yes Currently","Yes In The Past"];
         if(indexPath.row == 0)
         {
-            if(harvardExamModel.hormoneReplacementTherapy.everUsedHormones == nil)
+            if(harvardExamModel.hormoneReplacementTherapy.everUsedHormones == HormoneReplacementTherapy.UsedHormones.No_Never)
             {
                 cell?.detailTextLabel?.text = "No Never";
             }
@@ -120,7 +120,7 @@ class HarvardCheckBaseInfo4VC: UIViewController,UITableViewDataSource,UITableVie
         }
         else if(indexPath.row == 1)
         {
-            if(harvardExamModel.hormoneReplacementTherapy.combined == nil)
+            if(harvardExamModel.hormoneReplacementTherapy.combined == YesOrNo.No)
             {
                 cell?.detailTextLabel?.text = "No";
             }

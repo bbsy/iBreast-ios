@@ -104,24 +104,24 @@ class RiskCalcHttp: NSObject {
     func wrapBiopsies(model:Biopsies){
         
         var item  = NSMutableDictionary()
-        var atypia = "NAOrUnknow"
+        var atypiaStr = "NAOrUnknow"
         
         if model.atypia == Biopsies.Atypia.BenignBreastCondition{
-             atypia = "BenignBreastCondition"
+             atypiaStr = "BenignBreastCondition"
         }
         else if(model.atypia == Biopsies.Atypia.AtypicalHyperplasia){
-             atypia = "Hyperplasia_NoAtypia"
+             atypiaStr = "AtypicalHyperplasia"
         }
         else if(model.atypia == Biopsies.Atypia.Hyperplasia_NoAtypia){
-            atypia = "AtypicalHyperplasia"
+            atypiaStr = "Hyperplasia_NoAtypia"
         }
         else if(model.atypia == Biopsies.Atypia.LCIS){
-             atypia = "LCIS"
+             atypiaStr = "LCIS"
         }
         else if(model.atypia == Biopsies.Atypia.NAOrUnknow){
-             atypia = "NAOrUnknow"
+             atypiaStr = "NAOrUnknow"
         }
-        item.setObject(atypia, forKey:"atypia")
+        item.setObject(atypiaStr, forKey:"atypia")
         item.setObject(model.biopsiesNum, forKey: "biopsiesNum")
 
         
