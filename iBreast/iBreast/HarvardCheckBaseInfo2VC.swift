@@ -46,6 +46,8 @@ class HarvardCheckBaseInfo2VC: UIViewController ,UITableViewDataSource,UITableVi
         tableBaseInof2.dataSource=self
         tableBaseInof2.delegate=self
         
+       
+       
       
         
         RiskCalcHttp.sharedInstance.wrapPhysicalData(harvardExamModel.physicalDataModel)
@@ -71,7 +73,19 @@ class HarvardCheckBaseInfo2VC: UIViewController ,UITableViewDataSource,UITableVi
             first_haschild_age.append(i)
         }
     }
-    
+//    
+//     func scrollViewDidScroll(scrollView: UIScrollView) {
+//        
+//        var sectionHeaderHeight:Int = 40;
+//        
+//        if ((scrollView.contentOffset.y <= 40) && (scrollView.contentOffset.y >= 0)){
+//            scrollView.contentInset = UIEdgeInsetsMake(-scrollView.contentOffset.y, 0, 0, 0);
+//        } else if (scrollView.contentOffset.y >= 40) {
+//            scrollView.contentInset = UIEdgeInsetsMake(-40, 0, 0, 0);
+//        }
+//
+//    }
+//   
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath){
         
         
@@ -117,6 +131,8 @@ class HarvardCheckBaseInfo2VC: UIViewController ,UITableViewDataSource,UITableVi
     func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat{
         return 60
     }
+    
+   
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
         
