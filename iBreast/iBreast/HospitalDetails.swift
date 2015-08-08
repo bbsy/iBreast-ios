@@ -1,27 +1,28 @@
 //
-//  HospitalDetail.swift
+//  HospitalDetails.swift
 //  iBreast
 //
-//  Created by 许仕永 on 15/8/2.
+//  Created by 许仕永 on 15/8/8.
 //  Copyright (c) 2015年 钟其鸿. All rights reserved.
 //
+
+import Foundation
 import UIKit
 import Alamofire
 
-class HospitalDetail: UIViewController,HttpObjectMapper,HttpCallBack {
+
+class HospitalDetails: UIViewController,HttpObjectMapper,HttpCallBack {
     
     @IBOutlet weak var hospital_name: UILabel!
-    
     @IBOutlet weak var hospital_image: UIImageView!
-    
     @IBOutlet weak var hospital_address: UITextView!
-    
+
     // 定义数据模型对象
     var clinics:[ClinicBriefModel] = [ClinicBriefModel]()
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
         
         var httpRequest = HttpRequest()
         httpRequest.mapKey="history"
@@ -29,16 +30,19 @@ class HospitalDetail: UIViewController,HttpObjectMapper,HttpCallBack {
         httpRequest.callback = self
         httpRequest.urlRequest = URLRouter.Router.PopularClinics(0, 10)
         
+        hospital_address.editable = false;
+
         var http = HttpObject()
         
         http.fetch(httpRequest)
+
+        // Do any additional setup after loading the view, typically from a nib.
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
     
     func objectMap(data:AnyObject)->AnyObject?{
         
@@ -64,13 +68,10 @@ class HospitalDetail: UIViewController,HttpObjectMapper,HttpCallBack {
         println("--------------------\(result)")
         
         
-        dispatch_async(dispatch_get_main_queue()){
-            self.hospital_name.text = self.clinics[0].name;
-            self.hospital_address.text = self.clinics[0].address
-        }
         
         let imageURL = clinics[0].imageUrl
         
+        dispatch_async(dispatch_get_main_queue()){
         Alamofire.request(.GET, imageURL).response() {
             (_, _, data, _) in
             
@@ -78,10 +79,10 @@ class HospitalDetail: UIViewController,HttpObjectMapper,HttpCallBack {
             self.hospital_image.image = image;
         }
         
-//        hospital_name.text = clinics[0].name;
-//        hospital_address.text = clinics[0].address
-//        tabview.reloadData()
+        self.hospital_name.text = self.clinics[0].name;
+        self.hospital_address.text = self.clinics[0].address;
+        //        tabview.reloadData()
+        }
     }
-    
-    
+
 }

@@ -319,7 +319,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="hfcheckBI1TableCell" textLabel="Pw9-2H-DkG" detailTextLabel="2XJ-df-KP8" style="IBUITableViewCellStyleValue1" id="xVw-Bl-K7o">
-                                        <rect key="frame" x="0.0" y="86" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xVw-Bl-K7o" id="hbB-jf-F9i">
                                             <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
@@ -581,7 +581,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="harvardResultCell0" rowHeight="166" id="LOK-Kq-pZS">
-                                        <rect key="frame" x="0.0" y="86" width="320" height="166"/>
+                                        <rect key="frame" x="0.0" y="22" width="320" height="166"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="LOK-Kq-pZS" id="sjj-rT-zdB">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="165"/>
@@ -606,7 +606,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="harvardResultCell1" rowHeight="117" id="zt0-pJ-V7u">
-                                        <rect key="frame" x="0.0" y="252" width="320" height="117"/>
+                                        <rect key="frame" x="0.0" y="188" width="320" height="117"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zt0-pJ-V7u" id="DaV-RE-LFu">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="116"/>
@@ -672,7 +672,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="harvardResultCell2" rowHeight="108" id="gMV-9z-RbZ">
-                                        <rect key="frame" x="0.0" y="369" width="320" height="108"/>
+                                        <rect key="frame" x="0.0" y="305" width="320" height="108"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gMV-9z-RbZ" id="bsa-YR-K3s">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="107"/>
@@ -956,7 +956,7 @@
         <!--医院详情-->
         <scene sceneID="Wig-7c-oCL">
             <objects>
-                <viewController id="Pbe-XY-4Q9" customClass="HospitalDetail" customModule="iBreast" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Pbe-XY-4Q9" customClass="HospitalDetails" customModule="iBreast" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="thw-2p-Ypk">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1073,9 +1073,9 @@
                     <navigationItem key="navigationItem" title="医院详情" id="1AH-YT-3yv"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
-                        <outlet property="hospital_address" destination="Wfy-WI-4Z4" id="X0K-bI-DYl"/>
-                        <outlet property="hospital_image" destination="R14-K6-g30" id="nZf-nH-fdo"/>
-                        <outlet property="hospital_name" destination="c43-FL-DwV" id="pdw-u2-DaX"/>
+                        <outlet property="hospital_address" destination="Wfy-WI-4Z4" id="TC9-5Q-5DO"/>
+                        <outlet property="hospital_image" destination="R14-K6-g30" id="2Nr-T9-4mb"/>
+                        <outlet property="hospital_name" destination="c43-FL-DwV" id="pbH-8C-I0c"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YA5-qL-GwI" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1502,7 +1502,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="appointmentCell" rowHeight="74" id="2rY-n9-slo">
-                                        <rect key="frame" x="0.0" y="22" width="320" height="74"/>
+                                        <rect key="frame" x="0.0" y="86" width="320" height="74"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2rY-n9-slo" id="gfS-8j-KPi">
                                             <rect key="frame" x="0.0" y="0.0" width="287" height="73"/>
