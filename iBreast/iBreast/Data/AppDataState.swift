@@ -8,14 +8,17 @@
 
 import UIKit
 
+
+
 class AppDataState: NSObject {
 
     static var instance: AppDataState!
     
+    
     var selfExamHisList:[SelfExamHisModel]!
     var lesions=NSMutableOrderedSet()
     
-    class func getInstance()->AppDataState!{
+    class var sharedInstance:AppDataState{
         
         if(instance == nil){
             instance = AppDataState()
@@ -23,6 +26,11 @@ class AppDataState: NSObject {
         return instance
     }
     
+    
+    
+    
+    
+
     
     func getSelfExamHisList()->[SelfExamHisModel]{
         if(selfExamHisList == nil || selfExamHisList.isEmpty){

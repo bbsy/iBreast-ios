@@ -59,45 +59,21 @@ class ExamBoard: UIImageView {
     required init(coder aDecoder: NSCoder) {
         
       
-        
-       
-        
-//        self.strokeColor = UIColor.blackColor()
-//        self.strokeWidth = 1
-//        
-//        self.brush=PencilBrush()
-        
+
         var size = DeviceInfo.getDeviceSize()
         
        
         super.init(coder: aDecoder)
         
-        
+//        
         statuHeight = UIApplication.sharedApplication().statusBarFrame.size.height
-        
-        println("statueHeith: \(statuHeight)")
-        
-        var orgY = self.frame.origin.y - 45
-      
-        var point = CGPoint(x: 0,y: orgY)
-       
-        self.frame.origin = point
 
         var bg = UIImage(named: "breasts.png")
-        
-        var imgSize = CGSize(width: size.width, height: size.width)
-        
-         self.frame.size = imgSize
-        
-        
-        
-        self.contentMode = UIViewContentMode.ScaleAspectFit
-      
-        self.image = ImageUtil.scaleImage(imgSize, img: bg!)
-    
+
+//       self.image = ImageUtil.scaleImage(imgSize, img: bg!)
+//    
          rect = CGRect(x: self.frame.origin.x,y: self.frame.origin.y,width: self.frame.size.width,height: self.frame.height)
-        
-        println("rect: \(rect)")
+
         
         
         
@@ -539,7 +515,7 @@ class ExamBoard: UIImageView {
             
             if(hightlightedLesion.lesion.allowedMoving == true ){
                 
-                 println("orgy: \(rect.origin.y+rect.size.height) , pointy: \(movePoint.y - statuHeight )")
+          
                 
                 var overHeight:Bool = (rect.origin.y + rect.size.height/2) < movePoint.y - statuHeight + hightlightedLesion.lesion.size
                 
@@ -585,46 +561,6 @@ class ExamBoard: UIImageView {
     }
    
 
-    private func drawingImage() {
-        
-//        if let brush = self.brush {
-//            
-//            // 1.
-//            UIGraphicsBeginImageContext(self.bounds.size)
-//            
-//            // 2.
-//            let context = UIGraphicsGetCurrentContext()
-//            
-//            UIColor.clearColor().setFill()
-//            UIRectFill(self.bounds)
-//            
-//            CGContextSetLineCap(context, kCGLineCapRound)
-//            CGContextSetLineWidth(context, self.strokeWidth)
-//            CGContextSetStrokeColorWithColor(context, self.strokeColor.CGColor)
-//            
-//            // 3.
-//            if let realImage = self.realImage {
-//                realImage.drawInRect(self.bounds)
-//            }
-//            
-//            // 4.
-//            brush.strokeWidth = self.strokeWidth
-//            brush.drawInContext(context);
-//            CGContextStrokePath(context)
-//            
-//            // 5.
-//            let previewImage = UIGraphicsGetImageFromCurrentImageContext()
-//            if self.drawingState == .Ended || brush.supportedContinuousDrawing() {
-//                self.realImage = previewImage
-//            }
-//            
-//            UIGraphicsEndImageContext()
-//            
-//            // 6.
-//            self.image = previewImage;
-//            
-//            brush.lastPoint = brush.endPoint
-//        }
-    }
+    
 
 }

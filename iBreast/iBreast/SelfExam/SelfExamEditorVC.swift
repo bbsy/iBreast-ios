@@ -53,6 +53,7 @@ class SelfExamEditorVC: UIViewController {
         super.init(coder: aDecoder)
        
         
+        
     }
 
     @IBAction func didAddLesion(sender: AnyObject) {
@@ -75,12 +76,36 @@ class SelfExamEditorVC: UIViewController {
             addButton.hidden = true
         }
         
+        //checkBoard.hidden = true
+        
+        
+        
         checkBoard.sizeController = self.sizeController
         
         checkBoard.showHistoryLesions(maxId)
         
         
+        /**********************************/
+        
+        var statuHeight = UIApplication.sharedApplication().statusBarFrame.size.height
+        
+        println("statueHeith: \(statuHeight)")
+        
+        var orgY = checkBoard.frame.origin.y - 45
+        
+        var point = CGPoint(x: 0,y: 65)
+        
+        checkBoard.frame.origin = point
+
+        
+         var size = DeviceInfo.getDeviceSize()
+        
       
+        var imgSize = CGSize(width: size.width, height: size.width)
+        
+        checkBoard.frame.size = imgSize
+        
+        /**********************************/
         
         
         // Do any additional setup after loading the view.
