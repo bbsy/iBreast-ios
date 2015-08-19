@@ -11,7 +11,12 @@ import UIKit
 
 var harvardResultData:NSDictionary?
 
-class HarvardCheckResultVC: UIViewController {
+class HarvardCheckResultVC: UIViewController,UITableViewDataSource,UITableViewDelegate {
+
+    var timer:NSTimer!
+    
+    var  activityIndicatorView:UIActivityIndicatorView!
+    
 
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
@@ -27,7 +32,49 @@ class HarvardCheckResultVC: UIViewController {
         RiskCalcHttp.sharedInstance.wrapHormoneReplacementTherapy(harvardExamModel.hormoneReplacementTherapy)
         
         RiskCalcHttp.sharedInstance.printRisk()
+        
+        AZNotification.showNotificationWithTitle("该结果暂为测试数据，无科学依据", controller: self, notificationType: .Success, shouldShowNotificationUnderNavigationBar: true)
+        
+        timer = NSTimer.scheduledTimerWithTimeInterval(3, target: self, selector: "stopLoading:", userInfo: nil, repeats: false)
+        
+        
+        activityIndicatorView = UIActivityIndicatorView(activityIndicatorStyle:UIActivityIndicatorViewStyle.Gray)
+        activityIndicatorView.frame = CGRectMake(140.0, 220.0, 40.0, 40.0)
+        activityIndicatorView.startAnimating()
+        self.view.addSubview(activityIndicatorView)
+        
+        
     }
+    
+    func stopLoading(sender:AnyObject?){
+        
+        activityIndicatorView.stopAnimating()
+        
+        var resultViewController = HarvardCheckResultVC()
+        
+        //self.navigationController!.pushViewController(resultViewController, animated:true)
+        
+    }
+
+    
+    func showAzNotification(sender :AnyObject)
+    {
+        var button = sender as! UIButton
+        
+        switch button.tag
+        {
+        case 1 :
+            AZNotification.showNotificationWithTitle("Success", controller: self, notificationType: .Success, shouldShowNotificationUnderNavigationBar: true)
+        case 2:
+            AZNotification.showNotificationWithTitle("Opps something went wrong", controller: self, notificationType: .Error, shouldShowNotificationUnderNavigationBar: true)
+            
+        default :
+            AZNotification.showNotificationWithTitle("Success", controller: self, notificationType: .Success, shouldShowNotificationUnderNavigationBar: true)
+        }
+        
+    }
+    
+
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -45,9 +92,9 @@ class HarvardCheckResultVC: UIViewController {
     }
     */
 
-}
-
-extension HarvardCheckResultVC:UITableViewDataSource,UITableViewDelegate{
+//}
+//
+//extension HarvardCheckResultVC:UITableViewDataSource,UITableViewDelegate{
     
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat{

@@ -20,7 +20,7 @@ class HarvardCheckBaseInfo4VC: UIViewController,UITableViewDataSource,UITableVie
     
     let user_age=[1,2,3,4,5,6,7,8,9,10]
     
-    let alertPicker:AlertPickerViewController=AlertPickerViewController()
+     let alertPicker:AlertPickerViewController=AlertPickerViewController()
     
     // get a Model object for fill user data  获取一个用于填充用户数据的数据模型对象
     //var harvardExamModel:HarvardExamModel = HarvardExamModel();
@@ -44,8 +44,11 @@ class HarvardCheckBaseInfo4VC: UIViewController,UITableViewDataSource,UITableVie
         
         RiskCalcHttp.sharedInstance.wrapEthnicity(harvardExamModel.ethnicity)
         
+        
+   
     }
     
+      
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath){
         
         

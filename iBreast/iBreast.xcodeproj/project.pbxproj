@@ -83,12 +83,15 @@
 		8AA4484C1B6CF1CB001A90EF /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA448411B6CF1CB001A90EF /* FMResultSet.m */; };
 		8AA448511B6CF26C001A90EF /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AA448501B6CF26C001A90EF /* libsqlite3.dylib */; };
 		8AA448531B6D0F2C001A90EF /* RiskCalcHttp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA448521B6D0F2C001A90EF /* RiskCalcHttp.swift */; };
+		8AC46A651B84C2960025D25A /* AZNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC46A611B84C2960025D25A /* AZNotification.swift */; };
+		8AC46A661B84C2960025D25A /* AZNotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC46A621B84C2960025D25A /* AZNotificationView.swift */; };
+		8AC46A671B84C2960025D25A /* UIColor+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AC46A641B84C2960025D25A /* UIColor+Additions.m */; };
+		8AC46A691B84C2D30025D25A /* HospitalDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC46A681B84C2D30025D25A /* HospitalDetails.swift */; };
 		8AC4A0E41B6FC0CE0082DCB4 /* ClinicBriefModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC4A0E31B6FC0CE0082DCB4 /* ClinicBriefModel.swift */; };
 		8AC4A0E61B6FC1480082DCB4 /* ClinicBriefHttp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC4A0E51B6FC1480082DCB4 /* ClinicBriefHttp.swift */; };
 		8AC4A0EE1B70A0230082DCB4 /* PersonalityVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC4A0ED1B70A0230082DCB4 /* PersonalityVC.swift */; };
 		8AC4A0F01B70A3300082DCB4 /* About.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC4A0EF1B70A3300082DCB4 /* About.swift */; };
 		8AC4A0F71B70AEA40082DCB4 /* aboutus.docx in Resources */ = {isa = PBXBuildFile; fileRef = 8AC4A0F61B70AEA40082DCB4 /* aboutus.docx */; };
-		8ACB00DB1B7654E4001E0265 /* HospitalDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ACB00DA1B7654E4001E0265 /* HospitalDetail.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -242,12 +245,16 @@
 		8AA448421B6CF1CB001A90EF /* SwiftWithOC-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SwiftWithOC-Bridging-Header.h"; sourceTree = "<group>"; };
 		8AA448501B6CF26C001A90EF /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		8AA448521B6D0F2C001A90EF /* RiskCalcHttp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RiskCalcHttp.swift; sourceTree = "<group>"; };
+		8AC46A611B84C2960025D25A /* AZNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AZNotification.swift; sourceTree = "<group>"; };
+		8AC46A621B84C2960025D25A /* AZNotificationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AZNotificationView.swift; sourceTree = "<group>"; };
+		8AC46A631B84C2960025D25A /* UIColor+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Additions.h"; sourceTree = "<group>"; };
+		8AC46A641B84C2960025D25A /* UIColor+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Additions.m"; sourceTree = "<group>"; };
+		8AC46A681B84C2D30025D25A /* HospitalDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HospitalDetails.swift; sourceTree = "<group>"; };
 		8AC4A0E31B6FC0CE0082DCB4 /* ClinicBriefModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClinicBriefModel.swift; sourceTree = "<group>"; };
 		8AC4A0E51B6FC1480082DCB4 /* ClinicBriefHttp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClinicBriefHttp.swift; sourceTree = "<group>"; };
 		8AC4A0ED1B70A0230082DCB4 /* PersonalityVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonalityVC.swift; sourceTree = "<group>"; };
 		8AC4A0EF1B70A3300082DCB4 /* About.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = About.swift; sourceTree = "<group>"; };
 		8AC4A0F61B70AEA40082DCB4 /* aboutus.docx */ = {isa = PBXFileReference; lastKnownFileType = file; path = aboutus.docx; sourceTree = "<group>"; };
-		8ACB00DA1B7654E4001E0265 /* HospitalDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HospitalDetail.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -361,7 +368,8 @@
 		8A74DEDD1B461CAB0091DA2E /* iBreast */ = {
 			isa = PBXGroup;
 			children = (
-				8ACB00DA1B7654E4001E0265 /* HospitalDetail.swift */,
+				8AC46A5D1B84C2740025D25A /* Notification */,
+				8AC46A681B84C2D30025D25A /* HospitalDetails.swift */,
 				8AC4A0F61B70AEA40082DCB4 /* aboutus.docx */,
 				8AC4A0E91B709FCC0082DCB4 /* Personality */,
 				8AC4A0DF1B6FC0B40082DCB4 /* Clinics */,
@@ -543,6 +551,17 @@
 			path = fmdb;
 			sourceTree = "<group>";
 		};
+		8AC46A5D1B84C2740025D25A /* Notification */ = {
+			isa = PBXGroup;
+			children = (
+				8AC46A611B84C2960025D25A /* AZNotification.swift */,
+				8AC46A621B84C2960025D25A /* AZNotificationView.swift */,
+				8AC46A631B84C2960025D25A /* UIColor+Additions.h */,
+				8AC46A641B84C2960025D25A /* UIColor+Additions.m */,
+			);
+			path = Notification;
+			sourceTree = "<group>";
+		};
 		8AC4A0DF1B6FC0B40082DCB4 /* Clinics */ = {
 			isa = PBXGroup;
 			children = (
@@ -716,14 +735,15 @@
 				8AC4A0EE1B70A0230082DCB4 /* PersonalityVC.swift in Sources */,
 				8A6335031B68D91C00BBA939 /* IJReachability.swift in Sources */,
 				8A5F925D1B5D5C2A00F5BB81 /* AlertDatePickerView.swift in Sources */,
-				8ACB00DB1B7654E4001E0265 /* HospitalDetail.swift in Sources */,
 				8A6335081B68E80A00BBA939 /* GuideViewController.swift in Sources */,
 				8AC4A0E61B6FC1480082DCB4 /* ClinicBriefHttp.swift in Sources */,
 				8A7BB0711B49278000AFE5E2 /* EraserBrush.swift in Sources */,
+				8AC46A671B84C2960025D25A /* UIColor+Additions.m in Sources */,
 				8A93D2511B4AD28900B734FA /* AlertPickerViewController.swift in Sources */,
 				8A6EB99D1B46EA5A0003CFAB /* HarvardCheckBaseInfo4VC.swift in Sources */,
 				8A93E0AE1B4E458800B734FA /* HarvardCheckResultVC.swift in Sources */,
 				8A93E3881B596A4100B734FA /* LesionModel.swift in Sources */,
+				8AC46A661B84C2960025D25A /* AZNotificationView.swift in Sources */,
 				8A7BB06D1B4921A000AFE5E2 /* BaseBrush.swift in Sources */,
 				8AC4A0E41B6FC0CE0082DCB4 /* ClinicBriefModel.swift in Sources */,
 				8AA448441B6CF1CB001A90EF /* FMDatabase+FTS3.m in Sources */,
@@ -741,6 +761,7 @@
 				8A7BB0731B49439000AFE5E2 /* CircleView.swift in Sources */,
 				8AA448461B6CF1CB001A90EF /* FMDatabase+InMemoryOnDiskIO.m in Sources */,
 				8A93E0A41B4C042600B734FA /* RecordViewController.swift in Sources */,
+				8AC46A651B84C2960025D25A /* AZNotification.swift in Sources */,
 				8AA4484C1B6CF1CB001A90EF /* FMResultSet.m in Sources */,
 				8AA448491B6CF1CB001A90EF /* FMDatabaseAdditions.m in Sources */,
 				8A5F92491B5BD9BF00F5BB81 /* HttpObjectMapper.swift in Sources */,
@@ -769,6 +790,7 @@
 				8A93E36B1B58E6C100B734FA /* User.swift in Sources */,
 				8A7BB0751B4969F500AFE5E2 /* SelfExamEditorVC.swift in Sources */,
 				8A5F92571B5D4F7B00F5BB81 /* RemindModel.swift in Sources */,
+				8AC46A691B84C2D30025D25A /* HospitalDetails.swift in Sources */,
 				8A93E09C1B4BACE200B734FA /* ClinicsHistoryVC.swift in Sources */,
 				8A7040931B6266BA00B7923A /* AppDataState.swift in Sources */,
 				8A93E37B1B595EAA00B734FA /* SelfExamHisVC.swift in Sources */,
