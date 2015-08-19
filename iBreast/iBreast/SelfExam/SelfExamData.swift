@@ -392,10 +392,14 @@ extension SelfExamData{
     func saveAll(){
         
         var alreadMaxId = getMaxId()
+        
+        
+        dbManager.beginTransaction()
+        
+        var isRollBack:Bool = false;
+        
+       
         for item in lesions{
-            
-            
-            
             
             var l = item as! LesionModel
             l.resetAddAndDelete()
@@ -408,7 +412,11 @@ extension SelfExamData{
             else if(l.didRemove == true){
                 updateRemoveState(l)
             }
+            else{//修改了属性
+                updateLesion(l)
+            }
         }
+        dbManager.commit()
         
     }
 
@@ -508,7 +516,7 @@ extension SelfExamData{
             point.y = CGFloat(scaledY)*deviceInfo.size.width
             
             
-            println("scaledSize: \(scaledSize), currSize:\(size) realSize:\(realSize),point.x:\(point.x ),point.y:\(point.y)")
+           // println("scaledSize: \(scaledSize), currSize:\(size) realSize:\(realSize),point.x:\(point.x ),point.y:\(point.y)")
 
             
             
@@ -565,6 +573,36 @@ extension SelfExamData{
     }
     
 
+    func updateLesion(model:LesionModel)->Bool{
+        
+        //将具体坐标转换成屏幕比例值存储到数据库中，便于显示在不同分辨率上
+        var deviceInfo = DeviceInfo.getDeviceSize()
+        var deviceSize = deviceInfo.size.width
+        var scaledSize =  model.size/deviceSize
+        
+        var sql = "update \(tableName) set "
+        var keyVlaues = String()
+      
+        keyVlaues += " firmness =\(model.firmness),"
+        keyVlaues += " size =\(model.size),"
+        keyVlaues += " scaledSize =\(scaledSize)"
+        
+        
+        
+        
+        sql += keyVlaues
+        
+        sql += " where _id = \(model.id)"
+        
+        var res = dbManager.executeUpdate(sql, withArgumentsInArray: nil)
+        
+        println("update lesion.... : \(res)")
+        
+        return res;
+
+        
+    }
+    
     func getMaxId()->Int{
         
         
