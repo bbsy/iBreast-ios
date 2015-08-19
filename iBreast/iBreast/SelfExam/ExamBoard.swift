@@ -32,6 +32,11 @@ class ExamBoard: UIImageView {
     var lesionViews:[LesionView]=[LesionView]()
     var rect:CGRect!
     
+    var beginTouchPoint:CGPoint = CGPoint()
+    var lesionBeginPoint:CGPoint = CGPoint()
+    var pointxOffset:CGFloat = 0
+    var pointyOffset:CGFloat = 0
+    
     var addedLesions:[LesionModel] = [LesionModel]()
     var deletedLesions:[LesionModel] = [LesionModel]()
     var totalLesions:[LesionModel] = [LesionModel]()
@@ -411,6 +416,7 @@ class ExamBoard: UIImageView {
         
         var point=(touches as NSSet).anyObject()!.locationInView(self)
         
+        
         if(point.y > self.frame.size.height){
             
             println("not allowed to touch")
@@ -420,9 +426,17 @@ class ExamBoard: UIImageView {
         else{
             allowedMoving = true
         }
+        
+        beginTouchPoint.x = point.x
+        beginTouchPoint.y = point.y
+        
         getNearestPoint(point)
         
         
+        lesionBeginPoint.x = hightlightedLesion.lesion.point.x
+        lesionBeginPoint.y = hightlightedLesion.lesion.point.y
+        
+        println("lesionBeginPoint.x  = \(lesionBeginPoint.x )")
     }
     
     
@@ -499,7 +513,7 @@ class ExamBoard: UIImageView {
 //        }
         
         
-        
+     
         
         if(allowedMoving == false){
             
@@ -507,7 +521,7 @@ class ExamBoard: UIImageView {
             return
         }
         
-        
+     
         var movePoint=(touches as NSSet).anyObject()!.locationInView(self)
         
         
@@ -529,9 +543,18 @@ class ExamBoard: UIImageView {
                 }
                 
                 
+                
+                pointxOffset = (movePoint.x - beginTouchPoint.x)
+                pointyOffset = (movePoint.y - beginTouchPoint.y)
+                
+                println("移动位置 x=\(pointxOffset) y=\(pointxOffset),")
+                
 
-                cir.lesion.point=movePoint
-                cir.frame=CGRectMake(movePoint.x, movePoint.y, cir.frame.size.width, cir.frame.size.height)
+              //  cir.lesion.point=movePoint
+                cir.lesion.point.x = lesionBeginPoint.x + pointxOffset
+                cir.lesion.point.y = lesionBeginPoint.y + pointyOffset
+                
+                cir.frame=CGRectMake( cir.lesion.point.x , cir.lesion.point.y, cir.frame.size.width, cir.frame.size.height)
                 
                
                 

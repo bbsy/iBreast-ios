@@ -349,7 +349,7 @@ extension SelfExamData{
         values += "\(scaledSize),"
         
         
-        println("point.x:\(scaledX),point.y:\(scaledX)")
+     //   println("point.x:\(scaledX),point.y:\(scaledX)")
          //=========================
         
         keys += ")"

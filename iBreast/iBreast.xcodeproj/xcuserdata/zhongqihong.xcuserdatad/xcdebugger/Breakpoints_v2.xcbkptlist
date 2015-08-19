@@ -58,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iBreast/SelfExam/ExamBoard.swift"
-            timestampString = "460715149.277311"
+            timestampString = "461696058.691816"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "428"
-            endingLineNumber = "428"
+            startingLineNumber = "442"
+            endingLineNumber = "442"
             landmarkName = "ExamBoard"
             landmarkType = "3">
          </BreakpointContent>
@@ -438,11 +438,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iBreast/SelfExam/ExamBoard.swift"
-            timestampString = "460715149.277311"
+            timestampString = "461696058.691816"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "167"
-            endingLineNumber = "167"
+            startingLineNumber = "172"
+            endingLineNumber = "172"
             landmarkName = "check()"
             landmarkType = "5">
          </BreakpointContent>
@@ -454,11 +454,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iBreast/SelfExam/ExamBoard.swift"
-            timestampString = "460715149.277311"
+            timestampString = "461696058.691816"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "166"
-            endingLineNumber = "166"
+            startingLineNumber = "171"
+            endingLineNumber = "171"
             landmarkName = "check()"
             landmarkType = "5">
          </BreakpointContent>
@@ -470,11 +470,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iBreast/SelfExam/ExamBoard.swift"
-            timestampString = "460715149.277311"
+            timestampString = "461696058.691816"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "111"
-            endingLineNumber = "111"
+            startingLineNumber = "116"
+            endingLineNumber = "116"
             landmarkName = "getBackground()"
             landmarkType = "5">
          </BreakpointContent>
@@ -486,11 +486,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iBreast/SelfExam/ExamBoard.swift"
-            timestampString = "460715149.277311"
+            timestampString = "461696058.691816"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "165"
-            endingLineNumber = "165"
+            startingLineNumber = "170"
+            endingLineNumber = "170"
             landmarkName = "check()"
             landmarkType = "5">
          </BreakpointContent>
@@ -582,11 +582,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iBreast/SelfExam/ExamBoard.swift"
-            timestampString = "460715149.277311"
+            timestampString = "461696058.691816"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "297"
-            endingLineNumber = "297"
+            startingLineNumber = "302"
+            endingLineNumber = "302"
             landmarkName = "setHighlight(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -710,11 +710,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iBreast/SelfExam/ExamBoard.swift"
-            timestampString = "460715149.277311"
+            timestampString = "461696058.691816"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "278"
-            endingLineNumber = "278"
+            startingLineNumber = "283"
+            endingLineNumber = "283"
             landmarkName = "addNewLesion()"
             landmarkType = "5">
          </BreakpointContent>
@@ -806,11 +806,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iBreast/SelfExam/ExamBoard.swift"
-            timestampString = "460715149.277311"
+            timestampString = "461696058.691816"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "407"
-            endingLineNumber = "407"
+            startingLineNumber = "412"
+            endingLineNumber = "412"
             landmarkName = "touchesBegan(_:withEvent:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -822,11 +822,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iBreast/SelfExam/ExamBoard.swift"
-            timestampString = "460715149.277311"
+            timestampString = "461696058.691816"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "284"
-            endingLineNumber = "284"
+            startingLineNumber = "289"
+            endingLineNumber = "289"
             landmarkName = "setHighlight(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -838,11 +838,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iBreast/SelfExam/ExamBoard.swift"
-            timestampString = "460715149.277311"
+            timestampString = "461696058.691816"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "372"
-            endingLineNumber = "372"
+            startingLineNumber = "377"
+            endingLineNumber = "377"
             landmarkName = "add(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -854,11 +854,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iBreast/SelfExam/ExamBoard.swift"
-            timestampString = "460715149.277311"
+            timestampString = "461696058.691816"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "219"
-            endingLineNumber = "219"
+            startingLineNumber = "224"
+            endingLineNumber = "224"
             landmarkName = "showHistoryLesions(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -902,11 +902,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iBreast/SelfExam/ExamBoard.swift"
-            timestampString = "460715149.277311"
+            timestampString = "461696058.691816"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "239"
-            endingLineNumber = "239"
+            startingLineNumber = "244"
+            endingLineNumber = "244"
             landmarkName = "showHistoryLesions(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -918,11 +918,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iBreast/SelfExam/ExamBoard.swift"
-            timestampString = "460715149.277311"
+            timestampString = "461696058.691816"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "215"
-            endingLineNumber = "215"
+            startingLineNumber = "220"
+            endingLineNumber = "220"
             landmarkName = "showHistoryLesions(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -934,11 +934,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iBreast/SelfExam/ExamBoard.swift"
-            timestampString = "460715149.277311"
+            timestampString = "461696058.691816"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "214"
-            endingLineNumber = "214"
+            startingLineNumber = "219"
+            endingLineNumber = "219"
             landmarkName = "showHistoryLesions(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -982,11 +982,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iBreast/SelfExam/ExamBoard.swift"
-            timestampString = "460715149.277311"
+            timestampString = "461696058.691816"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "133"
-            endingLineNumber = "133"
+            startingLineNumber = "138"
+            endingLineNumber = "138"
             landmarkName = "check()"
             landmarkType = "5">
          </BreakpointContent>
@@ -1014,11 +1014,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iBreast/SelfExam/ExamBoard.swift"
-            timestampString = "460715149.277311"
+            timestampString = "461696058.691816"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "210"
-            endingLineNumber = "210"
+            startingLineNumber = "215"
+            endingLineNumber = "215"
             landmarkName = "setLesionsToRemove(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -1030,11 +1030,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iBreast/SelfExam/ExamBoard.swift"
-            timestampString = "460715149.277311"
+            timestampString = "461696058.691816"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "280"
-            endingLineNumber = "280"
+            startingLineNumber = "285"
+            endingLineNumber = "285"
             landmarkName = "addNewLesion()"
             landmarkType = "5">
          </BreakpointContent>
@@ -1046,11 +1046,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iBreast/SelfExam/ExamBoard.swift"
-            timestampString = "460715149.277311"
+            timestampString = "461696058.691816"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "289"
-            endingLineNumber = "289"
+            startingLineNumber = "294"
+            endingLineNumber = "294"
             landmarkName = "setHighlight(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -1078,11 +1078,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iBreast/SelfExam/ExamBoard.swift"
-            timestampString = "460715149.277311"
+            timestampString = "461696058.691816"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "301"
-            endingLineNumber = "301"
+            startingLineNumber = "306"
+            endingLineNumber = "306"
             landmarkName = "ExamBoard"
             landmarkType = "3">
          </BreakpointContent>
@@ -1094,11 +1094,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iBreast/SelfExam/ExamBoard.swift"
-            timestampString = "460715149.277311"
+            timestampString = "461696058.691816"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "425"
-            endingLineNumber = "425"
+            startingLineNumber = "439"
+            endingLineNumber = "439"
             landmarkName = "touchesBegan(_:withEvent:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -1110,11 +1110,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iBreast/SelfExam/ExamBoard.swift"
-            timestampString = "460715149.277311"
+            timestampString = "461696058.691816"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "452"
-            endingLineNumber = "452"
+            startingLineNumber = "466"
+            endingLineNumber = "466"
             landmarkName = "getNearestPoint(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -1126,11 +1126,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iBreast/SelfExam/ExamBoard.swift"
-            timestampString = "460715149.277311"
+            timestampString = "461696058.691816"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "80"
-            endingLineNumber = "80"
+            startingLineNumber = "85"
+            endingLineNumber = "85"
             landmarkName = "init(coder:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -1381,11 +1381,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iBreast/SelfExam/ExamBoard.swift"
-            timestampString = "460715149.277311"
+            timestampString = "461696058.691816"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "521"
-            endingLineNumber = "521"
+            startingLineNumber = "535"
+            endingLineNumber = "535"
             landmarkName = "touchesMoved(_:withEvent:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -1669,11 +1669,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iBreast/SelfExam/ExamBoard.swift"
-            timestampString = "460715149.277311"
+            timestampString = "461696058.691816"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "122"
-            endingLineNumber = "122"
+            startingLineNumber = "127"
+            endingLineNumber = "127"
             landmarkName = "check()"
             landmarkType = "5">
          </BreakpointContent>
@@ -1685,11 +1685,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iBreast/SelfExam/ExamBoard.swift"
-            timestampString = "460715149.277311"
+            timestampString = "461696058.691816"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "123"
-            endingLineNumber = "123"
+            startingLineNumber = "128"
+            endingLineNumber = "128"
             landmarkName = "check()"
             landmarkType = "5">
          </BreakpointContent>
@@ -1701,11 +1701,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iBreast/SelfExam/ExamBoard.swift"
-            timestampString = "460715149.277311"
+            timestampString = "461696058.691816"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "131"
-            endingLineNumber = "131"
+            startingLineNumber = "136"
+            endingLineNumber = "136"
             landmarkName = "check()"
             landmarkType = "5">
          </BreakpointContent>
@@ -1813,11 +1813,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iBreast/SelfExam/ExamBoard.swift"
-            timestampString = "460715149.277311"
+            timestampString = "461696058.691816"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "304"
-            endingLineNumber = "304"
+            startingLineNumber = "309"
+            endingLineNumber = "309"
             landmarkName = "deleteALesion()"
             landmarkType = "5">
          </BreakpointContent>
@@ -1845,11 +1845,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iBreast/SelfExam/ExamBoard.swift"
-            timestampString = "460715149.277311"
+            timestampString = "461696058.691816"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "75"
-            endingLineNumber = "75"
+            startingLineNumber = "80"
+            endingLineNumber = "80"
             landmarkName = "init(coder:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -1861,11 +1861,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iBreast/SelfExam/ExamBoard.swift"
-            timestampString = "460715149.277311"
+            timestampString = "461696058.691816"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "504"
-            endingLineNumber = "504"
+            startingLineNumber = "518"
+            endingLineNumber = "518"
             landmarkName = "touchesMoved(_:withEvent:)"
             landmarkType = "5">
          </BreakpointContent>
