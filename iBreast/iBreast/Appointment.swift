@@ -15,6 +15,7 @@ class  Appointment:UIViewController,HttpObjectMapper,HttpCallBack {
     @IBOutlet weak var tabview: UITableView!
     
     var clinics:[ClinicBriefModel] = [ClinicBriefModel]()
+    var alter:UIAlertView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +31,14 @@ class  Appointment:UIViewController,HttpObjectMapper,HttpCallBack {
         var http = HttpObject()
         
         http.fetch(httpRequest)
+        
+        if(alter == nil )
+        {
+            alter = UIAlertView(title: "提示", message: "正在加载门诊医院，请稍后", delegate: nil, cancelButtonTitle: "知道了")
+         
+        }
+        alter.show()
+
 
     }
     
@@ -68,6 +77,7 @@ class  Appointment:UIViewController,HttpObjectMapper,HttpCallBack {
         dispatch_async(dispatch_get_main_queue()){
             
              self.tabview.reloadData()
+             self.alter.dismissWithClickedButtonIndex(0, animated: true)
         }
       
     }
