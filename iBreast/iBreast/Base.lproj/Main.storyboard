@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="4xP-YP-VeL">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14C2513" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="4xP-YP-VeL">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
@@ -138,7 +138,7 @@
                                         <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="W7I-D3-IZ3" id="lr3-F7-9ta">
-                                            <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="287" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="hfW-Hw-Wu7">
@@ -160,7 +160,7 @@
                                         <rect key="frame" x="0.0" y="66" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="yoU-QE-geO" id="yTR-24-VRh">
-                                            <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="287" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="bTF-w1-U3u">
@@ -322,7 +322,7 @@
                                         <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xVw-Bl-K7o" id="hbB-jf-F9i">
-                                            <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="287" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Pw9-2H-DkG">
@@ -391,7 +391,7 @@
                                         <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Djo-Nv-76D" id="0t0-Zy-zh0">
-                                            <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="287" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="FUK-hh-1iq">
@@ -460,7 +460,7 @@
                                         <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ni2-wA-CIJ" id="xQx-60-fxX">
-                                            <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="287" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ZzH-a9-P0a">
@@ -529,7 +529,7 @@
                                         <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jfw-E8-eSN" id="dJP-9u-zYo">
-                                            <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="287" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="xYd-ue-vdR">
@@ -581,10 +581,10 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="harvardResultCell0" rowHeight="166" id="LOK-Kq-pZS">
-                                        <rect key="frame" x="0.0" y="22" width="320" height="166"/>
+                                        <rect key="frame" x="0.0" y="86" width="320" height="166"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="LOK-Kq-pZS" id="sjj-rT-zdB">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="165"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="165.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_low" id="LJs-eJ-eRa">
@@ -606,10 +606,10 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="harvardResultCell1" rowHeight="117" id="zt0-pJ-V7u">
-                                        <rect key="frame" x="0.0" y="188" width="320" height="117"/>
+                                        <rect key="frame" x="0.0" y="252" width="320" height="117"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zt0-pJ-V7u" id="DaV-RE-LFu">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="116"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="116.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BRCA1或BRCA2基因突变风险" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="6ra-Re-v0S">
@@ -672,10 +672,10 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="harvardResultCell2" rowHeight="108" id="gMV-9z-RbZ">
-                                        <rect key="frame" x="0.0" y="305" width="320" height="108"/>
+                                        <rect key="frame" x="0.0" y="369" width="320" height="108"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gMV-9z-RbZ" id="bsa-YR-K3s">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="107"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="107.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="乳腺患癌风险" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="SpA-jK-TLy">
@@ -868,7 +868,7 @@
                                         <rect key="frame" x="0.0" y="22" width="320" height="172"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="FdS-4m-qaM" id="pBE-fR-0aK">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="171"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="171.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background_center_top" id="dEn-ys-elW">
@@ -906,7 +906,7 @@
                                         <rect key="frame" x="0.0" y="194" width="320" height="68"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="x7x-03-f9o" id="Cp6-6I-gmh">
-                                            <rect key="frame" x="0.0" y="0.0" width="287" height="67"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="287" height="67.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="1PM-dH-NCT">
@@ -1106,7 +1106,7 @@
                                         <rect key="frame" x="0.0" y="22" width="320" height="71"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bxS-U3-sW7" id="9uw-Zc-kQF">
-                                            <rect key="frame" x="0.0" y="0.0" width="287" height="70"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="287" height="70.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" tag="202" contentMode="center" image="0" id="coN-1g-xXo">
@@ -1178,7 +1178,7 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="每次月经结束后的3天，此时的乳房组织最为松软，容易发现异常。" id="HCy-vE-pp1">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="每次月经结束后的3天，此时的乳房组织最为松软，容易发现异常。" selectable="NO" id="HCy-vE-pp1">
                                 <rect key="frame" x="55" y="163" width="210" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1186,7 +1186,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="如果你是怀孕或已绝经的女性，可以每月的首日或固定某一日自检。" id="0Mn-fE-Zbd">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="如果你是怀孕或已绝经的女性，可以每月的首日或固定某一日自检。" selectable="NO" id="0Mn-fE-Zbd">
                                 <rect key="frame" x="55" y="200" width="210" height="47"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1222,7 +1222,7 @@
                                         <rect key="frame" x="0.0" y="22" width="269" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="I6F-rx-PL0" id="lYN-yE-oBq">
-                                            <rect key="frame" x="0.0" y="0.0" width="236" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="236" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="MxT-oW-SJ9">
@@ -1269,10 +1269,10 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="news_item" rowHeight="420" id="mjs-NV-lp0">
-                                        <rect key="frame" x="0.0" y="22" width="320" height="420"/>
+                                        <rect key="frame" x="0.0" y="86" width="320" height="420"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mjs-NV-lp0" id="P67-UU-Jh5">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="419"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="419.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="乳房的自我检查" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="xIb-Gd-7XM">
@@ -1282,7 +1282,7 @@
                                                     <color key="textColor" red="0.95127051770000004" green="0.098662455359999998" blue="0.28188429079999999" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="乳房的自我检查，通过触、视、查三个步骤简单操作。首先通过触摸乳房来感觉乳房是否存在异常，随后仔细查看乳房是否有形状或皮肤纹理的变化。" id="Bv6-8q-laG">
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="乳房的自我检查，通过触、视、查三个步骤简单操作。首先通过触摸乳房来感觉乳房是否存在异常，随后仔细查看乳房是否有形状或皮肤纹理的变化。" selectable="NO" id="Bv6-8q-laG">
                                                     <rect key="frame" x="14" y="181" width="293" height="85"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1434,7 +1434,7 @@
                                         <rect key="frame" x="0.0" y="22" width="288" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ekz-vw-pZH" id="npt-aj-Bxm">
-                                            <rect key="frame" x="0.0" y="0.0" width="288" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="288" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="6/22" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="LWc-pS-X52">
@@ -1505,7 +1505,7 @@
                                         <rect key="frame" x="0.0" y="86" width="320" height="74"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2rY-n9-slo" id="gfS-8j-KPi">
-                                            <rect key="frame" x="0.0" y="0.0" width="287" height="73"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="287" height="73.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="101" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="医院名称" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="uFO-LI-Rb2">

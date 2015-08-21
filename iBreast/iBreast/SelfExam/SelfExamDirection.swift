@@ -69,8 +69,24 @@ class SelfExamDirection: UIViewController {
         pic3ImageView.frame = CGRectMake(0, UIScreen.mainScreen().bounds.size.height*2,UIScreen.mainScreen().bounds.size.width,UIScreen.mainScreen().bounds.size.height)
         scrollView.addSubview(pic3ImageView)
         
+        var pic4Image = UIImage(named: "se_4")
+        var pic4ImageView = UIImageView(image:pic4Image)
+        pic4ImageView.frame = CGRectMake(0, UIScreen.mainScreen().bounds.size.height*3,UIScreen.mainScreen().bounds.size.width,UIScreen.mainScreen().bounds.size.height)
+        scrollView.addSubview(pic4ImageView)
         
-        scrollView.contentSize = CGSizeMake(UIScreen.mainScreen().bounds.size.width, UIScreen.mainScreen().bounds.size.height*3)
+        var pic5Image = UIImage(named: "se_5")
+        var pic5ImageView = UIImageView(image:pic5Image)
+        pic5ImageView.frame = CGRectMake(0, UIScreen.mainScreen().bounds.size.height*4,UIScreen.mainScreen().bounds.size.width,UIScreen.mainScreen().bounds.size.height)
+        scrollView.addSubview(pic5ImageView)
+        
+        var pic6Image = UIImage(named: "se_6")
+        var pic6ImageView = UIImageView(image:pic6Image)
+        pic6ImageView.frame = CGRectMake(0, UIScreen.mainScreen().bounds.size.height*5,UIScreen.mainScreen().bounds.size.width,UIScreen.mainScreen().bounds.size.height)
+        scrollView.addSubview(pic6ImageView)
+        
+        
+        
+        scrollView.contentSize = CGSizeMake(UIScreen.mainScreen().bounds.size.width, UIScreen.mainScreen().bounds.size.height*6)
         scrollView.indicatorStyle = UIScrollViewIndicatorStyle.White
         
         
@@ -87,7 +103,7 @@ class SelfExamDirection: UIViewController {
         
        // self.view.addSubview(pageCtrl)
         
-        pageCtrl.numberOfPages = 2
+        pageCtrl.numberOfPages = 6
         pageCtrl.currentPage = 0
         pageCtrl.addTarget(self, action: "pageTurn:", forControlEvents: UIControlEvents.ValueChanged)
         

@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		8A5323921B5AC7BB0095F568 /* ProfessionalInspection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A5323911B5AC7BB0095F568 /* ProfessionalInspection.swift */; };
 		8A5323941B5AC8660095F568 /* Appointment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A5323931B5AC8660095F568 /* Appointment.swift */; };
+		8A57C2991B85DE750003E1C8 /* iBreast.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A57C2981B85DE750003E1C8 /* iBreast.png */; };
+		8A57C29B1B85DE990003E1C8 /* Images-2.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A57C29A1B85DE990003E1C8 /* Images-2.xcassets */; };
 		8A5F923E1B5B94C100F5BB81 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A5F92371B5B948A00F5BB81 /* Alamofire.framework */; };
 		8A5F923F1B5B94C100F5BB81 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8A5F92371B5B948A00F5BB81 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8A5F92451B5BD7B600F5BB81 /* URLRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A5F92441B5BD7B600F5BB81 /* URLRouter.swift */; };
@@ -156,6 +158,8 @@
 /* Begin PBXFileReference section */
 		8A5323911B5AC7BB0095F568 /* ProfessionalInspection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfessionalInspection.swift; path = iBreast/ProfessionalInspection.swift; sourceTree = SOURCE_ROOT; };
 		8A5323931B5AC8660095F568 /* Appointment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Appointment.swift; sourceTree = "<group>"; };
+		8A57C2981B85DE750003E1C8 /* iBreast.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iBreast.png; sourceTree = "<group>"; };
+		8A57C29A1B85DE990003E1C8 /* Images-2.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Images-2.xcassets"; sourceTree = "<group>"; };
 		8A5F922F1B5B948900F5BB81 /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = "Alamofire-master-2/Alamofire.xcodeproj"; sourceTree = "<group>"; };
 		8A5F92441B5BD7B600F5BB81 /* URLRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLRouter.swift; sourceTree = "<group>"; };
 		8A5F92461B5BD97E00F5BB81 /* HttpObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpObject.swift; sourceTree = "<group>"; };
@@ -278,6 +282,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8A57C2961B85DE3F0003E1C8 /* Image */ = {
+			isa = PBXGroup;
+			children = (
+				8A57C2971B85DE560003E1C8 /* app */,
+			);
+			path = Image;
+			sourceTree = "<group>";
+		};
+		8A57C2971B85DE560003E1C8 /* app */ = {
+			isa = PBXGroup;
+			children = (
+				8A57C2981B85DE750003E1C8 /* iBreast.png */,
+			);
+			path = app;
+			sourceTree = "<group>";
+		};
 		8A5F92301B5B948900F5BB81 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -368,6 +388,7 @@
 		8A74DEDD1B461CAB0091DA2E /* iBreast */ = {
 			isa = PBXGroup;
 			children = (
+				8A57C2961B85DE3F0003E1C8 /* Image */,
 				8AC46A5D1B84C2740025D25A /* Notification */,
 				8AC46A681B84C2D30025D25A /* HospitalDetails.swift */,
 				8AC4A0F61B70AEA40082DCB4 /* aboutus.docx */,
@@ -421,6 +442,7 @@
 				8A93E3701B5952EA00B734FA /* SelfExamHisManager.swift */,
 				8A93E3721B5954B800B734FA /* Constant.swift */,
 				8A6335071B68E80A00BBA939 /* GuideViewController.swift */,
+				8A57C29A1B85DE990003E1C8 /* Images-2.xcassets */,
 			);
 			path = iBreast;
 			sourceTree = "<group>";
@@ -702,6 +724,7 @@
 				8A93E37C1B595EAA00B734FA /* SelfExamHisVC.xib in Resources */,
 				8A93E0AC1B4D205100B734FA /* MeMenuList.plist in Resources */,
 				8A93E0AA1B4D1EA900B734FA /* Me in Resources */,
+				8A57C29B1B85DE990003E1C8 /* Images-2.xcassets in Resources */,
 				8A74DEE61B461CAB0091DA2E /* Main.storyboard in Resources */,
 				8A74DEEB1B461CAB0091DA2E /* LaunchScreen.xib in Resources */,
 				8A6EB9951B46D4520003CFAB /* harvardMenuList.plist in Resources */,
@@ -711,6 +734,7 @@
 				8A6EB9911B46D16A0003CFAB /* HarvardCheckMenu.plist in Resources */,
 				8A93D2541B4B911900B734FA /* SelfExam in Resources */,
 				8A93E0A61B4C043000B734FA /* Record in Resources */,
+				8A57C2991B85DE750003E1C8 /* iBreast.png in Resources */,
 				8A93E0A21B4C03E100B734FA /* ClinicsCheck in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -859,7 +883,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: qi lin (N57A2UML24)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: qi lin (N57A2UML24)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -881,6 +906,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "ac5d0f66-9efe-417b-8806-cc8f9a7586ab";
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -903,7 +929,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: qi lin (N57A2UML24)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: qi lin (N57A2UML24)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -918,6 +945,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PROVISIONING_PROFILE = "ac5d0f66-9efe-417b-8806-cc8f9a7586ab";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -927,6 +955,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = iBreast/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -939,6 +968,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = iBreast/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

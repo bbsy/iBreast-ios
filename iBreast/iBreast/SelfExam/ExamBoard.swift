@@ -535,12 +535,12 @@ class ExamBoard: UIImageView {
                 
                 var overWidth = rect.origin.x + rect.size.width < movePoint.x + hightlightedLesion.lesion.size
                 
-                if(overHeight || overWidth){
-                    
-                    println("越界，越界")
-                    
-                    return
-                }
+//                if(overHeight || overWidth){
+//                    
+//                    println("越界，越界")
+//                    
+//                    return
+//                }
                 
                 
                 
