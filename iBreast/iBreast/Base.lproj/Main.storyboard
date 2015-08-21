@@ -595,8 +595,8 @@
                                                     <rect key="frame" x="22" y="74" width="276" height="60"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Tips: 建议女性朋友了解一些乳腺疾病的科普知识，掌握乳腺自我检查方法，养成定期乳房自查习惯，积极参加乳腺癌检查，防范于未然" id="HNh-eC-8n2">
-                                                    <rect key="frame" x="34" y="80" width="253" height="56"/>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Tips: 建议女性朋友了解一些乳腺疾病的科普知识，掌握乳腺自我检查方法，养成定期乳房自查习惯，积极参加乳腺癌检查，防范于未然" selectable="NO" id="HNh-eC-8n2">
+                                                    <rect key="frame" x="34" y="78" width="253" height="56"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="textColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="11"/>
